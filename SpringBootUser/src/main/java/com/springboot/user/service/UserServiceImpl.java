@@ -31,6 +31,12 @@ public class UserServiceImpl implements UserService {
 		return userdao.findUserInfoByUserid(userid);
 		// TODO Auto-generated method stub
 	}
+
+	@Override
+	public void addUser(UserEntity user) {
+		// TODO Auto-generated method stub
+		userdao.addUser(user);
+	}
 	
 	
 }

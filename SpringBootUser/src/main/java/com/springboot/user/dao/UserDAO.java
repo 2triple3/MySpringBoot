@@ -11,6 +11,6 @@ import com.springboot.common.entity.user.UserEntity;
 public interface UserDAO {
 	List<UserEntity> findUserInfoByUserid(@Param("userid") String userid);
 
-	
-	
+	void addUser(@Param("userEntitypp")UserEntity userEntity);
+
 }

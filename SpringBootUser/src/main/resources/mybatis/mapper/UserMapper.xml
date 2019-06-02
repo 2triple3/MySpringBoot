@@ -20,11 +20,20 @@
         db_springboot.tb_user as tb_user
 
       <where>
-          <if test="userid != null">
-              AND tb_user.userid = #{userid}
+          <if test="userid != null and userid != ''">
+              AND tb_user.userid like CONCAT(#{userid},'%')
+          </if>
+          <if test="userid == null or userid == ''">
+              AND tb_user.userid like '%'
           </if>
       </where>
     </select>
 
+    <insert id="addUser">
+        INSERT INTO db_springboot.tb_user
+        (userid, username)
+        VALUES
+        (#{userEntitypp.userid},#{userEntitypp.username})
+    </insert>
 
 </mapper>
