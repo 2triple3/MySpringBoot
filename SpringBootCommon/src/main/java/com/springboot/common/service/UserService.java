@@ -14,7 +14,7 @@ import com.springboot.common.entity.user.UserEntity;
  * @description Redis服务接口
  */
 public interface UserService {
-	public List<UserEntity> findUserInfoByUserid(String userid);
+	public List<UserEntity> findUserInfoByUsername(String userid);
 
 	public void addUser(UserEntity user);
 }

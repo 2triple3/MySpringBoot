@@ -27,8 +27,8 @@ public class UserServiceImpl implements UserService {
 	private UserDAO userdao;
 
 	@Override
-	public List<UserEntity> findUserInfoByUserid(String userid) {
-		return userdao.findUserInfoByUserid(userid);
+	public List<UserEntity> findUserInfoByUsername(String username) {
+		return userdao.findUserInfoByUsername(username);
 		// TODO Auto-generated method stub
 	}
 

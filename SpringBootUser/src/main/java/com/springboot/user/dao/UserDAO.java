@@ -9,7 +9,7 @@ import com.springboot.common.entity.user.UserEntity;
 
 @Mapper
 public interface UserDAO {
-	List<UserEntity> findUserInfoByUserid(@Param("userid") String userid);
+	List<UserEntity> findUserInfoByUsername(@Param("username") String username);
 
 	void addUser(@Param("userEntitypp")UserEntity userEntity);
 

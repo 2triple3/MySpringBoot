@@ -6,34 +6,51 @@
     <resultMap id="findUserResultMap" type="com.springboot.common.entity.user.UserEntity">
         <result property="userid" column="userid"/>
         <result property="username" column="username"/>
-        
+        <result property="password" column="password"/>
     </resultMap>
 
 
 
-    <select id="findUserInfoByUserid" resultMap="findUserResultMap">
+    <select id="findUserInfoByUsername" resultMap="findUserResultMap">
       SELECT
          tb_user.userid as userid,
-         tb_user.username as username
+         tb_user.username as username,
+         tb_user.password as password
 
       FROM
         db_springboot.tb_user as tb_user
 
       <where>
-          <if test="userid != null and userid != ''">
-              AND tb_user.userid like CONCAT(#{userid},'%')
+          <if test="username != null and username != ''">
+              AND tb_user.username = #{username}
           </if>
-          <if test="userid == null or userid == ''">
-              AND tb_user.userid like '%'
+      </where>
+    </select>
+    
+    <select id="findUserInfoLikeUsername" resultMap="findUserResultMap">
+      SELECT
+         tb_user.userid as userid,
+         tb_user.username as username,
+         tb_user.password as password
+
+      FROM
+        db_springboot.tb_user as tb_user
+
+      <where>
+          <if test="username != null and username != ''">
+              AND tb_user.username like CONCAT(#{username},'%')
+          </if>
+          <if test="username == null or username == ''">
+              AND tb_user.username like '%'
           </if>
       </where>
     </select>
 
     <insert id="addUser">
         INSERT INTO db_springboot.tb_user
-        (userid, username)
+        (userid, username,password)
         VALUES
-        (#{userEntitypp.userid},#{userEntitypp.username})
+        (#{userEntitypp.userid},#{userEntitypp.username},#{userEntitypp.password})
     </insert>
 
 </mapper>

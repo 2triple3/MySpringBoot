@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-boot-admin-server
+Implementation-Version: 1.0.0.BUILD-SNAPSHOT
+Built-By: fancm
+Implementation-Vendor-Id: com.neo
+Build-Jdk: 1.8.0_201
+Implementation-URL: http://projects.spring.io/spring-boot/spring-boot-
+ admin-eureka/spring-boot-admin-server/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
