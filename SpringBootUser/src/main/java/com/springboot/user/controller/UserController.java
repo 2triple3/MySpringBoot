@@ -40,37 +40,41 @@ public class UserController {
 	@RequestMapping(value="/api/finduser/{username}", method = RequestMethod.GET)
 	public String getUserInfoByUserid(@PathVariable("username") String username) {
 		List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername(username);
-		
 		String s ="";
 		Iterator it = userlist.iterator();
 		while(it.hasNext()) {
 		  s =s+  it.next().toString()+"<br>";
-		}
-		
-		return s;
-		
+		}		
+		return s;	
 	} 
+	
 	
 	@ResponseBody
 	@RequestMapping("/api/adduser")
 	public String addUser() {
 		UserEntity user = new UserEntity();
 		user.setUserid("009");
-		user.setUsername("zhangsan");
-		
+		user.setUsername("zhangsan");	
 		userserviceImpl.addUser(user);
-		
         List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername("");
 		String s ="";
 		Iterator it = userlist.iterator();
 		while(it.hasNext()) {
 		  s =s+  it.next().toString()+"<br>";
 		}
-		return s;
-		
+		return s;	
 	}
 	
 	
+	@CrossOrigin
+	@ResponseBody
+	@RequestMapping(value="/api/userlist", produces = { "application/json;charset=UTF-8" })
+	public Map<String, Object> getUserlist() {
+		List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername("");
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userlist", userlist);
+		return map;		
+	}
 	
 	
 	@CrossOrigin
@@ -107,6 +111,7 @@ public class UserController {
 //		redisServiceImpl.set("user",user);
 //		return redisServiceImpl.get("user").toString();		
 	} 
+    
     
     @CrossOrigin
     @ResponseBody
