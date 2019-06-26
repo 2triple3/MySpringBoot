@@ -17,4 +17,6 @@ public interface UserService {
 	public List<UserEntity> findUserInfoByUsername(String userid);
 
 	public void addUser(UserEntity user);
+
+	public void deleteUserByUsername(String username);
 }

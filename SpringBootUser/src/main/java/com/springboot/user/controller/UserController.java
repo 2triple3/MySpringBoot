@@ -68,6 +68,18 @@ public class UserController {
 	
 	@CrossOrigin
 	@ResponseBody
+	@RequestMapping(value="/api/deleteUser/{username}", produces = { "application/json;charset=UTF-8" })
+	public Map<String, Object> deleteUser(@PathVariable String username) {
+		System.out.println("username_deleteUser:"+username);
+		userserviceImpl.deleteUserByUsername(username);
+		List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername("");
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userlist", userlist);
+		return map;		
+	}
+	
+	@CrossOrigin
+	@ResponseBody
 	@RequestMapping(value="/api/userlist", produces = { "application/json;charset=UTF-8" })
 	public Map<String, Object> getUserlist() {
 		List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername("");

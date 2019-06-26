@@ -13,4 +13,6 @@ public interface UserDAO {
 
 	void addUser(@Param("userEntitypp")UserEntity userEntity);
 
+	void deleteUserByUsername(@Param("username")String username);
+
 }

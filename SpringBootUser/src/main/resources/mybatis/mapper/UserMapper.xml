@@ -52,5 +52,10 @@
         VALUES
         (#{userEntitypp.userid},#{userEntitypp.username},#{userEntitypp.password})
     </insert>
+    
+    <delete id="deleteUserByUsername">
+    delete from db_springboot.tb_user
+    WHERE username = #{username}
+    </delete>
 
 </mapper>
