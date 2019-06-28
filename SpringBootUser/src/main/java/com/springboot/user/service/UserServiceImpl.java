@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public int saveUser(UserEntity user) {
+	public int updateUser(UserEntity user) {
 		// TODO Auto-generated method stub
 		return userdao.updateByPrimaryKeySelective(user);
 	}

@@ -20,7 +20,7 @@ public interface UserService {
 
 	public void deleteUserByUsername(String username);
 
-	public int saveUser(UserEntity user);
+	public int updateUser(UserEntity user);
 
 	public List<UserEntity> findUser(UserEntity userInfo);
 }
