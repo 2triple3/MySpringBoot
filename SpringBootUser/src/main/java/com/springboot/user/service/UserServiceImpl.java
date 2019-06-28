@@ -33,9 +33,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void addUser(UserEntity user) {
-		// TODO Auto-generated method stub
-		userdao.addUser(user);
+	public int addUser(UserEntity user) {
+		return userdao.addUser(user);
 	}
 
 	@Override
@@ -43,6 +42,20 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		userdao.deleteUserByUsername(username);
 	}
+
+	@Override
+	public List<UserEntity> findUser(UserEntity userInfo) {
+		// TODO Auto-generated method stub
+		return userdao.findUser(userInfo);
+	}
+	
+	@Override
+	public int saveUser(UserEntity user) {
+		// TODO Auto-generated method stub
+		return userdao.updateByPrimaryKeySelective(user);
+	}
+
+
 	
 	
 }

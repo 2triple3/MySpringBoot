@@ -25,6 +25,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.springboot.common.entity.user.UserEntity;
 import com.springboot.common.service.RedisService;
 import com.springboot.common.service.UserService;
+import com.springboot.common.utils.HttpResult;
 
 
 @Controller
@@ -65,6 +66,26 @@ public class UserController {
 		return s;	
 	}
 	
+
+    @CrossOrigin
+	@ResponseBody
+	@RequestMapping(value="/api/register", produces = { "application/json;charset=UTF-8" })
+	public Map<String, Object> register(@RequestBody Map registerInfo) {
+		System.out.println("username_register:"+registerInfo.get("username")+":::password_register:"+registerInfo.get("password"));
+		UserEntity user = new UserEntity();
+		user.setUsername((String)registerInfo.get("username"));
+		user.setPassword((String)registerInfo.get("password"));	
+		userserviceImpl.addUser(user);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("status", 1);
+		return map;
+		//return new ResponseEntity<>("66", HttpStatus.OK);		
+//	    JSONObject jsonObj = JSONObject.getObject(user);	
+//		redisServiceImpl.set("user",user);
+//		return redisServiceImpl.get("user").toString();		
+	} 
+	
 	
 	@CrossOrigin
 	@ResponseBody
@@ -103,26 +124,6 @@ public class UserController {
 		map.put("status", status);
 		return map;		
 	}
-	
-	
-    @CrossOrigin
-	@ResponseBody
-	@RequestMapping(value="/api/register", produces = { "application/json;charset=UTF-8" })
-	public Map<String, Object> register(@RequestBody Map registerInfo) {
-		System.out.println("username_register:"+registerInfo.get("username")+":::password_register:"+registerInfo.get("password"));
-		UserEntity user = new UserEntity();
-		user.setUsername((String)registerInfo.get("username"));
-		user.setPassword((String)registerInfo.get("password"));	
-		userserviceImpl.addUser(user);
-		
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("status", 1);
-		return map;
-		//return new ResponseEntity<>("66", HttpStatus.OK);		
-//	    JSONObject jsonObj = JSONObject.getObject(user);	
-//		redisServiceImpl.set("user",user);
-//		return redisServiceImpl.get("user").toString();		
-	} 
     
     
     @CrossOrigin
@@ -147,6 +148,38 @@ public class UserController {
     	Map<String, Object> map = new HashMap<String, Object>();
     	map.put("status", status);
     	return map;	
-    } 
+    }
+    
+    
+    @CrossOrigin
+    @ResponseBody
+    @RequestMapping(value="/user/findUser", produces = { "application/json;charset=UTF-8" })
+    public Map<String, Object> findUser(@RequestBody Map userInfo) {
+    	System.out.println("username_findUser:"+userInfo.get("username")+":::password_findUser:"+userInfo.get("password"));
+    	UserEntity user = new UserEntity();
+		user.setUsername((String)userInfo.get("username"));
+		user.setPassword((String)userInfo.get("password"));	
+		List<UserEntity> userlist = userserviceImpl.findUser(user);
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userlist", userlist);
+		return map;	
+    	
+    }
+    
+    @CrossOrigin
+	@ResponseBody
+	@RequestMapping(value="/user/save", produces = { "application/json;charset=UTF-8" })
+	public HttpResult saveUser(@RequestBody Map userInfo) {
+		System.out.println("username_saveUser:"+userInfo.get("username")+":::password_saveUser:"+userInfo.get("password"));
+		
+		UserEntity user = new UserEntity();
+		user.setUsername((String)userInfo.get("username"));
+		user.setPassword((String)userInfo.get("password"));	
+				
+		return HttpResult.ok(userserviceImpl.saveUser(user));
+		
+	} 
+    
+    
 
 }

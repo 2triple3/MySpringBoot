@@ -16,7 +16,11 @@ import com.springboot.common.entity.user.UserEntity;
 public interface UserService {
 	public List<UserEntity> findUserInfoByUsername(String userid);
 
-	public void addUser(UserEntity user);
+	public int addUser(UserEntity user);
 
 	public void deleteUserByUsername(String username);
+
+	public int saveUser(UserEntity user);
+
+	public List<UserEntity> findUser(UserEntity userInfo);
 }

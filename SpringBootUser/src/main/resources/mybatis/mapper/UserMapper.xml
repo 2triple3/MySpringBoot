@@ -16,13 +16,25 @@
          tb_user.userid as userid,
          tb_user.username as username,
          tb_user.password as password
-
       FROM
         db_springboot.tb_user as tb_user
-
       <where>
           <if test="username != null and username != ''">
               AND tb_user.username = #{username}
+          </if>
+      </where>
+    </select>
+    
+    <select id="findUser" resultMap="findUserResultMap">
+      SELECT
+         tb_user.userid as userid,
+         tb_user.username as username,
+         tb_user.password as password
+      FROM
+        db_springboot.tb_user as tb_user
+      <where>
+          <if test="userEntity.username != null and userEntity.username != ''">
+              AND tb_user.username like CONCAT(#{userEntity.username},'%') 
           </if>
       </where>
     </select>
@@ -35,7 +47,6 @@
 
       FROM
         db_springboot.tb_user as tb_user
-
       <where>
           <if test="username != null and username != ''">
               AND tb_user.username like CONCAT(#{username},'%')
@@ -57,5 +68,18 @@
     delete from db_springboot.tb_user
     WHERE username = #{username}
     </delete>
+    
+    <update id="updateByPrimaryKeySelective" parameterType="com.springboot.common.entity.user.UserEntity">
+    update db_springboot.tb_user
+    <set>
+      <if test="userEntity.username != null">
+        username = #{userEntity.username},
+      </if>
+      <if test="userEntity.password != null">
+        password = #{userEntity.password},
+      </if>
+    </set>
+    where username = #{userEntity.username}
+    </update>
 
 </mapper>
