@@ -168,7 +168,7 @@ public class UserController {
     
     @CrossOrigin
 	@ResponseBody
-	@RequestMapping(value="/user/edit", produces = { "application/json;charset=UTF-8" })
+	@RequestMapping(value="/user/update", produces = { "application/json;charset=UTF-8" })
 	public HttpResult updateUser(@RequestBody Map userInfo) {
 		System.out.println("username_updateUser:"+userInfo.get("username")+":::password_updateUser:"+userInfo.get("password"));
 		
@@ -177,7 +177,6 @@ public class UserController {
 		user.setPassword((String)userInfo.get("password"));	
 				
 		return HttpResult.ok(userserviceImpl.updateUser(user));
-		
 	} 
     
     
