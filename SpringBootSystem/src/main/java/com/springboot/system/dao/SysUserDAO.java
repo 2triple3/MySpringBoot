@@ -12,13 +12,13 @@ import com.springboot.common.entity.SysUser;
 public interface SysUserDAO {
 	List<SysUser> findUserInfoByUsername(@Param("username") String username);
 
-	int addUser(@Param("userEntitypp")SysUser sysUserEntity);
+	int addUser(@Param("sysUserpp")SysUser sysUser);
 
 	void deleteUserByUsername(@Param("username")String username);
 
-	List<SysUser> findUser(@Param("userEntity")SysUser sysUserEntity);
+	List<SysUser> findUser(@Param("sysUser")SysUser sysUser);
 	
-	int updateByPrimaryKeySelective(@Param("userEntity")SysUser sysUserEntity);
+	int updateByPrimaryKeySelective(@Param("sysUser")SysUser sysUser);
 
 	
 

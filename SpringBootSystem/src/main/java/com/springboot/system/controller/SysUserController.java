@@ -32,7 +32,7 @@ import com.springboot.system.service.SysUserService;
 public class SysUserController {
 	
 	@Autowired
-	private SysUserService userserviceImpl;
+	private SysUserService sysUserServiceImpl;
 	
 //	@Reference
 //    private RedisService redisServiceImpl;
@@ -40,7 +40,7 @@ public class SysUserController {
 	@ResponseBody
 	@RequestMapping(value="/api/finduser/{username}", method = RequestMethod.GET)
 	public String getUserInfoByUserid(@PathVariable("username") String username) {
-		List<SysUser> userlist = userserviceImpl.findUserInfoByUsername(username);
+		List<SysUser> userlist = sysUserServiceImpl.findUserInfoByUsername(username);
 		String s ="";
 		Iterator it = userlist.iterator();
 		while(it.hasNext()) {
@@ -56,8 +56,8 @@ public class SysUserController {
 		SysUser user = new SysUser();
 		user.setUserid("009");
 		user.setUsername("zhangsan");	
-		userserviceImpl.addUser(user);
-        List<SysUser> userlist = userserviceImpl.findUserInfoByUsername("");
+		sysUserServiceImpl.addUser(user);
+        List<SysUser> userlist = sysUserServiceImpl.findUserInfoByUsername("");
 		String s ="";
 		Iterator it = userlist.iterator();
 		while(it.hasNext()) {
@@ -75,7 +75,7 @@ public class SysUserController {
 		SysUser user = new SysUser();
 		user.setUsername((String)registerInfo.get("username"));
 		user.setPassword((String)registerInfo.get("password"));	
-		userserviceImpl.addUser(user);
+		sysUserServiceImpl.addUser(user);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("status", 1);
@@ -92,8 +92,8 @@ public class SysUserController {
 	@RequestMapping(value="/api/deleteUser/{username}", produces = { "application/json;charset=UTF-8" })
 	public Map<String, Object> deleteUser(@PathVariable String username) {
 		System.out.println("username_deleteUser:"+username);
-		userserviceImpl.deleteUserByUsername(username);
-		List<SysUser> userlist = userserviceImpl.findUserInfoByUsername("");
+		sysUserServiceImpl.deleteUserByUsername(username);
+		List<SysUser> userlist = sysUserServiceImpl.findUserInfoByUsername("");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userlist", userlist);
 		return map;		
@@ -103,7 +103,8 @@ public class SysUserController {
 	@ResponseBody
 	@RequestMapping(value="/api/userlist", produces = { "application/json;charset=UTF-8" })
 	public Map<String, Object> getUserlist() {
-		List<SysUser> userlist = userserviceImpl.findUserInfoByUsername("");
+		System.out.println("这是userlist");
+		List<SysUser> userlist = sysUserServiceImpl.findUserInfoByUsername("");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userlist", userlist);
 		return map;		
@@ -115,7 +116,7 @@ public class SysUserController {
 	@RequestMapping(value="/api/checkUsernameExist/{username}", produces = { "application/json;charset=UTF-8" })
 	public Map<String, Object> checkUsernameExist(@PathVariable String username) {
 		System.out.println("username_checkUsernameExist:"+username);
-		List<SysUser> userlist = userserviceImpl.findUserInfoByUsername(username);
+		List<SysUser> userlist = sysUserServiceImpl.findUserInfoByUsername(username);
     	String status="0";
 		if(userlist.size()>0){
 			status="1";
@@ -133,7 +134,7 @@ public class SysUserController {
     		@RequestParam("username") String username_input,
             @RequestParam("password") String password_input) {
     	System.out.println("username_doLogin:"+username_input+",password_doLogin:"+password_input);
-    	List<SysUser> userlist = userserviceImpl.findUserInfoByUsername(username_input);
+    	List<SysUser> userlist = sysUserServiceImpl.findUserInfoByUsername(username_input);
     	String status="0";
 		Iterator it = userlist.iterator();
 		if(userlist.size()>0) {
@@ -159,7 +160,7 @@ public class SysUserController {
     	SysUser user = new SysUser();
 		user.setUsername((String)userInfo.get("username"));
 		user.setPassword((String)userInfo.get("password"));	
-		List<SysUser> userlist = userserviceImpl.findUser(user);
+		List<SysUser> userlist = sysUserServiceImpl.findUser(user);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userlist", userlist);
 		return map;	
@@ -170,13 +171,14 @@ public class SysUserController {
 	@ResponseBody
 	@RequestMapping(value="/user/update", produces = { "application/json;charset=UTF-8" })
 	public HttpResult updateUser(@RequestBody Map userInfo) {
-		System.out.println("username_updateUser:"+userInfo.get("username")+":::password_updateUser:"+userInfo.get("password"));
+		System.out.println("userid_updateUser:"+userInfo.get("userid")+":::username_updateUser:"+userInfo.get("username")+":::password_updateUser:"+userInfo.get("password"));
 		
 		SysUser user = new SysUser();
+		user.setUserid((String)userInfo.get("userid"));
 		user.setUsername((String)userInfo.get("username"));
 		user.setPassword((String)userInfo.get("password"));	
 				
-		return HttpResult.ok(userserviceImpl.updateUser(user));
+		return HttpResult.ok(sysUserServiceImpl.updateUser(user));
 	} 
     
     

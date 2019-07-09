@@ -6,7 +6,7 @@ import java.util.List;
 
 
 
-public class SysUser implements Serializable {
+public class SysUser extends BaseModel implements Serializable  {
 	private String userid;
 	
     private String username;

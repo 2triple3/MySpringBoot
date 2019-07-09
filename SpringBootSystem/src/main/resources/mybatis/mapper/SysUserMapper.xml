@@ -12,9 +12,10 @@
 	    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
 	    <result column="status" jdbcType="TINYINT" property="status" />
 	    <result column="dept_id" jdbcType="BIGINT" property="deptId" />
-
-
-
+	    <result column="create_by" jdbcType="BIGINT" property="createBy" />
+	    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+	    <result column="last_update_by" jdbcType="BIGINT" property="lastUpdateBy" />
+	    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
 	    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
     </resultMap>
 
@@ -41,8 +42,8 @@
       FROM
         db_springboot.sys_user as sys_user
       <where>
-          <if test="SysUser.username != null and SysUser.username != ''">
-              AND sys_user.username like CONCAT(#{SysUser.username},'%') 
+          <if test="sysUser.username != null and sysUser.username != ''">
+              AND sys_user.username like CONCAT(#{sysUser.username},'%') 
           </if>
       </where>
     </select>
@@ -66,7 +67,7 @@
         INSERT INTO db_springboot.sys_user
         (userid, username,password)
         VALUES
-        (#{userEntitypp.userid},#{userEntitypp.username},#{userEntitypp.password})
+        (#{sysUserpp.userid},#{sysUserpp.username},#{sysUserpp.password})
     </insert>
     
     <delete id="deleteUserByUsername">
@@ -77,14 +78,14 @@
     <update id="updateByPrimaryKeySelective" parameterType="com.springboot.common.entity.SysUser">
     update db_springboot.sys_user
     <set>
-      <if test="SysUser.username != null">
-        username = #{SysUser.username},
+      <if test="sysUser.username != null">
+        username = #{sysUser.username},
       </if>
-      <if test="SysUser.password != null">
-        password = #{SysUser.password},
+      <if test="sysUser.password != null">
+        password = #{sysUser.password},
       </if>
     </set>
-    where username = #{SysUser.username}
+    where sys_user.userid = #{sysUser.userid}
     </update>
 
 </mapper>

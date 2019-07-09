@@ -25,30 +25,31 @@ import com.springboot.system.service.SysMenuService;
 public class SysMenuController {
 
 	@Autowired
-	private SysMenuService menuServiceImpl;
+	private SysMenuService sysMenuServiceImpl;
 	
 	//@PreAuthorize("hasAuthority('sys:menu:add') AND hasAuthority('sys:menu:edit')")
 	@PostMapping(value="/save")
 	public HttpResult save(@RequestBody SysMenu record) {
-		return HttpResult.ok(menuServiceImpl.save(record));
+		return HttpResult.ok(sysMenuServiceImpl.save(record));
 	}
 
 	//@PreAuthorize("hasAuthority('sys:menu:delete')")
 	@PostMapping(value="/delete")
 	public HttpResult delete(@RequestBody List<SysMenu> records) {
-		return HttpResult.ok(menuServiceImpl.delete(records));
+		return HttpResult.ok(sysMenuServiceImpl.delete(records));
 	}
 
 	//@PreAuthorize("hasAuthority('sys:menu:view')")
 	@CrossOrigin
 	@GetMapping(value="/findNavTree")
 	public HttpResult findNavTree(@RequestParam String userName) {
-		return HttpResult.ok(menuServiceImpl.findTree(userName, 1));
+		return HttpResult.ok(sysMenuServiceImpl.findTree(userName, 1));
 	}
 	
 	//@PreAuthorize("hasAuthority('sys:menu:view')")
+	@CrossOrigin
 	@GetMapping(value="/findMenuTree")
 	public HttpResult findMenuTree() {
-		return HttpResult.ok(menuServiceImpl.findTree(null, 0));
+		return HttpResult.ok(sysMenuServiceImpl.findTree(null, 0));
 	}
 }
