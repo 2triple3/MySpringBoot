@@ -1,9 +1,7 @@
 package com.springboot.system.service.impl;
 
 /**
- * @author 大闲人柴毛毛
- * @date 2017/11/1 下午3:15
- * @description
+ * 
  */
 import java.io.Serializable;
 import java.util.List;
@@ -12,27 +10,27 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.springboot.common.entity.UserEntity;
+import com.springboot.common.entity.SysUser;
 import com.springboot.common.service.RedisService;
-import com.springboot.system.dao.UserDAO;
+import com.springboot.system.dao.SysUserDAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 
 @org.springframework.stereotype.Service
-public class UserServiceImpl implements com.springboot.system.service.UserService {
+public class SysUserServiceImpl implements com.springboot.system.service.SysUserService {
 	
 	@Autowired
-	private UserDAO userdao;
+	private SysUserDAO userdao;
 
 	@Override
-	public List<UserEntity> findUserInfoByUsername(String username) {
+	public List<SysUser> findUserInfoByUsername(String username) {
 		return userdao.findUserInfoByUsername(username);
 		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public int addUser(UserEntity user) {
+	public int addUser(SysUser user) {
 		return userdao.addUser(user);
 	}
 
@@ -43,13 +41,13 @@ public class UserServiceImpl implements com.springboot.system.service.UserServic
 	}
 
 	@Override
-	public List<UserEntity> findUser(UserEntity userInfo) {
+	public List<SysUser> findUser(SysUser userInfo) {
 		// TODO Auto-generated method stub
 		return userdao.findUser(userInfo);
 	}
 	
 	@Override
-	public int updateUser(UserEntity user) {
+	public int updateUser(SysUser user) {
 		// TODO Auto-generated method stub
 		return userdao.updateByPrimaryKeySelective(user);
 	}

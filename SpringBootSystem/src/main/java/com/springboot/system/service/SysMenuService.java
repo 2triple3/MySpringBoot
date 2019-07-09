@@ -2,7 +2,7 @@ package com.springboot.system.service;
 
 import java.util.List;
 
-import com.springboot.common.entity.MenuEntity;
+import com.springboot.common.entity.SysMenu;
 
 
 
@@ -11,7 +11,7 @@ import com.springboot.common.entity.MenuEntity;
  * @author Louis
  * @date Oct 29, 2018
  */
-public interface MenuService extends CurdService<MenuEntity> {
+public interface SysMenuService extends CurdService<SysMenu> {
 
 	/**
 	 * 查询菜单树,用户ID和用户名为空则查询全部
@@ -19,12 +19,12 @@ public interface MenuService extends CurdService<MenuEntity> {
 	 * @param userId 
 	 * @return
 	 */
-	List<MenuEntity> findTree(String userName, int menuType);
+	List<SysMenu> findTree(String userName, int menuType);
 
 	/**
 	 * 根据用户名查找菜单列表
 	 * @param userName
 	 * @return
 	 */
-	List<MenuEntity> findByUser(String userName);
+	List<SysMenu> findByUser(String userName);
 }

@@ -22,17 +22,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.dubbo.common.json.JSONObject;
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.springboot.common.entity.UserEntity;
+import com.springboot.common.entity.SysUser;
 import com.springboot.common.service.RedisService;
 import com.springboot.common.utils.HttpResult;
-import com.springboot.system.service.UserService;
+import com.springboot.system.service.SysUserService;
 
 
 @Controller
-public class UserController {
+public class SysUserController {
 	
 	@Autowired
-	private UserService userserviceImpl;
+	private SysUserService userserviceImpl;
 	
 //	@Reference
 //    private RedisService redisServiceImpl;
@@ -40,7 +40,7 @@ public class UserController {
 	@ResponseBody
 	@RequestMapping(value="/api/finduser/{username}", method = RequestMethod.GET)
 	public String getUserInfoByUserid(@PathVariable("username") String username) {
-		List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername(username);
+		List<SysUser> userlist = userserviceImpl.findUserInfoByUsername(username);
 		String s ="";
 		Iterator it = userlist.iterator();
 		while(it.hasNext()) {
@@ -53,11 +53,11 @@ public class UserController {
 	@ResponseBody
 	@RequestMapping("/api/adduser")
 	public String addUser() {
-		UserEntity user = new UserEntity();
+		SysUser user = new SysUser();
 		user.setUserid("009");
 		user.setUsername("zhangsan");	
 		userserviceImpl.addUser(user);
-        List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername("");
+        List<SysUser> userlist = userserviceImpl.findUserInfoByUsername("");
 		String s ="";
 		Iterator it = userlist.iterator();
 		while(it.hasNext()) {
@@ -72,7 +72,7 @@ public class UserController {
 	@RequestMapping(value="/api/register", produces = { "application/json;charset=UTF-8" })
 	public Map<String, Object> register(@RequestBody Map registerInfo) {
 		System.out.println("username_register:"+registerInfo.get("username")+":::password_register:"+registerInfo.get("password"));
-		UserEntity user = new UserEntity();
+		SysUser user = new SysUser();
 		user.setUsername((String)registerInfo.get("username"));
 		user.setPassword((String)registerInfo.get("password"));	
 		userserviceImpl.addUser(user);
@@ -93,7 +93,7 @@ public class UserController {
 	public Map<String, Object> deleteUser(@PathVariable String username) {
 		System.out.println("username_deleteUser:"+username);
 		userserviceImpl.deleteUserByUsername(username);
-		List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername("");
+		List<SysUser> userlist = userserviceImpl.findUserInfoByUsername("");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userlist", userlist);
 		return map;		
@@ -103,7 +103,7 @@ public class UserController {
 	@ResponseBody
 	@RequestMapping(value="/api/userlist", produces = { "application/json;charset=UTF-8" })
 	public Map<String, Object> getUserlist() {
-		List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername("");
+		List<SysUser> userlist = userserviceImpl.findUserInfoByUsername("");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userlist", userlist);
 		return map;		
@@ -115,7 +115,7 @@ public class UserController {
 	@RequestMapping(value="/api/checkUsernameExist/{username}", produces = { "application/json;charset=UTF-8" })
 	public Map<String, Object> checkUsernameExist(@PathVariable String username) {
 		System.out.println("username_checkUsernameExist:"+username);
-		List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername(username);
+		List<SysUser> userlist = userserviceImpl.findUserInfoByUsername(username);
     	String status="0";
 		if(userlist.size()>0){
 			status="1";
@@ -133,14 +133,14 @@ public class UserController {
     		@RequestParam("username") String username_input,
             @RequestParam("password") String password_input) {
     	System.out.println("username_doLogin:"+username_input+",password_doLogin:"+password_input);
-    	List<UserEntity> userlist = userserviceImpl.findUserInfoByUsername(username_input);
+    	List<SysUser> userlist = userserviceImpl.findUserInfoByUsername(username_input);
     	String status="0";
 		Iterator it = userlist.iterator();
 		if(userlist.size()>0) {
-			if("".equals(((UserEntity) userlist.get(0)).getPassword())
-				||((UserEntity) userlist.get(0)).getPassword()==null
-				||password_input.equals(((UserEntity) userlist.get(0)).getPassword())) {
-				System.out.println(((UserEntity) userlist.get(0)).toString()+"::::"+((UserEntity) userlist.get(0)).getPassword());
+			if("".equals(((SysUser) userlist.get(0)).getPassword())
+				||((SysUser) userlist.get(0)).getPassword()==null
+				||password_input.equals(((SysUser) userlist.get(0)).getPassword())) {
+				System.out.println(((SysUser) userlist.get(0)).toString()+"::::"+((SysUser) userlist.get(0)).getPassword());
 				status="1";
 			}
 		}
@@ -156,10 +156,10 @@ public class UserController {
     @RequestMapping(value="/user/findUser", produces = { "application/json;charset=UTF-8" })
     public Map<String, Object> findUser(@RequestBody Map userInfo) {
     	System.out.println("username_findUser:"+userInfo.get("username")+":::password_findUser:"+userInfo.get("password"));
-    	UserEntity user = new UserEntity();
+    	SysUser user = new SysUser();
 		user.setUsername((String)userInfo.get("username"));
 		user.setPassword((String)userInfo.get("password"));	
-		List<UserEntity> userlist = userserviceImpl.findUser(user);
+		List<SysUser> userlist = userserviceImpl.findUser(user);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userlist", userlist);
 		return map;	
@@ -172,7 +172,7 @@ public class UserController {
 	public HttpResult updateUser(@RequestBody Map userInfo) {
 		System.out.println("username_updateUser:"+userInfo.get("username")+":::password_updateUser:"+userInfo.get("password"));
 		
-		UserEntity user = new UserEntity();
+		SysUser user = new SysUser();
 		user.setUsername((String)userInfo.get("username"));
 		user.setPassword((String)userInfo.get("password"));	
 				

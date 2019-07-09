@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import com.springboot.common.entity.UserEntity;
+import com.springboot.common.entity.SysUser;
 
 
 
@@ -13,14 +13,14 @@ import com.springboot.common.entity.UserEntity;
  * @date 2017/11/1 下午3:33
  * @description Redis服务接口
  */
-public interface UserService {
-	public List<UserEntity> findUserInfoByUsername(String userid);
+public interface SysUserService {
+	public List<SysUser> findUserInfoByUsername(String userid);
 
-	public int addUser(UserEntity user);
+	public int addUser(SysUser user);
 
 	public void deleteUserByUsername(String username);
 
-	public int updateUser(UserEntity user);
+	public int updateUser(SysUser user);
 
-	public List<UserEntity> findUser(UserEntity userInfo);
+	public List<SysUser> findUser(SysUser userInfo);
 }

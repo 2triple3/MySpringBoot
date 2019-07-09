@@ -12,31 +12,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.common.entity.MenuEntity;
+import com.springboot.common.entity.SysMenu;
 import com.springboot.common.utils.HttpResult;
-import com.springboot.system.service.MenuService;
+import com.springboot.system.service.SysMenuService;
 
 /**
  * 菜单控制器
- * @author Louis
- * @date Oct 29, 2018
+ * 
  */
 @RestController
 @RequestMapping("menu")
-public class MenuController {
+public class SysMenuController {
 
 	@Autowired
-	private MenuService menuServiceImpl;
+	private SysMenuService menuServiceImpl;
 	
 	//@PreAuthorize("hasAuthority('sys:menu:add') AND hasAuthority('sys:menu:edit')")
 	@PostMapping(value="/save")
-	public HttpResult save(@RequestBody MenuEntity record) {
+	public HttpResult save(@RequestBody SysMenu record) {
 		return HttpResult.ok(menuServiceImpl.save(record));
 	}
 
 	//@PreAuthorize("hasAuthority('sys:menu:delete')")
 	@PostMapping(value="/delete")
-	public HttpResult delete(@RequestBody List<MenuEntity> records) {
+	public HttpResult delete(@RequestBody List<SysMenu> records) {
 		return HttpResult.ok(menuServiceImpl.delete(records));
 	}
 

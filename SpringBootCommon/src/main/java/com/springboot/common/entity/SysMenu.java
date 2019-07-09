@@ -4,13 +4,15 @@ import java.io.Serializable;
 import java.util.List;
 
 
-public class MenuEntity extends BaseModel implements Serializable{
+public class SysMenu extends BaseModel implements Serializable{
 
     private Long parentId;
 
     private String name;
 
     private String url;
+    
+    private String method;
 
     private String perms;
 
@@ -27,7 +29,7 @@ public class MenuEntity extends BaseModel implements Serializable{
     // 非数据库字段
     private Integer level;
     // 非数据库字段
-    private List<MenuEntity> children;
+    private List<SysMenu> children;
     
 	public Long getParentId() {
 		return parentId;
@@ -93,11 +95,11 @@ public class MenuEntity extends BaseModel implements Serializable{
 		this.delFlag = delFlag;
 	}
 
-	public List<MenuEntity> getChildren() {
+	public List<SysMenu> getChildren() {
 		return children;
 	}
 
-	public void setChildren(List<MenuEntity> children) {
+	public void setChildren(List<SysMenu> children) {
 		this.children = children;
 	}
 
@@ -115,6 +117,14 @@ public class MenuEntity extends BaseModel implements Serializable{
 
 	public void setParentName(String parentName) {
 		this.parentName = parentName;
+	}
+
+	public String getMethod() {
+		return method;
+	}
+
+	public void setMethod(String method) {
+		this.method = method;
 	}
 	
 }

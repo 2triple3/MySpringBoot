@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.springboot.system.dao.MenuDAO">
-  <resultMap id="BaseResultMap" type="com.springboot.common.entity.MenuEntity">
+<mapper namespace="com.springboot.system.dao.SysMenuDAO">
+  <resultMap id="BaseResultMap" type="com.springboot.common.entity.SysMenu">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="parent_id" jdbcType="BIGINT" property="parentId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="method" jdbcType="VARCHAR" property="method" />
     <result column="perms" jdbcType="VARCHAR" property="perms" />
     <result column="type" jdbcType="INTEGER" property="type" />
     <result column="icon" jdbcType="VARCHAR" property="icon" />
@@ -17,7 +18,7 @@
     <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, parent_id, name, url, perms, type, icon, order_num, create_by, create_time, 
+    id, parent_id, name, url, method, perms, type, icon, order_num, create_by, create_time, 
     last_update_by, last_update_time, del_flag
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -30,19 +31,19 @@
     delete from sys_menu
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.springboot.common.entity.MenuEntity">
+  <insert id="insert" parameterType="com.springboot.common.entity.SysMenu">
     insert into sys_menu (id, parent_id, name, 
-      url, perms, type, icon, 
+      url, method, perms, type, icon, 
       order_num, create_by, create_time, 
       last_update_by, last_update_time, del_flag
       )
     values (#{id,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
-      #{url,jdbcType=VARCHAR}, #{perms,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{method,jdbcType=VARCHAR}, #{perms,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, 
       #{orderNum,jdbcType=INTEGER}, #{createBy,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
       #{lastUpdateBy,jdbcType=BIGINT}, #{lastUpdateTime,jdbcType=TIMESTAMP}, #{delFlag,jdbcType=TINYINT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.springboot.common.entity.MenuEntity">
+  <insert id="insertSelective" parameterType="com.springboot.common.entity.SysMenu">
     insert into sys_menu
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -56,6 +57,9 @@
       </if>
       <if test="url != null">
         url,
+      </if>
+      <if test="method != null">
+        method,
       </if>
       <if test="perms != null">
         perms,
@@ -98,6 +102,9 @@
       <if test="url != null">
         #{url,jdbcType=VARCHAR},
       </if>
+      <if test="method != null">
+        #{method,jdbcType=VARCHAR},
+      </if>
       <if test="perms != null">
         #{perms,jdbcType=VARCHAR},
       </if>
@@ -127,7 +134,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.springboot.common.entity.MenuEntity">
+  <update id="updateByPrimaryKeySelective" parameterType="com.springboot.common.entity.SysMenu">
     update sys_menu
     <set>
       <if test="parentId != null">
@@ -138,6 +145,9 @@
       </if>
       <if test="url != null">
         url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        url = #{method,jdbcType=VARCHAR},
       </if>
       <if test="perms != null">
         perms = #{perms,jdbcType=VARCHAR},
@@ -169,11 +179,12 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.springboot.common.entity.MenuEntity">
+  <update id="updateByPrimaryKey" parameterType="com.springboot.common.entity.SysMenu">
     update sys_menu
     set parent_id = #{parentId,jdbcType=BIGINT},
       name = #{name,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
       perms = #{perms,jdbcType=VARCHAR},
       type = #{type,jdbcType=INTEGER},
       icon = #{icon,jdbcType=VARCHAR},

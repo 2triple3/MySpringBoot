@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.system.dao.SysUserDAO" >
+
+    <resultMap id="findUserResultMap" type="com.springboot.common.entity.SysUser">
+	    <result column="userid" jdbcType="BIGINT" property="userid" />
+	    <result column="username" jdbcType="VARCHAR" property="username" />
+	    <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="salt" jdbcType="VARCHAR" property="salt" />
+	    <result column="email" jdbcType="VARCHAR" property="email" />
+	    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+	    <result column="status" jdbcType="TINYINT" property="status" />
+	    <result column="dept_id" jdbcType="BIGINT" property="deptId" />
+
+
+
+	    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+	    userid, username, password, salt, email, mobile, status, dept_id, create_by, create_time, 
+	    last_update_by, last_update_time, del_flag
+    </sql>
+
+    <select id="findUserInfoByUsername" resultMap="findUserResultMap">
+      SELECT
+        <include refid="Base_Column_List" />
+      FROM
+        db_springboot.sys_user as sys_user
+      <where>
+          <if test="username != null and username != ''">
+              AND sys_user.username = #{username}
+          </if>
+      </where>
+    </select>
+    
+    <select id="findUser" resultMap="findUserResultMap">
+      SELECT
+         <include refid="Base_Column_List" />
+      FROM
+        db_springboot.sys_user as sys_user
+      <where>
+          <if test="SysUser.username != null and SysUser.username != ''">
+              AND sys_user.username like CONCAT(#{SysUser.username},'%') 
+          </if>
+      </where>
+    </select>
+    
+    <select id="findUserInfoLikeUsername" resultMap="findUserResultMap">
+      SELECT
+        <include refid="Base_Column_List" />
+      FROM
+        db_springboot.sys_user as sys_user
+      <where>
+          <if test="username != null and username != ''">
+              AND sys_user.username like CONCAT(#{username},'%')
+          </if>
+          <if test="username == null or username == ''">
+              AND sys_user.username like '%'
+          </if>
+      </where>
+    </select>
+
+    <insert id="addUser">
+        INSERT INTO db_springboot.sys_user
+        (userid, username,password)
+        VALUES
+        (#{userEntitypp.userid},#{userEntitypp.username},#{userEntitypp.password})
+    </insert>
+    
+    <delete id="deleteUserByUsername">
+    delete from db_springboot.sys_user
+    WHERE username = #{username}
+    </delete>
+    
+    <update id="updateByPrimaryKeySelective" parameterType="com.springboot.common.entity.SysUser">
+    update db_springboot.sys_user
+    <set>
+      <if test="SysUser.username != null">
+        username = #{SysUser.username},
+      </if>
+      <if test="SysUser.password != null">
+        password = #{SysUser.password},
+      </if>
+    </set>
+    where username = #{SysUser.username}
+    </update>
+
+</mapper>
