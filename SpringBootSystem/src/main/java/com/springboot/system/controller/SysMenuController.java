@@ -20,6 +20,7 @@ import com.springboot.system.service.SysMenuService;
  * 菜单控制器
  * 
  */
+@CrossOrigin
 @RestController
 @RequestMapping("menu")
 public class SysMenuController {

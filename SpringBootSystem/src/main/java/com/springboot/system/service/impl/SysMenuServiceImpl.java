@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springboot.common.entity.SysMenu;
+import com.springboot.common.page.MybatisPageHelper;
+import com.springboot.common.page.PageRequest;
+import com.springboot.common.page.PageResult;
 import com.springboot.system.dao.SysMenuDAO;
-import com.springboot.system.dao.SysUserDAO;
 import com.springboot.system.service.SysMenuService;
 
 @Service
@@ -46,10 +48,10 @@ public class SysMenuServiceImpl implements SysMenuService {
 		return menudao.selectByPrimaryKey(id);
 	}
 
-//	@Override
-//	public PageResult findPage(PageRequest pageRequest) {
-//		return MybatisPageHelper.findPage(pageRequest, menudao);
-//	}
+	@Override
+	public PageResult findPage(PageRequest pageRequest) {
+		return MybatisPageHelper.findPage(pageRequest, menudao);
+	}
 	
 	@Override
 	public List<SysMenu> findTree(String userName, int menuType) {

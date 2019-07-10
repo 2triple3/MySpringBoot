@@ -2,6 +2,9 @@ package com.springboot.system.service;
 
 import java.util.List;
 
+import com.springboot.common.page.PageRequest;
+import com.springboot.common.page.PageResult;
+
 //import com.louis.kitty.core.page.PageRequest;
 //import com.louis.kitty.core.page.PageResult;
 
@@ -45,6 +48,6 @@ public interface CurdService<T> {
 	 * @param pageRequest 自定义，统一分页查询请求
 	 * @return PageResult 自定义，统一分页查询结果
      */
-	//PageResult findPage(PageRequest pageRequest);
+	PageResult findPage(PageRequest pageRequest);
 	
 }

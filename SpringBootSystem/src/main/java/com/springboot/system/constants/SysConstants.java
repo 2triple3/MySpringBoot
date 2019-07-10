@@ -1,7 +1,9 @@
-package com.louis.kitty.admin.constants;
+package com.springboot.system.constants;
 
 /**
  * 常量管理
+ * @author Louis
+ * @date Oct 29, 2018
  */ 
 public interface SysConstants {
 
