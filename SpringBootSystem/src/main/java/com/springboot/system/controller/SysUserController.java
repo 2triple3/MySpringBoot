@@ -35,7 +35,8 @@ public class SysUserController {
 	private SysUserService sysUserServiceImpl;
 	
 //	@Reference
-//    private RedisService redisServiceImpl;
+//   private RedisService redisServiceImpl;
+
 	
 	@ResponseBody
 	@RequestMapping(value="/api/finduser/{username}", method = RequestMethod.GET)
