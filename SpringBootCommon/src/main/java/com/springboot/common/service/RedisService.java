@@ -3,11 +3,7 @@ package com.springboot.common.service;
 import java.io.Serializable;
 import java.util.Map;
 
-/**
- * @author 大闲人柴毛毛
- * @date 2017/11/1 下午3:33
- * @description Redis服务接口
- */
+
 public interface RedisService {
 
     /**
