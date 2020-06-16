@@ -20,8 +20,8 @@ public class MQSenderServiceImpl implements MQSenderService{
 
     public void sendTopic(Object message) {
 		//String msg = RedisService.beanToString(message);
-		String msg = "testtopic";
-		log.info("send topic message:"+msg);
+        String msg = (String) message;
+        log.info("send topic mq message:"+msg);
 		amqpTemplate.convertAndSend(MQConfig.TOPIC_EXCHANGE, "topic.key1", msg+"1");
 		amqpTemplate.convertAndSend(MQConfig.TOPIC_EXCHANGE, "topic.key2", msg+"2");
 	}
@@ -29,7 +29,7 @@ public class MQSenderServiceImpl implements MQSenderService{
 	public void sendMessage(Object message){
         //String msg = RedisService.beanToString(message);
         String msg = (String) message;
-        log.info("send message:"+msg);
+        log.info("send default mq message:"+msg);
         amqpTemplate.convertAndSend(MQConfig.QUEUE, msg);
 
     }

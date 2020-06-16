@@ -31,12 +31,19 @@ public class TestController {
 
     @RequestMapping(value="/testmq")
     public String testmq() throws InterruptedException {
+//        for(int i=1;i<1000;i++){
+//            mqsender.sendMessage("mq"+i);
+//            Thread.sleep(500);
+//        }
+        mqsender.sendMessage("mq");
+        return "mq test";
+    }
 
-        for(int i=1;i<1000;i++){
-            mqsender.sendMessage("mq"+i);
-            Thread.sleep(500);
-        }
-        return "mqqqq";
+    @RequestMapping(value="/testmqtopic")
+    public String testmqtopic() throws InterruptedException {
+
+        mqsender.sendTopic("mqtopic");
+        return "mq topic test";
     }
 
 

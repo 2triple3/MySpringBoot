@@ -43,13 +43,24 @@ public class MQConfig {
     public TopicExchange topicExchange(){
         return new TopicExchange(TOPIC_EXCHANGE);
     }
+
+
+    /*
+     * 匹配规则
+     * 绑定键binding key也必须是这种形式。以特定路由键发送的消息将会发送到所有绑定键与之匹配的队列中。
+     * 但绑定键有两种特殊的情况：
+     *  *（星号）仅代表一个单词
+     *  #（井号）代表任意个单词
+     **/
     //绑定
     @Bean
     public Binding topicBinding1() {
+        //TOPIC_QUEUE1只能收到路由key是topic.key1的消息
         return BindingBuilder.bind(topicQueue1()).to(topicExchange()).with("topic.key1");
     }
     @Bean
     public Binding topicBinding2() {
+        //TOPIC_QUEUE1能收到路由key是topic.key1、topic.key2...的消息
         return BindingBuilder.bind(topicQueue2()).to(topicExchange()).with("topic.#");
     }
 
