@@ -117,6 +117,18 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.springboot.system.SpringBootSystemApplication</mainClass>
+                    <!--<skip>true</skip>使打出的jar包目录结构正常不含BOOT-INF，但构建docker镜像时不能打开-->
+					<includeSystemScope>true</includeSystemScope><!--依赖的文件一起打包-->
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
