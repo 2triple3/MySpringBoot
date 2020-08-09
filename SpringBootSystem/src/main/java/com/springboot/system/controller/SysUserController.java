@@ -34,8 +34,8 @@ public class SysUserController {
 	@Autowired
 	private SysUserService sysUserServiceImpl;
 	
-//	@Reference
-//   private RedisService redisServiceImpl;
+	@Reference
+    private RedisService redisServiceImpl;
 
 	
 	@ResponseBody

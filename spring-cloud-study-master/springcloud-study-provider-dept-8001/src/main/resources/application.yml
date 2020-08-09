@@ -7,9 +7,9 @@ server:
 #数据库信息配置
 spring:
   application:
-    name: study-springcloud-dept  #应用名称
+    name: study-springcloud-dept  #Application名称,eureka会改为大写
   datasource:
-    url: jdbc:mysql://localhost:3306/study?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&verifyServerCertificate=false&useSSL=false
+    url: jdbc:mysql://localhost:3306/study01?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&verifyServerCertificate=false&useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
@@ -40,13 +40,15 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true #开启驼峰命名
     cache-enabled: true #开启二级缓存
+
 #客户端注册进eureka服务列表
 eureka:
   client:
     service-url:
       defaultZone: eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+      #defaultZone: eureka7001.com:7001/eureka
   instance:
-    #服务实例名称修改
+    #服务实例名称（Application名称后面的status对应，一个Application可对应多个实例）
     instance-id: study-springcloud-dept8001
     #访问路径显示IP地址
     prefer-ip-address: true

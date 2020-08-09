@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d17f6fc-f1cd-4201-91ba-4581fd3dff49" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Environments/apache-maven-3.6.2" />
+        <option name="userSettingsFile" value="D:\Environments\apache-maven-3.6.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aR9Cj0rjLewOnwZQ53IFRdkjkU" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/es-jd/src/main/resources/static/js" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Elasticsearch\code\es-jd\src\main\resources\static\js" />
+      <recent name="F:\Elasticsearch\code\es-jd\src\main\java\com\awen" />
+      <recent name="F:\Elasticsearch\code\es-jd\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EsJdApplication">
+    <configuration name="ContentServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.awen.service.impl.ContentServiceImpl" />
+      <module name="es-jd" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HtmlParseUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.awen.utils.HtmlParseUtil" />
+      <module name="es-jd" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsoupHtmlParseJd" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.awen.utils.JsoupHtmlParseJd" />
+      <module name="es-jd" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EsJdApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="es-jd" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.awen.EsJdApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JsoupHtmlParseJd" />
+        <item itemvalue="Application.ContentServiceImpl" />
+        <item itemvalue="Application.HtmlParseUtil" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="430" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586708280796">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state x="430" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1463.783@0.0.1463.783" timestamp="1586708280796" />
+    <state x="462" y="90" key="FileChooserDialogImpl" timestamp="1586738422874">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state x="462" y="90" key="FileChooserDialogImpl/0.0.1463.783@0.0.1463.783" timestamp="1586738422874" />
+    <state width="1410" height="84" key="GridCell.Tab.0.bottom" timestamp="1586750899216">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state width="1410" height="84" key="GridCell.Tab.0.bottom/0.0.1463.783@0.0.1463.783" timestamp="1586750899216" />
+    <state width="1410" height="84" key="GridCell.Tab.0.center" timestamp="1586750899216">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state width="1410" height="84" key="GridCell.Tab.0.center/0.0.1463.783@0.0.1463.783" timestamp="1586750899216" />
+    <state width="1410" height="84" key="GridCell.Tab.0.left" timestamp="1586750899215">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state width="1410" height="84" key="GridCell.Tab.0.left/0.0.1463.783@0.0.1463.783" timestamp="1586750899215" />
+    <state width="1410" height="84" key="GridCell.Tab.0.right" timestamp="1586750899216">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state width="1410" height="84" key="GridCell.Tab.0.right/0.0.1463.783@0.0.1463.783" timestamp="1586750899216" />
+    <state width="1410" height="84" key="GridCell.Tab.1.bottom" timestamp="1586750899217">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state width="1410" height="84" key="GridCell.Tab.1.bottom/0.0.1463.783@0.0.1463.783" timestamp="1586750899217" />
+    <state width="1410" height="84" key="GridCell.Tab.1.center" timestamp="1586750899216">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state width="1410" height="84" key="GridCell.Tab.1.center/0.0.1463.783@0.0.1463.783" timestamp="1586750899216" />
+    <state width="1410" height="84" key="GridCell.Tab.1.left" timestamp="1586750899216">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state width="1410" height="84" key="GridCell.Tab.1.left/0.0.1463.783@0.0.1463.783" timestamp="1586750899216" />
+    <state width="1410" height="84" key="GridCell.Tab.1.right" timestamp="1586750899216">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state width="1410" height="84" key="GridCell.Tab.1.right/0.0.1463.783@0.0.1463.783" timestamp="1586750899216" />
+    <state x="117" y="0" key="SettingsEditor" timestamp="1586746276570">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state x="117" y="0" key="SettingsEditor/0.0.1463.783@0.0.1463.783" timestamp="1586746276570" />
+    <state x="354" y="175" key="com.intellij.ide.util.TipDialog" timestamp="1586746675452">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state x="354" y="175" key="com.intellij.ide.util.TipDialog/0.0.1463.783@0.0.1463.783" timestamp="1586746675452" />
+    <state x="0" y="71" width="1463" height="695" key="new project wizard" timestamp="1586687510059">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state x="0" y="71" width="1463" height="695" key="new project wizard/0.0.1463.783@0.0.1463.783" timestamp="1586687510059" />
+    <state x="310" y="0" width="840" height="781" key="search.everywhere.popup" timestamp="1586740495204">
+      <screen x="0" y="0" width="1463" height="783" />
+    </state>
+    <state x="310" y="0" width="840" height="781" key="search.everywhere.popup/0.0.1463.783@0.0.1463.783" timestamp="1586740495204" />
+  </component>
+</project>
