@@ -62,18 +62,18 @@ public class TestController {
     @RequestMapping(value = "/testmq")
     public String testmq() throws InterruptedException {
 //        for(int i=1;i<1000;i++){
-//            mqsender.sendMessage("mq"+i);
+//            mqsender.sendMessage("rabbitmq"+i);
 //            Thread.sleep(500);
 //        }
-        mqsender.sendMessage("mq");
-        return "mq test";
+        mqsender.sendMessage("rabbitmq");
+        return "rabbitmq test";
     }
 
     @RequestMapping(value = "/testmqtopic")
     public String testmqtopic() throws InterruptedException {
 
         mqsender.sendTopic("mqtopic");
-        return "mq topic test";
+        return "rabbitmq topic test";
     }
 
     @RequestMapping(value = "/test1")

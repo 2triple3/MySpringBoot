@@ -18,8 +18,12 @@ import java.util.List;
  */
 @RestController
 public class DeptConsumerController {
+
+    //feign:接口层上加注解@FeignClient，然后在这里注入
     @Autowired
     private DeptClientService deptClientService;
+
+
     @RequestMapping(value = "/consumer/dept/add")
     public boolean add( DeptEntity deptEntity){
         //三个参数：url,requestMap ResponseBean.class

@@ -13,6 +13,9 @@ import java.util.Random;
  * @createTime 31 2:18
  * @description
  */
+
+
+
 public class MyRandomRule extends AbstractLoadBalancerRule {
     Random rand;
 
