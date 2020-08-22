@@ -11,21 +11,27 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      # 单机版配置defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka #设置与eureka server 交互的地址查询服务和注册服务都需要依赖的地址
+      #单机版配置
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka  #设置与eureka server 交互的地址查询服务和注册服务都需要依赖的地址
+      #单机版配置
+      defaultZone: http://eureka7001.com:7001/eureka/
       #集群配置
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
 zuul:
   routes:
-    mydept.serviceId: STUDY-SPRINGCLOUD-DEPT
-    mydept.path: /mydept/*
+#    mydept.serviceId: STUDY-SPRINGCLOUD-DEPT
+#    mydept.path: /mydept/*
+    mycloud.serviceId: STUDY-SPRINGCLOUD-DEPT
+    mycloud.path: /mycloud/*
+    mycloud.sensitiveHeaders: "*"   #需要此配置，因为springcloud项目中经过网关zuul转发请求后发生session失效问题，这是由于zuul默认会丢弃原来的session并生成新的session
   #多个用"*" ignored-services: "*"
   ignored-services: STUDY-SPRINGCLOUD-DEPT
-  prefix: /springcloud
+  #prefix: /springcloud
 
 
 
 info:
   app.name: springcloud-study-zuul-gateway
   company.name: www.gxs.com
-  build.artifactId: ${project.artifactId}
-  build.version: ${project.version}
+  build.artifactId: springcloud-study-zuul-gateway-9527
+  build.version: 1.0-SNAPSHOT

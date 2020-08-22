@@ -45,8 +45,11 @@ mybatis:
 eureka:
   client:
     service-url:
-      defaultZone: eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+      #单机
       #defaultZone: eureka7001.com:7001/eureka
+      #集群
+      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+      #defaultZone: eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
   instance:
     #服务实例名称（Application名称后面的status对应，一个Application可对应多个实例）
     instance-id: study-springcloud-dept8003
