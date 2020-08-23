@@ -12,6 +12,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
  * @author GongXings
  * @createTime 30 16:11
  * @description
+ *
  */
 @SpringBootApplication
 @EnableEurekaClient

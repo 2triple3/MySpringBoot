@@ -27,6 +27,6 @@ public class TestController {
             session.setAttribute("username", username);
         }
         System.out.println("访问端口：" + request.getServerPort());
-        return username;
+        return username+"    "+"访问端口：" + request.getServerPort();
     }
 }

@@ -39,11 +39,6 @@ public class DeptController {
     }
 
 
-
-
-
-
-
 //    @Autowired
 //    private DiscoveryClient discoveryClient;
 //

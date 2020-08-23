@@ -23,10 +23,10 @@ public class TestController {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         if (StringUtils.isEmpty(username)) {
-            username = "testSessionRedis|" + System.currentTimeMillis();
+            username = "|testSessionRedis|" + System.currentTimeMillis();
             session.setAttribute("username", username);
         }
         System.out.println("访问端口：" + request.getServerPort());
-        return username;
+        return username+"   "+"访问端口：" + request.getServerPort();
     }
 }

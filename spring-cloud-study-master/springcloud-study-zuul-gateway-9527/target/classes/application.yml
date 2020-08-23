@@ -18,17 +18,29 @@ eureka:
       #集群配置
       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
 zuul:
+  #prefix: /springcloud  #如：http://localhost:9527/springcloud/getUser
+  #ignored-services: STUDY-SPRINGCLOUD-DEPT
+  #多个用"*"
+  ignored-services: "*"
+  #不配置ignored-services会造成网关地址+微服务名也能访问，如：http://localhost:9527/study-springcloud-dept/getUser
   routes:
 #    mydept.serviceId: STUDY-SPRINGCLOUD-DEPT
 #    mydept.path: /mydept/*
-    mycloud.serviceId: STUDY-SPRINGCLOUD-DEPT
-    mycloud.path: /mycloud/*
-    mycloud.sensitiveHeaders: "*"   #需要此配置，因为springcloud项目中经过网关zuul转发请求后发生session失效问题，这是由于zuul默认会丢弃原来的session并生成新的session
-  #多个用"*" ignored-services: "*"
-  ignored-services: STUDY-SPRINGCLOUD-DEPT
-  #prefix: /springcloud
+    mycloud:
+      serviceId: STUDY-SPRINGCLOUD-DEPT
+      path: /mycloud/*
+      #url: http://localhost:8002  #指定微服务具体所在的服务器url,有url则不需要serviceId，没有url则根据serviceId以及负载均衡策略访问
+      sensitiveHeaders: "*"   #需要此配置，因为springcloud项目中经过网关zuul转发请求后发生session失效问题，这是由于zuul默认会丢弃原来的session并生成新的session
 
-
+#path/url组合不支持负载均衡
+#path/serviceId支持负载均衡
+#ribbon负载均衡参数配置
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+STUDY-SPRINGCLOUD-DEPT:
+  ribbon:
+    listOfServices: http://localhost:8001,http://localhost:8002,http://localhost:8003
 
 info:
   app.name: springcloud-study-zuul-gateway
