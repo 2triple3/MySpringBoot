@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="classes">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../ws4springboot/ActNow/target/classes/jna-platform.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../ws4springboot/ActNow/target/classes/jna.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

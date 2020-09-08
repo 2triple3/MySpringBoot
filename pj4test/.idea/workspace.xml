@@ -1,0 +1,1283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutomaticModuleUnloader">
+    <option name="modules">
+      <list>
+        <option value="concurrent" />
+        <option value="RPC" />
+        <option value="nio" />
+        <option value="springbootdemo" />
+        <option value="mq" />
+        <option value="module001" />
+        <option value="pj001" />
+      </list>
+    </option>
+    <loaded-modules>
+      <module name="concurrent" />
+      <module name="RPC" />
+      <module name="nio" />
+      <module name="springbootdemo" />
+      <module name="mq" />
+      <module name="module001" />
+      <module name="pj001" />
+    </loaded-modules>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="095c8211-64ba-4b9d-be95-77b98bcc3c76" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ws4vue/my-vue/my-vue.iml" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootCommon/target/" />
+    <ignored path="$PROJECT_DIR$/../../springboot-seckill-master/target/" />
+    <ignored path="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/target/" />
+    <ignored path="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootDataService/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/module001/target/" />
+    <ignored path="$PROJECT_DIR$/springbootdemo/target/" />
+    <ignored path="$PROJECT_DIR$/../../liudrain-product-master/product/target/" />
+    <ignored path="$PROJECT_DIR$/nio/target/" />
+    <ignored path="$PROJECT_DIR$/mq/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="pj001" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pj001.iml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pj001.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>IProductService</find>
+      <find>ProductServiceImpl</find>
+      <find>ProductMapper</find>
+      <find>DecisionClass</find>
+      <find>ccc</find>
+      <find>Redis</find>
+      <find>druid</find>
+      <find>DruidDataSource</find>
+      <find>MQReceiver</find>
+      <find>DubboComponentScan</find>
+      <find>auto</find>
+      <find>.select</find>
+      <find>readyOps</find>
+      <find>SelectorImpl</find>
+      <find>publicSelectedKeys</find>
+      <find>selectedKeys</find>
+      <find>redisServiceImpl</find>
+      <find>rabbit</find>
+      <find>mqr</find>
+      <find>test</find>
+      <find>redist</find>
+      <find>Base_Column_List</find>
+      <find>CacheManager</find>
+      <find>KeyGenerator</find>
+      <find>jedisConnectionFactory</find>
+      <find>spring.factories</find>
+      <find>redis</find>
+      <find>redisTemplate</find>
+      <find>mq</find>
+      <find>perms</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>//@Mapper</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>E:\Workspaces\ws4idea\pj001\concurrent\src</dir>
+      <dir>E:\work\maven\repository\com\springboot\SpringBootCommon\0.0.1-SNAPSHOT\SpringBootCommon-0.0.1-SNAPSHOT.jar</dir>
+      <dir>E:\Workspaces\ws4idea\pj001\out</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../ws4vue/my-vue" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../../springboot-seckill-master/src/main/java/com/jesper/seckill/controller/SeckillController.java" />
+        <option value="$PROJECT_DIR$/../../springboot-seckill-master/src/main/java/com/jesper/seckill/rabbitmq/MQConfig.java" />
+        <option value="$PROJECT_DIR$/mq/src/main/java/com/example/mq/config/MQConfig.java" />
+        <option value="$PROJECT_DIR$/../../springboot-seckill-master/src/main/java/com/jesper/seckill/rabbitmq/MQSender.java" />
+        <option value="$PROJECT_DIR$/mq/src/main/java/com/example/mq/serviceimpl/ReturnCallbackService.java" />
+        <option value="$PROJECT_DIR$/mq/src/main/java/com/example/mq/rabbitmq/MQConfig.java" />
+        <option value="$PROJECT_DIR$/mq/src/main/java/com/example/mq/rabbitmq/MQReceiver.java" />
+        <option value="$PROJECT_DIR$/mq/src/main/java/com/example/mq/rabbitmq/MQSender.java" />
+        <option value="$PROJECT_DIR$/../../springboot-seckill-master/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/mq/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/mq/src/main/java/com/example/mq/controller/MQTestController.java" />
+        <option value="$PROJECT_DIR$/mq/src/main/java/com/example/mq/serviceimpl/ConfirmCallbackService.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/test/java/com/example/demo/test/test.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/test/java/com/example/demo/test/testtest.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/test/java/com/example/demo/SpringBootSystemApplicationTests.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/test/java/com/example/demo/daoTest/AdaoTest.java" />
+        <option value="$PROJECT_DIR$/mq/src/test/java/com/example/mq/MqApplicationTests.java" />
+        <option value="$PROJECT_DIR$/mq/src/test/java/com/example/mq/controllerTest/AAControllerTest.java" />
+        <option value="$PROJECT_DIR$/mq/src/test/java/com/example/mq/controllerTest/MQTestController.java" />
+        <option value="$PROJECT_DIR$/mq/src/test/java/com/example/mq/controllerTest/rabbitmq/MQReceiver.java" />
+        <option value="$PROJECT_DIR$/mq/src/test/java/com/example/mq/rabbitmq/MQSender.java" />
+        <option value="$PROJECT_DIR$/mq/src/test/java/com/example/mq/controller/MQTestController.java" />
+        <option value="$PROJECT_DIR$/../../springboot-seckill-master/src/main/java/com/jesper/seckill/result/Result.java" />
+        <option value="$PROJECT_DIR$/module001/src/main/java/Java8.java" />
+        <option value="$PROJECT_DIR$/module001/src/main/java/day2.com/atguigu/exer/Trader.java" />
+        <option value="$PROJECT_DIR$/module001/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootDataService/src/main/java/com/springboot/dataservice/config/RedisConfiguration.java" />
+        <option value="$PROJECT_DIR$/mq/src/main/java/com/example/mq/controller/test.java" />
+        <option value="$PROJECT_DIR$/mq/src/main/java/com/example/mq/controller/bb.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootDataService/pom.xml" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/impl/SysUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/SysUserService.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/impl/test.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/security/JwtUserDetails.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/security/UserDetailsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/util/IPUtils.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/util/SecurityUtils.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/util/JwtTokenUtils.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/util/HttpUtils.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/security/JwtAuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/security/JwtAuthenticationProvider.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootDataService/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/CurdService.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/SysDeptService.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/SysMenuService.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/config/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootCommon/src/main/java/com/springboot/common/entity/SysUser.java" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootCommon/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/mq/pom.xml" />
+        <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/controller/SysUserController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:/software/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="E:\software\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="111" />
+    <option name="y" value="26" />
+    <option name="width" value="1830" />
+    <option name="height" value="1037" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>CodeSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring CoreSpring</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpringJavaInjectionPointsAutowiringInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="pj4test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pj4test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Production">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="SpringBootDataService" type="cbb8eebc:String" user="SpringBootDataService" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="SpringBootDataService" type="cbb8eebc:String" user="SpringBootDataService" />
+              <item name="E:\Workspaces\ws4springboot\MySpringBoot\SpringBootDataService" type="cbb8eebc:String" user="E:\Workspaces\ws4springboot\MySpringBoot\SpringBootDataService" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="SpringBootDataService" type="cbb8eebc:String" user="SpringBootDataService" />
+              <item name="E:\Workspaces\ws4springboot\MySpringBoot\SpringBootDataService" type="cbb8eebc:String" user="E:\Workspaces\ws4springboot\MySpringBoot\SpringBootDataService" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.24827586" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.mq" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Workspaces\ws4springboot\MySpringBoot\SpringBootSystem\src\main\java\com\springboot\system" />
+      <recent name="E:\Workspaces\ws4idea\pj001\module001\src\main\java" />
+      <recent name="E:\Workspaces\ws4idea\pj001\mq\src\test\java\com\example\mq\controllerTest" />
+      <recent name="E:\Workspaces\ws4vue\" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.nio" />
+      <recent name="com.study" />
+      <recent name="remote.procedure.call.client" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Workspaces\ws4idea\pj001" />
+      <recent name="E:\Workspaces\ws4idea\pj001\module001\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+    <option name="contentProportion" value="0.36454654" />
+  </component>
+  <component name="RunManager" selected="Application.test (1)">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration name="Java8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Java8" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="module001" />
+      <envs />
+    </configuration>
+    <configuration name="ReentrantLock2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="c_020.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="c_020.ReentrantLock2" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="concurrent" />
+      <envs />
+    </configuration>
+    <configuration name="ReentrantLock5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="c_020.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="c_020.ReentrantLock5" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="concurrent" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration name="test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.springboot.system.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.springboot.system.service.impl.test" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="SpringBootSystem" />
+      <envs />
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.example.mq.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.example.mq.controller.test" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="mq" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="my-vue" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.jesper.seckill.MainApplication" />
+      <module name="jesper_seckill" />
+      <envs />
+    </configuration>
+    <configuration name="MqApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.mq.MqApplication" />
+      <module name="mq" />
+      <envs />
+    </configuration>
+    <configuration name="NioApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.nio.NioApplication" />
+      <module name="nio" />
+      <envs />
+    </configuration>
+    <configuration name="SpringBootDataServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.springboot.dataservice.SpringBootDataServiceApplication" />
+      <module name="SpringBootDataService" />
+      <envs />
+    </configuration>
+    <configuration name="SpringBootSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.springboot.system.SpringBootSystemApplication" />
+      <module name="SpringBootSystem" />
+      <envs />
+    </configuration>
+    <configuration name="SpringbootdemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springbootdemo.SpringbootdemoApplication" />
+      <module name="springbootdemo" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <list size="11">
+      <item index="0" class="java.lang.String" itemvalue="Spring Boot.MainApplication" />
+      <item index="1" class="java.lang.String" itemvalue="Spring Boot.SpringBootDataServiceApplication" />
+      <item index="2" class="java.lang.String" itemvalue="Spring Boot.SpringbootdemoApplication" />
+      <item index="3" class="java.lang.String" itemvalue="Spring Boot.SpringBootSystemApplication" />
+      <item index="4" class="java.lang.String" itemvalue="Spring Boot.NioApplication" />
+      <item index="5" class="java.lang.String" itemvalue="Spring Boot.MqApplication" />
+      <item index="6" class="java.lang.String" itemvalue="Application.Java8" />
+      <item index="7" class="java.lang.String" itemvalue="Application.ReentrantLock2" />
+      <item index="8" class="java.lang.String" itemvalue="Application.ReentrantLock5" />
+      <item index="9" class="java.lang.String" itemvalue="Application.test" />
+      <item index="10" class="java.lang.String" itemvalue="Application.test (1)" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.test (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.test" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ReentrantLock5" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ReentrantLock2" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Java8" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="095c8211-64ba-4b9d-be95-77b98bcc3c76" name="Default" comment="" />
+      <created>1581335488247</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581335488247</updated>
+      <workItem from="1581335489546" duration="49000" />
+      <workItem from="1581335628104" duration="2190000" />
+      <workItem from="1581409168540" duration="71000" />
+      <workItem from="1581409342466" duration="3504000" />
+      <workItem from="1581577867693" duration="57000" />
+      <workItem from="1581577981325" duration="5000" />
+      <workItem from="1581578022405" duration="4000" />
+      <workItem from="1581582204429" duration="3001000" />
+      <workItem from="1581592818197" duration="5158000" />
+      <workItem from="1583323253218" duration="17000" />
+      <workItem from="1589438538637" duration="14000" />
+      <workItem from="1589438577466" duration="3480000" />
+      <workItem from="1589523645867" duration="822000" />
+      <workItem from="1589524821626" duration="1462000" />
+      <workItem from="1589527882300" duration="992000" />
+      <workItem from="1589528903544" duration="4232000" />
+      <workItem from="1589534914258" duration="559000" />
+      <workItem from="1589535498512" duration="3135000" />
+      <workItem from="1589539606215" duration="431000" />
+      <workItem from="1589540061771" duration="376000" />
+      <workItem from="1589540463021" duration="6907000" />
+      <workItem from="1589632913813" duration="58000" />
+      <workItem from="1589632993819" duration="109000" />
+      <workItem from="1589633140440" duration="7643000" />
+      <workItem from="1589701872225" duration="192000" />
+      <workItem from="1589702149688" duration="1347000" />
+      <workItem from="1589876487032" duration="690000" />
+      <workItem from="1589877215447" duration="68000" />
+      <workItem from="1589877497835" duration="1246000" />
+      <workItem from="1589878769396" duration="1194000" />
+      <workItem from="1589880976400" duration="8169000" />
+      <workItem from="1589964176361" duration="599000" />
+      <workItem from="1590044837070" duration="25668000" />
+      <workItem from="1590132692132" duration="2366000" />
+      <workItem from="1590138070531" duration="978000" />
+      <workItem from="1590139574554" duration="6867000" />
+      <workItem from="1590146722122" duration="1929000" />
+      <workItem from="1590392829091" duration="7542000" />
+      <workItem from="1590476176672" duration="1455000" />
+      <workItem from="1590675464185" duration="51000" />
+      <workItem from="1590676299879" duration="627000" />
+      <workItem from="1590733432422" duration="5971000" />
+      <workItem from="1590763202993" duration="1209000" />
+      <workItem from="1590834089114" duration="8811000" />
+      <workItem from="1590933086677" duration="2960000" />
+      <workItem from="1591115279221" duration="1982000" />
+      <workItem from="1591167573792" duration="9922000" />
+      <workItem from="1591179823870" duration="696000" />
+      <workItem from="1591180576729" duration="513000" />
+      <workItem from="1591181149985" duration="1040000" />
+      <workItem from="1591182247958" duration="7529000" />
+      <workItem from="1591193420928" duration="12372000" />
+      <workItem from="1591212284731" duration="2501000" />
+      <workItem from="1591246969810" duration="18856000" />
+      <workItem from="1591596225160" duration="2739000" />
+      <workItem from="1591693823405" duration="670000" />
+      <workItem from="1591940945645" duration="1004000" />
+      <workItem from="1591953639936" duration="7775000" />
+      <workItem from="1592027797979" duration="3572000" />
+      <workItem from="1592209520708" duration="9506000" />
+      <workItem from="1592230907704" duration="2836000" />
+      <workItem from="1592236520906" duration="1395000" />
+      <workItem from="1592280248671" duration="15492000" />
+      <workItem from="1592320350699" duration="1774000" />
+      <workItem from="1593419819840" duration="4563000" />
+      <workItem from="1593424437097" duration="7716000" />
+      <workItem from="1593432220201" duration="5245000" />
+      <workItem from="1593521076312" duration="3917000" />
+      <workItem from="1593591623412" duration="709000" />
+      <workItem from="1593801400588" duration="9000" />
+      <workItem from="1594745329106" duration="2289000" />
+      <workItem from="1595237570183" duration="1194000" />
+      <workItem from="1595434350099" duration="704000" />
+      <workItem from="1595495249435" duration="596000" />
+      <workItem from="1595580593749" duration="20606000" />
+      <workItem from="1595611339249" duration="841000" />
+      <workItem from="1595923406618" duration="7853000" />
+      <workItem from="1596036656727" duration="1653000" />
+      <workItem from="1596116777290" duration="2779000" />
+      <workItem from="1596293617976" duration="1625000" />
+      <workItem from="1596385084925" duration="1670000" />
+      <workItem from="1596433716519" duration="232000" />
+      <workItem from="1596445490398" duration="1648000" />
+      <workItem from="1596470101237" duration="651000" />
+      <workItem from="1596597867551" duration="815000" />
+      <workItem from="1596611546704" duration="180000" />
+      <workItem from="1596611947679" duration="13000" />
+      <workItem from="1596632195871" duration="117000" />
+      <workItem from="1596636788462" duration="74000" />
+      <workItem from="1596689320413" duration="2450000" />
+      <workItem from="1596960354896" duration="206000" />
+      <workItem from="1597073858475" duration="77000" />
+      <workItem from="1597132352651" duration="23503000" />
+      <workItem from="1597220039830" duration="207000" />
+      <workItem from="1597226910615" duration="4850000" />
+      <workItem from="1597247966420" duration="1686000" />
+      <workItem from="1597298277386" duration="6821000" />
+      <workItem from="1597737787332" duration="5224000" />
+      <workItem from="1597757184421" duration="1441000" />
+      <workItem from="1597833534213" duration="310000" />
+      <workItem from="1597833899224" duration="146000" />
+      <workItem from="1597834069659" duration="304000" />
+      <workItem from="1597834462585" duration="920000" />
+      <workItem from="1598021259738" duration="594000" />
+      <workItem from="1598029801997" duration="132000" />
+      <workItem from="1598079639624" duration="283000" />
+      <workItem from="1598085769757" duration="1549000" />
+      <workItem from="1598173944166" duration="625000" />
+      <workItem from="1598199401679" duration="1112000" />
+      <workItem from="1598457673912" duration="439000" />
+      <workItem from="1598511707768" duration="4210000" />
+      <workItem from="1598535389048" duration="37000" />
+      <workItem from="1598542357348" duration="1219000" />
+      <workItem from="1598621394380" duration="2822000" />
+      <workItem from="1598761549915" duration="2289000" />
+      <workItem from="1598803427945" duration="2837000" />
+      <workItem from="1598854463035" duration="71000" />
+      <workItem from="1598863310119" duration="112000" />
+      <workItem from="1598864681750" duration="42000" />
+      <workItem from="1598867552043" duration="755000" />
+      <workItem from="1598868946460" duration="1978000" />
+      <workItem from="1598873190076" duration="4000" />
+      <workItem from="1598873224771" duration="6000" />
+      <workItem from="1598873736159" duration="640000" />
+      <workItem from="1598973413611" duration="2283000" />
+      <workItem from="1599037936113" duration="4407000" />
+      <workItem from="1599378551408" duration="1932000" />
+      <workItem from="1599399581704" duration="4566000" />
+      <workItem from="1599470074183" duration="1532000" />
+      <workItem from="1599486165404" duration="3264000" />
+      <workItem from="1599489488288" duration="1265000" />
+      <workItem from="1599538562423" duration="342000" />
+      <workItem from="1599538990632" duration="14000" />
+      <workItem from="1599539310514" duration="137000" />
+      <workItem from="1599539454755" duration="23000" />
+      <workItem from="1599541842539" duration="47000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="AAControllerTest_testFind - 2020.08.12 at 18h 53m 18s.xml">
+      <configuration name="AAControllerTest.testFind" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AAControllerTest_testFind - 2020.08.12 at 18h 55m 57s.xml">
+      <configuration name="AAControllerTest.testFind" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AAControllerTest_testFind - 2020.08.12 at 18h 59m 13s.xml">
+      <configuration name="AAControllerTest.testFind" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AAControllerTest_testFind - 2020.08.12 at 19h 01m 12s.xml">
+      <configuration name="AAControllerTest.testFind" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AAControllerTest_testFind - 2020.08.12 at 19h 02m 07s.xml">
+      <configuration name="AAControllerTest.testFind" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AAControllerTest_testMqDirect - 2020.08.12 at 19h 02m 30s.xml">
+      <configuration name="AAControllerTest.testMqDirect" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTestController_testMqDirect - 2020.08.12 at 19h 05m 38s.xml">
+      <configuration name="MQTestController.testMqDirect" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTestController_testMqDirect - 2020.08.12 at 19h 06m 55s.xml">
+      <configuration name="MQTestController.testMqDirect" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTestController_testMqDirect - 2020.08.12 at 19h 08m 11s.xml">
+      <configuration name="MQTestController.testMqDirect" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MQTestController_testMqDirect - 2020.08.12 at 19h 08m 34s.xml">
+      <configuration name="MQTestController.testMqDirect" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="383801000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="83" y="-11" width="1848" height="1102" extended-state="6" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32745314" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779098" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19845645" sideWeight="0.5062571" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3693495" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21501707" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37265712" sideWeight="0.49374288" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32745314" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32745314" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2821388" sideWeight="0.47653958" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28555176" sideWeight="0.5234604" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24942529" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24942529" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28555176" sideWeight="0.5234604" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2767221" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20517242" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31422272" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36239102" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32745314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19845645" sideWeight="0.5062571" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21501707" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20517242" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24942529" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24942529" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2767221" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32745314" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31422272" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779098" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Dashboard" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3693495" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37292162" sideWeight="0.49374288" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32876712" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32745314" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32745314" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36239102" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2576792" sideWeight="0.47653958" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28555176" sideWeight="0.5234604" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32745314" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28555176" sideWeight="0.5234604" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="18" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>this.isOpen()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://E:/software/jdk1.8.0_201/src.zip!/java/util/PropertyPermission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1816">
+          <caret line="656" column="1" lean-forward="true" selection-start-line="656" selection-start-column="1" selection-end-line="656" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/impl/test.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/impl/SysRoleServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/dao/SysMenuDAO.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/impl/SysUserServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/resources/mybatis/mybatis-config.xml" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/util/IPUtils.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/util/PasswordUtils.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/util/PasswordEncoder.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/util/JwtTokenUtils.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/util/HttpUtils.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/security/JwtAuthenticationProvider.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/controller/SysRoleController.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/controller/SysDeptController.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootDataService/src/main/resources/application.yml" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootDataService/src/main/resources/application-redis.yml" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/resources/application.properties" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootDataService/src/main/resources/application.properties" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/security/UserDetailsServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/security/JwtAuthenticatioToken.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/security/GrantedAuthorityImpl.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/security/JwtAuthenticationFilter.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/util/SecurityUtils.java" />
+    <entry file="uml://MAVEN/com.springboot:SpringBootDataService:0.0.1-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>com.springboot:SpringBootDataService:0.0.1-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="" y="">com.springboot:SpringBootDataService:0.0.1-SNAPSHOT</node>
+            <node x="" y="">com.springboot:SpringBootCommon:jar:0.0.1-SNAPSHOT</node>
+            <node x="" y="">com.springboot:SpringBootCommon:jar:0.0.1-SNAPSHOT/mysql:mysql-connector-java:jar:8.0.16</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.5.RELEASE/com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.9.8</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.5.RELEASE/com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.9.8</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.5.RELEASE/com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.9.8</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:2.1.5.RELEASE/org.apache.tomcat.embed:tomcat-embed-core:jar:9.0.19</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:2.1.5.RELEASE/org.apache.tomcat.embed:tomcat-embed-el:jar:9.0.19</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:2.1.5.RELEASE/org.apache.tomcat.embed:tomcat-embed-websocket:jar:9.0.19</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.hibernate.validator:hibernate-validator:jar:6.0.16.Final</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.hibernate.validator:hibernate-validator:jar:6.0.16.Final/javax.validation:validation-api:jar:2.0.1.Final</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.hibernate.validator:hibernate-validator:jar:6.0.16.Final/org.jboss.logging:jboss-logging:jar:3.3.2.Final</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework:spring-web:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework:spring-web:jar:5.1.7.RELEASE/org.springframework:spring-beans:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework:spring-webmvc:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework:spring-webmvc:jar:5.1.7.RELEASE/org.springframework:spring-context:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.5.RELEASE/org.springframework:spring-webmvc:jar:5.1.7.RELEASE/org.springframework:spring-expression:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-autoconfigure:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:2.1.5.RELEASE/javax.annotation:javax.annotation-api:jar:1.3.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:2.1.5.RELEASE/org.springframework:spring-core:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:2.1.5.RELEASE/org.springframework:spring-core:jar:5.1.7.RELEASE/org.springframework:spring-jcl:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter:jar:2.1.5.RELEASE/org.yaml:snakeyaml:jar:1.23</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-test:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.springframework.boot:spring-boot-test-autoconfigure:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/com.jayway.jsonpath:json-path:jar:2.4.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/com.jayway.jsonpath:json-path:jar:2.4.0/net.minidev:json-smart:jar:2.3</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/com.jayway.jsonpath:json-path:jar:2.4.0/net.minidev:json-smart:jar:2.3/net.minidev:accessors-smart:jar:1.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/com.jayway.jsonpath:json-path:jar:2.4.0/net.minidev:json-smart:jar:2.3/net.minidev:accessors-smart:jar:1.2/org.ow2.asm:asm:jar:5.0.4</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/junit:junit:jar:4.12</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.assertj:assertj-core:jar:3.11.1</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.mockito:mockito-core:jar:2.23.4</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.mockito:mockito-core:jar:2.23.4/net.bytebuddy:byte-buddy:jar:1.9.12</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.mockito:mockito-core:jar:2.23.4/net.bytebuddy:byte-buddy-agent:jar:1.9.12</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.mockito:mockito-core:jar:2.23.4/org.objenesis:objenesis:jar:2.6</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.hamcrest:hamcrest-core:jar:1.3</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.hamcrest:hamcrest-library:jar:1.3</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.skyscreamer:jsonassert:jar:1.5.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.skyscreamer:jsonassert:jar:1.5.0/com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.springframework:spring-test:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.5.RELEASE/org.xmlunit:xmlunit-core:jar:2.6.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-configuration-processor:jar:2.1.5.RELEASE</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/com.alibaba:dubbo:jar:2.6.2</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/com.alibaba:dubbo:jar:2.6.2/org.javassist:javassist:jar:3.20.0-GA</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/com.alibaba:dubbo:jar:2.6.2/org.jboss.netty:netty:jar:3.2.5.Final</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/org.apache.zookeeper:zookeeper:jar:3.4.9</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/org.apache.zookeeper:zookeeper:jar:3.4.9/jline:jline:jar:0.9.94</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/org.apache.zookeeper:zookeeper:jar:3.4.9/io.netty:netty:jar:3.10.5.Final</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/org.apache.curator:curator-framework:jar:2.12.0</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0/org.apache.zookeeper:zookeeper:jar:3.4.8</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/org.apache.curator:curator-framework:jar:2.12.0/org.apache.curator:curator-client:jar:2.12.0/com.google.guava:guava:jar:16.0.1</node>
+            <node x="" y="">com.alibaba.boot:dubbo-spring-boot-starter:jar:0.2.0/com.alibaba.boot:dubbo-spring-boot-autoconfigure:jar:0.2.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-quartz:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-quartz:jar:2.1.5.RELEASE/org.springframework:spring-context-support:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-quartz:jar:2.1.5.RELEASE/org.springframework:spring-tx:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-quartz:jar:2.1.5.RELEASE/org.quartz-scheduler:quartz:jar:2.3.1</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-quartz:jar:2.1.5.RELEASE/org.quartz-scheduler:quartz:jar:2.3.1/com.mchange:mchange-commons-java:jar:0.2.15</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-mail:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-mail:jar:2.1.5.RELEASE/com.sun.mail:javax.mail:jar:1.6.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-mail:jar:2.1.5.RELEASE/com.sun.mail:javax.mail:jar:1.6.2/javax.activation:activation:jar:1.1</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-activemq:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-activemq:jar:2.1.5.RELEASE/org.springframework:spring-jms:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-activemq:jar:2.1.5.RELEASE/org.apache.activemq:activemq-broker:jar:5.15.9</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-activemq:jar:2.1.5.RELEASE/org.apache.activemq:activemq-broker:jar:5.15.9/org.apache.activemq:activemq-openwire-legacy:jar:5.15.9</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-activemq:jar:2.1.5.RELEASE/org.apache.activemq:activemq-broker:jar:5.15.9/com.google.guava:guava:jar:18.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-activemq:jar:2.1.5.RELEASE/javax.jms:javax.jms-api:jar:2.0.1</node>
+            <node x="" y="">org.apache.activemq:activemq-pool:jar:5.15.9</node>
+            <node x="" y="">org.apache.activemq:activemq-pool:jar:5.15.9/org.slf4j:slf4j-api:jar:1.7.26</node>
+            <node x="" y="">org.apache.activemq:activemq-pool:jar:5.15.9/org.apache.activemq:activemq-jms-pool:jar:5.15.9</node>
+            <node x="" y="">org.apache.activemq:activemq-pool:jar:5.15.9/org.apache.activemq:activemq-jms-pool:jar:5.15.9/org.apache.geronimo.specs:geronimo-jms_1.1_spec:jar:1.1.1</node>
+            <node x="" y="">org.apache.activemq:activemq-pool:jar:5.15.9/org.apache.activemq:activemq-jms-pool:jar:5.15.9/org.apache.commons:commons-pool2:jar:2.6.2</node>
+            <node x="" y="">org.apache.activemq:activemq-pool:jar:5.15.9/org.apache.activemq:activemq-client:jar:5.15.9</node>
+            <node x="" y="">org.apache.activemq:activemq-pool:jar:5.15.9/org.apache.activemq:activemq-client:jar:5.15.9/org.fusesource.hawtbuf:hawtbuf:jar:1.11</node>
+            <node x="" y="">org.apache.activemq:activemq-pool:jar:5.15.9/org.apache.activemq:activemq-client:jar:5.15.9/org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:jar:1.0.1</node>
+            <node x="" y="">org.apache.activemq:activemq-pool:jar:5.15.9/org.apache.geronimo.specs:geronimo-jta_1.0.1B_spec:jar:1.0.1</node>
+            <node x="" y="">org.apache.activemq:activemq-pool:jar:5.15.9/org.apache.commons:commons-pool2:jar:2.5.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-log4j2:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-log4j2:jar:2.1.5.RELEASE/org.apache.logging.log4j:log4j-slf4j-impl:jar:2.11.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-log4j2:jar:2.1.5.RELEASE/org.apache.logging.log4j:log4j-slf4j-impl:jar:2.11.2/org.apache.logging.log4j:log4j-api:jar:2.11.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-log4j2:jar:2.1.5.RELEASE/org.apache.logging.log4j:log4j-core:jar:2.11.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-log4j2:jar:2.1.5.RELEASE/org.apache.logging.log4j:log4j-jul:jar:2.11.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-log4j2:jar:2.1.5.RELEASE/org.slf4j:jul-to-slf4j:jar:1.7.26</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.3.2</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.3.2/org.springframework.boot:spring-boot-starter-jdbc:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.3.2/org.springframework.boot:spring-boot-starter-jdbc:jar:2.1.5.RELEASE/com.zaxxer:HikariCP:jar:3.2.0</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.3.2/org.springframework.boot:spring-boot-starter-jdbc:jar:2.1.5.RELEASE/org.springframework:spring-jdbc:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.3.2/org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:jar:1.3.2</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.3.2/org.mybatis:mybatis:jar:3.4.6</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.3.2/org.mybatis:mybatis-spring:jar:1.3.2</node>
+            <node x="" y="">org.mybatis.generator:mybatis-generator-core:jar:1.3.2</node>
+            <node x="" y="">com.github.pagehelper:pagehelper-spring-boot-starter:jar:1.2.5</node>
+            <node x="" y="">com.github.pagehelper:pagehelper-spring-boot-starter:jar:1.2.5/com.github.pagehelper:pagehelper-spring-boot-autoconfigure:jar:1.2.5</node>
+            <node x="" y="">com.github.pagehelper:pagehelper-spring-boot-starter:jar:1.2.5/com.github.pagehelper:pagehelper:jar:5.1.4</node>
+            <node x="" y="">com.github.pagehelper:pagehelper-spring-boot-starter:jar:1.2.5/com.github.pagehelper:pagehelper:jar:5.1.4/com.github.jsqlparser:jsqlparser:jar:1.0</node>
+            <node x="" y="">mysql:mysql-connector-java:jar:8.0.13</node>
+            <node x="" y="">com.alibaba:druid:jar:1.1.4</node>
+            <node x="" y="">com.alibaba:druid:jar:1.1.4/com.alibaba:jconsole:jar:1.8.0</node>
+            <node x="" y="">com.alibaba:druid:jar:1.1.4/com.alibaba:tools:jar:1.8.0</node>
+            <node x="" y="">log4j:log4j:jar:1.2.16</node>
+            <node x="" y="">org.apache.commons:commons-lang3:jar:3.4</node>
+            <node x="" y="">org.apache.commons:commons-configuration2:jar:2.4</node>
+            <node x="" y="">org.apache.commons:commons-configuration2:jar:2.4/org.apache.commons:commons-lang3:jar:3.8.1</node>
+            <node x="" y="">org.apache.commons:commons-configuration2:jar:2.4/org.apache.commons:commons-text:jar:1.6</node>
+            <node x="" y="">org.apache.commons:commons-configuration2:jar:2.4/org.apache.commons:commons-text:jar:1.6/org.apache.commons:commons-lang3:jar:3.4</node>
+            <node x="" y="">org.apache.commons:commons-configuration2:jar:2.4/commons-logging:commons-logging:jar:1.2</node>
+            <node x="" y="">oro:oro:jar:2.0.8</node>
+            <node x="" y="">commons-beanutils:commons-beanutils:jar:1.9.3</node>
+            <node x="" y="">commons-beanutils:commons-beanutils:jar:1.9.3/commons-collections:commons-collections:jar:3.2.2</node>
+            <node x="" y="">org.springframework.retry:spring-retry:jar:1.2.4.RELEASE</node>
+            <node x="" y="">org.aspectj:aspectjweaver:jar:1.9.4</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-redis:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-redis:jar:2.1.5.RELEASE/org.springframework.data:spring-data-redis:jar:2.1.8.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-redis:jar:2.1.5.RELEASE/org.springframework.data:spring-data-redis:jar:2.1.8.RELEASE/org.springframework.data:spring-data-keyvalue:jar:2.1.8.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-redis:jar:2.1.5.RELEASE/org.springframework.data:spring-data-redis:jar:2.1.8.RELEASE/org.springframework.data:spring-data-keyvalue:jar:2.1.8.RELEASE/org.springframework.data:spring-data-commons:jar:2.1.8.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-redis:jar:2.1.5.RELEASE/org.springframework.data:spring-data-redis:jar:2.1.8.RELEASE/org.springframework:spring-oxm:jar:5.1.7.RELEASE</node>
+            <node x="" y="">redis.clients:jedis:jar:2.9.3</node>
+            <node x="" y="">redis.clients:jedis:jar:2.9.3/org.apache.commons:commons-pool2:jar:2.5.0</node>
+            <node x="" y="">org.apache.commons:commons-pool2:jar:2.5.0</node>
+            <node x="" y="">com.alibaba:fastjson:jar:1.2.47</node>
+            <node x="" y="">io.jsonwebtoken:jjwt:jar:0.9.0</node>
+            <node x="" y="">io.jsonwebtoken:jjwt:jar:0.9.0/com.fasterxml.jackson.core:jackson-databind:jar:2.9.8</node>
+            <node x="" y="">io.jsonwebtoken:jjwt:jar:0.9.0/com.fasterxml.jackson.core:jackson-databind:jar:2.9.8/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0</node>
+            <node x="" y="">io.jsonwebtoken:jjwt:jar:0.9.0/com.fasterxml.jackson.core:jackson-databind:jar:2.9.8/com.fasterxml.jackson.core:jackson-core:jar:2.9.8</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.swagger:swagger-annotations:jar:1.5.13</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.swagger:swagger-models:jar:1.5.13</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spi:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spi:jar:2.7.0/io.springfox:springfox-core:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spi:jar:2.7.0/io.springfox:springfox-core:jar:2.7.0/com.google.guava:guava:jar:20.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-schema:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-swagger-common:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-swagger-common:jar:2.7.0/com.google.guava:guava:jar:20.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spring-web:jar:2.7.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spring-web:jar:2.7.0/org.reflections:reflections:jar:0.9.11</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spring-web:jar:2.7.0/org.reflections:reflections:jar:0.9.11/org.javassist:javassist:jar:3.21.0-GA</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/io.springfox:springfox-spring-web:jar:2.7.0/com.google.guava:guava:jar:20.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/com.google.guava:guava:jar:20.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/com.fasterxml:classmate:jar:1.4.0</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/org.springframework.plugin:spring-plugin-core:jar:1.2.0.RELEASE</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/org.springframework.plugin:spring-plugin-metadata:jar:1.2.0.RELEASE</node>
+            <node x="" y="">io.springfox:springfox-swagger2:jar:2.7.0/org.mapstruct:mapstruct:jar:1.1.0.Final</node>
+            <node x="" y="">io.springfox:springfox-swagger-ui:jar:2.7.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:2.1.5.RELEASE/org.thymeleaf:thymeleaf-spring5:jar:3.0.11.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:2.1.5.RELEASE/org.thymeleaf:thymeleaf-spring5:jar:3.0.11.RELEASE/org.thymeleaf:thymeleaf:jar:3.0.11.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:2.1.5.RELEASE/org.thymeleaf:thymeleaf-spring5:jar:3.0.11.RELEASE/org.thymeleaf:thymeleaf:jar:3.0.11.RELEASE/org.attoparser:attoparser:jar:2.0.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:2.1.5.RELEASE/org.thymeleaf:thymeleaf-spring5:jar:3.0.11.RELEASE/org.thymeleaf:thymeleaf:jar:3.0.11.RELEASE/org.unbescape:unbescape:jar:1.1.6.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-thymeleaf:jar:2.1.5.RELEASE/org.thymeleaf.extras:thymeleaf-extras-java8time:jar:3.0.4.RELEASE</node>
+            <node x="" y="">com.google.guava:guava:jar:20.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-aop:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-aop:jar:2.1.5.RELEASE/org.springframework:spring-aop:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-amqp:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-amqp:jar:2.1.5.RELEASE/org.springframework:spring-messaging:jar:5.1.7.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-amqp:jar:2.1.5.RELEASE/org.springframework.amqp:spring-rabbit:jar:2.1.6.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-amqp:jar:2.1.5.RELEASE/org.springframework.amqp:spring-rabbit:jar:2.1.6.RELEASE/org.springframework.amqp:spring-amqp:jar:2.1.6.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-amqp:jar:2.1.5.RELEASE/org.springframework.amqp:spring-rabbit:jar:2.1.6.RELEASE/com.rabbitmq:amqp-client:jar:5.4.3</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8368584853847562" x="610.0" y="1696.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootDataService/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/controller/SysMenuController.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/security/JwtUserDetails.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.5.RELEASE/spring-security-core-5.1.5.RELEASE-sources.jar!/org/springframework/security/core/userdetails/UserDetailsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/config/RedissonConfig.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/CurdService.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/SysDeptService.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/SysRoleService.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/SysMenuService.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/impl/MySQLConnectionOld.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/config/WebSecurityConfig.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/springboot/SpringBootCommon/0.0.1-SNAPSHOT/SpringBootCommon-0.0.1-SNAPSHOT.jar!/com/springboot/common/entity/SysUser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/resources/mybatis/mapper/SysMenuMapper.xml" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootCommon/src/main/resources/application.properties" />
+    <entry file="file://$PROJECT_DIR$/mq/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="95" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/impl/SysDeptServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootCommon/src/main/java/com/springboot/common/entity/SysUser.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/springboot/SpringBootCommon/0.0.1-SNAPSHOT/SpringBootCommon-0.0.1-SNAPSHOT.jar!/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootCommon/src/main/java/com/springboot/common/entity/BaseModel.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootCommon/src/main/java/com/springboot/common/entity/SysUserRole.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/impl/SysMenuServiceImpl.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/dao/SysDeptDAO.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/controller/SysUserController.java" />
+    <entry file="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem/src/main/java/com/springboot/system/service/SysUserService.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pj001.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>pj001:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Detection</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.24827586" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>pj001</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.24827586" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>.mylyn</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootCommon" />
+    <option value="install" />
+    <option value="package" />
+    <option value="package -skipping test" />
+    <option value="install -skipping test" />
+  </component>
+</project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/../../liudrain-product-master/product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../springboot-seckill-master" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RPC/src/remote/procedure/call/server/ServerImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_010/T.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_025/T01_ConcurrentMap.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_025/T02_CopyOnWriteList.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_025/T03_SynchronizedList.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_025/T04_ConcurrentQueue.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_025/T05_LinkedBlockingQueue.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_025/T06_ArrayBlockingQueue.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_025/T07_DelayQueue.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_025/T08_TransferQueue.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_025/T09_SynchronusQueue.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_026/T03_Callable.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/concurrent/src/c_026/T10_ScheduledPool.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mq" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/nio" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springbootdemo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootCommon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootDataService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../ws4springboot/MySpringBoot/SpringBootSystem" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

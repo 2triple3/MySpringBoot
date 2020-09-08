@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="module001" />
+        <module name="mq" />
+        <module name="nio" />
+        <module name="pj001" />
+        <module name="SpringBootDataService" />
+        <module name="springbootdemo" />
+        <module name="SpringBootSystem" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="jesper_seckill" target="1.8" />
+      <module name="module001" target="1.8" />
+      <module name="mq" target="1.8" />
+      <module name="nio" target="1.8" />
+      <module name="pj001" target="1.8" />
+      <module name="select" target="1.8" />
+      <module name="SpringBootCommon" target="1.8" />
+      <module name="SpringBootDataService" target="1.8" />
+      <module name="springbootdemo" target="1.8" />
+      <module name="SpringBootSystem" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
