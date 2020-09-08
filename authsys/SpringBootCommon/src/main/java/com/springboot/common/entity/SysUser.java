@@ -7,9 +7,9 @@ import java.util.List;
 
 
 public class SysUser extends BaseModel implements Serializable  {
-	//private String id;
+	private String userid;
 	
-    private String name;
+    private String username;
 
     private String password;
 
@@ -32,13 +32,24 @@ public class SysUser extends BaseModel implements Serializable  {
     
     private List<SysUserRole> userRoles = new ArrayList<>();
 
-
-	public String getName() {
-		return name;
+	
+	public String getUserid() {
+		return userid;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 
@@ -141,20 +152,11 @@ public class SysUser extends BaseModel implements Serializable  {
 		this.userRoles = userRoles;
 	}
 
+
 	@Override
 	public String toString() {
-		return "SysUser{" +
-				"name='" + name + '\'' +
-				", password='" + password + '\'' +
-				", salt='" + salt + '\'' +
-				", email='" + email + '\'' +
-				", mobile='" + mobile + '\'' +
-				", status=" + status +
-				", deptId=" + deptId +
-				", deptName='" + deptName + '\'' +
-				", delFlag=" + delFlag +
-				", roleNames='" + roleNames + '\'' +
-				", userRoles=" + userRoles +
-				'}';
+		return "UserEntity [userid=" + userid + ", username=" + username + ", password=" + password + "]";
 	}
+
+
 }

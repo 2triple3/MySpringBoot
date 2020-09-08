@@ -20,7 +20,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-	    userid, username, password, salt, email, mobile, status, dept_id, create_by, create_time, 
+	    userid, username, password, salt, email, mobile, status, dept_id, create_by, create_time,
 	    last_update_by, last_update_time, del_flag
     </sql>
 
@@ -35,7 +35,7 @@
           </if>
       </where>
     </select>
-    
+
     <select id="findUser" resultMap="findUserResultMap">
       SELECT
          <include refid="Base_Column_List" />
@@ -43,11 +43,11 @@
         db_springboot.sys_user as sys_user
       <where>
           <if test="sysUser.username != null and sysUser.username != ''">
-              AND sys_user.username like CONCAT(#{sysUser.username},'%') 
+              AND sys_user.username like CONCAT(#{sysUser.username},'%')
           </if>
       </where>
     </select>
-    
+
     <select id="findUserInfoLikeUsername" resultMap="findUserResultMap">
       SELECT
         <include refid="Base_Column_List" />
@@ -69,12 +69,12 @@
         VALUES
         (#{sysUserpp.userid},#{sysUserpp.username},#{sysUserpp.password})
     </insert>
-    
+
     <delete id="deleteUserByUsername">
     delete from db_springboot.sys_user
     WHERE username = #{username}
     </delete>
-    
+
     <update id="updateByPrimaryKeySelective" parameterType="com.springboot.common.entity.SysUser">
     update db_springboot.sys_user
     <set>
