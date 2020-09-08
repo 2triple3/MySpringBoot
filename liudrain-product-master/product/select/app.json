@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/zhinan/zhinan",
+    "pages/xuanze/xuanze",
+    "pages/qingdan/qingdan",
+    "pages/wenti/wenti",
+    "pages/articleDetail/articleDetail",
+    "pages/pay/pay",
+    "pages/paihang/paihang",
+    "pages/productDetail/productDetail",
+    "pages/compare/compare",
+    "pages/filtrate/filtrate"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "找工作",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#8a8a8a",
+    "selectedColor": "#28B1C7",
+    "list": [
+      {
+        "pagePath": "pages/zhinan/zhinan",
+        "text": "职位搜索",
+        "iconPath": "image/zhinan1.png",
+        "selectedIconPath": "image/zhinan2.png"
+      },
+      {
+        "pagePath": "pages/xuanze/xuanze",
+        "text": "聊天室",
+        "iconPath": "image/xuanze1.png",
+        "selectedIconPath": "image/xuanze2.png"
+      },
+      {
+        "pagePath": "pages/qingdan/qingdan",
+        "text": "我的收藏",
+        "iconPath": "image/qingdan1.png",
+        "selectedIconPath": "image/qingdan2.png"
+      },
+      {
+        "pagePath": "pages/wenti/wenti",
+        "text": "个人中心",
+        "iconPath": "image/wenti1.png",
+        "selectedIconPath": "image/wenti2.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

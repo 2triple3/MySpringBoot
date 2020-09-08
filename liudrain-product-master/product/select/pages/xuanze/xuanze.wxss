@@ -1,0 +1,149 @@
+@import '../../component/wxSearch/wxSearch';
+@import "../../component/productList/list/index.wxss";
+
+page {
+  background-color: #f6f6f6;
+}
+
+.imagesize {
+  display: flex;
+  margin-top: 80rpx;
+  justify-content: center;
+}
+
+.text {
+  display: flex;
+  margin-top: 40rpx;
+  justify-content: center;
+  color: #8f8f8f;
+}
+
+.productList {
+  margin-top: -10rpx;
+}
+
+.filter-tab {
+  display: flex;
+  flex-direction: row;
+  background-color: #f6f6f6;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 80rpx;
+}
+
+.filter-tab view {
+  margin-left: 22rpx;
+  height: 80rpx;
+  width: 50%;
+  text-align: center;
+  line-height: 80rpx;
+  color: #888;
+  font-size: 28rpx;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.filter-tab view text {
+  display: inline-block;
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-tab view:before {
+  content: "";
+  position: absolute;
+  width: 1rpx;
+  height: 36rpx;
+  background-color: #f6f6f6;
+  right: 0;
+  top: 22rpx;
+}
+
+.filter-tab view:last-child:before {
+  width: 0;
+}
+
+.filter-tab view image {
+  display: inline-block;
+  margin-left: 10rpx;
+  margin-right: 1rpx;
+  vertical-align: 30rpx;
+}
+
+.sortimage {
+  width: 16rpx;
+  height: 8rpx;
+}
+
+.filter-tab view.active {
+  color: #4fcbff;
+}
+
+.filter-tab view text.active {
+  color: #4fcbff;
+}
+
+.left {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+}
+
+.banner {
+  top: 88rpx;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+}
+
+.common-panel {
+  padding-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  font-size: 28rpx;
+  line-height: 80rpx;
+}
+
+.common-panel text {
+  width: 100%;
+  padding: 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.common-panel text.active {
+  background: #fff;
+  color: #38a1db;
+}
+
+.filter-content {
+  margin-top: 46px;
+  width: 100%;
+  background: #fff;
+  z-index: 6;
+  position: absolute;
+  top: 80rpx;
+  left: 0;
+}
+
+.select {
+  margin-left: 60%;
+}
+
+.selectImage {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.ask {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8f8f8f;
+}

@@ -1,0 +1,107 @@
+/* pages/pay/pay.wxss */
+
+page {
+  background-color: #3f3f3f;
+}
+
+.title {
+  position: relative;
+  z-index: 99;
+  border-radius: 5rpx;
+  width: 90%;
+  background-color: #fff;
+  margin: 5%;
+}
+
+.location {
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.title2 {
+  padding-top: 10rpx;
+  color: #28b1c7;
+  font-size: 36rpx;
+}
+
+.line {
+  background: #28b1c7;
+  width: 5%;
+  height: 5rpx;
+}
+
+.title3 {
+  padding-top: 10rpx;
+  color: #8f8f8f;
+  font-size: 24rpx;
+}
+
+.title3_1 {
+  background-color: #f6f6f6;
+}
+
+.title4 {
+  color: #fba503;
+  font-size: 24rpx;
+  padding-bottom: 10rpx;
+}
+
+.pay {
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  height: 120rpx;
+  width: 100%;
+  justify-content: center;
+  left: 0px;
+  font-size: 24rpx;
+  bottom: 0rpx;
+}
+
+.pay2 {
+  padding-top: 35rpx;
+}
+
+.pay button {
+  z-index: 999;
+  font-size: 32rpx;
+  background: #28b1c7;
+  color: #fff;
+}
+
+button::after {
+  border: none;
+  border-radius: 0;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+}
+
+.wxParsecontainer {
+  margin: 25rpx;
+}
+
+.title5 {
+  position: relative;
+  z-index: -100;
+  margin-top: -82rpx;
+  height: 120rpx;
+  background-color: #fff;
+}
+
+.title6 {
+  position: relative;
+  z-index: 10;
+  margin-top: -40rpx;
+  background-color: #fff;
+}
+
+.block2 {
+  z-index: 100;
+  margin-top: -30rpx;
+  background: #fff;
+  width: 100%;
+  height: 150rpx;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btnsub").on("click",function(){
+            $("#formData").submit();
+        });
+    });
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品模块</a></li>
+                <li><a href="#">产品</a></li>
+                <li class="active">添加页面</li>
+            </ol>
+        </div>
+    </div>
+    <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls">
+
+                        <div class="form-row">
+                            <div class="col-md-3">产品品牌<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="brand" name="brand" placeholder="先输入中文品牌名称，再输入英语名牌名称，例如，戴森dyson"  ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品型号<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="model" name="model"  placeholder="输入产品具体型号，例如v8 fluffy"></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品分类<span style="color: red">*</span></div>
+                            <div class="col-md-9">
+
+                                <select class="form-control" name="categoryId">
+                                    <option value="" >选择产品对应分类，例如戴森dyson v8 fluffy，选择对应分类吸尘器</option>
+                                    <#list categoryList as categoryList>
+                                    <option value="${categoryList.categoryId}">${categoryList.cname}</option>
+                                </#list>
+
+                                </select>
+                            </div>
+                        </div>
+
+
+                            <div class="col-md-9"><input type="hidden" class="form-control"  name="status" value="1" readonly="readonly"></input></div>
+
+                        <div class="form-row">
+                            <div class="col-md-3">产品排序</div>
+                            <div class="col-md-9"><input type="number" class="form-control"  name="sort"  placeholder="填写数字(选填)"  ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品概述<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control"  name="overview" placeholder="输入产品报告中对应概述内容" > </input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品评级<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control"  name="rate" placeholder="输入产品报告中对应的评级" ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品评分<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control"  name="score" placeholder="输入产品对应的总评分（百分制）"></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">颜色级别<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="number" class="form-control"  name="colorLevel" placeholder="输入数字1-5，1为推荐，每+1次，评级降一级"></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品星级<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control"  name="star" placeholder="5星制，1为一颗星，0.5为半颗星，例如3.5显示为3星半"></input></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

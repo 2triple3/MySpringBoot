@@ -1,0 +1,353 @@
+page {
+  background-color: #fff;
+}
+
+.wxParse-inline {
+  display: inline-block;
+}
+
+.wxParse-pre {
+  white-space: pre-wrpruductp;
+}
+
+.pruduct {
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.nav_tab {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+.show {
+  line-height: 100rpx;
+  text-align: center;
+  flex: 1;
+  color: #333;
+  font-size: 30rpx;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.hidden {
+  line-height: 100rpx;
+  text-align: center;
+  color: #28b1c7;
+  font-weight: 400;
+  flex: 1;
+  font-size: 32rpx;
+}
+
+.nav_underline {
+  background: #28b1c7;
+  width: 100rpx;
+  height: 6rpx;
+  margin-top: -10rpx;
+  margin-left: 40rpx;
+  border-radius: 8rpx;
+}
+
+.swiper_main {
+  height: 400rpx;
+  position: relative;
+}
+
+.swiper_item {
+  position: relative;
+}
+
+.defaultImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 400rpx;
+  width: 100%;
+}
+
+.swiperPic_title {
+  font-size: 32rpx;
+  position: absolute;
+  bottom: 16rpx;
+  right: 16rpx;
+  z-index: 2;
+  width: 100rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border-radius: 4rpx;
+}
+
+.detail-top {
+  position: relative;
+}
+
+.detail-top swiper {
+  width: 100%;
+  height: 400rpx !important;
+  overflow: hidden;
+  display: block;
+}
+
+.detail-top .slide-image {
+  display: block;
+  width: 100%;
+  height: 500rpx;
+}
+
+.pingji {
+  display: flex;
+  flex-flow: row;
+  font-weight: 400;
+}
+
+.pingji view {
+  width: 50%;
+  display: inline-block;
+}
+
+.juece {
+  margin-left: 4%;
+}
+
+.overview {
+  margin-left: 7%;
+  width: 85%;
+  color: #8f8f8f;
+  font-size: 24rpx;
+}
+
+.info {
+  font-weight: 700;
+  font-size: 28rpx;
+  color: #3f3f3f;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+}
+
+.score {
+  font-size: 48rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  color: #fba503;
+  font-family: PingFangSC-Medium;
+}
+
+.allstar {
+  margin-top: 35rpx;
+  margin-left: -180rpx;
+}
+
+.star {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.price {
+  text-align: right;
+  padding-right: 30rpx;
+  margin-top: 10rpx;
+  float: right;
+  font-size: 48rpx;
+  color: #28b1c7;
+}
+
+.lowprice {
+  color: #8f8f8f;
+  font-size: 20rpx;
+  margin-right: 35rpx;
+  text-align: right;
+}
+
+.line {
+  margin-top: 20rpx;
+  background: #e2e2e2;
+  width: 100%;
+  height: 5rpx;
+}
+
+.tedianview {
+  display: flex;
+  flex-flow: row;
+}
+
+.tedian {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+
+.tediantext {
+  width: 30rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  color: #8f8f8f;
+  font-size: 24rpx;
+}
+
+.content {
+  width: 700rpx;
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+  margin-top: 20rpx;
+  color: #8f8f8f;
+  font-size: 24rpx;
+}
+
+.tediantop1 {
+  margin-top: 20rpx;
+}
+
+.tediantop2 {
+  margin-top: -20rpx;
+}
+
+.wxParsecontainer {
+  margin: 22rpx;
+}
+
+.decisionbox {
+}
+
+.mainbox {
+  margin-top: 10rox;
+  margin-left: 5%;
+}
+
+.acName {
+  width: 90%;
+  background-color: #f4f4f4;
+  border: 1rpx solid #e2e2e2;
+}
+
+.dcName {
+  margin-left: 3%;
+  display: flex;
+  width: 90%;
+}
+
+.progress {
+  margin-left: 5%;
+  width: 85%;
+}
+
+.icon {
+  margin-left: 10rpx;
+  margin-top: -25rpx;
+  width: 5%;
+  height: 20rpx;
+}
+
+.jiantou {
+  display: flex;
+}
+
+.acNametext {
+  width: 50%;
+  font-size: 32rpx;
+  color: #3f3f3f;
+  margin-left: 20rpx;
+}
+
+.dcNametext {
+  width: 90%;
+  font-size: 32rpx;
+  color: #3f3f3f;
+  margin-left: 20rpx;
+}
+
+.acscoretext {
+  width: 10%;
+  font-size: 32rpx;
+  color: #28b1c7;
+}
+
+.pricesource {
+  width: 70%;
+  font-size: 32rpx;
+  color: #3f3f3f;
+  margin-left: 20rpx;
+}
+
+.priceNum {
+  width: 30%;
+}
+
+.value {
+  width: 50%;
+}
+
+.newslist {
+  margin-top: 30rpx;
+}
+
+.description {
+  margin-left: 5%;
+  width: 90%;
+  font-size: 28rpx;
+  color: #8f8f8f;
+}
+
+.list1 {
+  margin-left: 5%;
+  width: 85%;
+  border: 1rpx solid #e2e2e2;
+  display: flex;
+}
+
+.list {
+  width: 90%;
+  border: 1rpx solid #e2e2e2;
+  display: flex;
+}
+
+.pricelist {
+  margin-top: 20rpx;
+  padding-top: 10rpx;
+  height: 70rpx;
+  width: 95%;
+  border: 1rpx solid #e2e2e2;
+  display: flex;
+}
+
+.pricelow {
+  padding-top: 12rpx;
+  height: 70rpx;
+  width: 95%;
+  background-color: #f2fdff;
+}
+
+.pricelowtext {
+  font-weight: 700rpx;
+  padding-top: 10rpx;
+  margin-left: 10rpx;
+  color: #28b1c7;
+  font-size: 32rpx;
+}
+.compare {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  left: 0px;
+  font-size: 24rpx;
+  bottom: 20rpx;
+}
+.block{
+  margin-top: 100rpx;
+  background: #fff;
+  width: 100%;
+  height: 5rpx;
+}
+.wenda{
+  color: #fff;
+  background-color:  #28b1c7;
+}

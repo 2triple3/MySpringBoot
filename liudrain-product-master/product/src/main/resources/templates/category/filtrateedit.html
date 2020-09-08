@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btnsub").on("click",function(){
+            $("#formData").submit();
+        });
+    });
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">类别管理</a></li>
+                <li><a href="#">排序参数</a></li>
+                <li class="active">修改</li>
+            </ol>
+        </div>
+    </div>
+    <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls">
+
+
+                        <div class="form-row">
+                            <div class="col-md-3">产品类型</div>
+                            <div class="col-md-9">
+                                <input type="text" disabled="disabled" class="form-control" id="name" name="name"value="${category.cname}"></input>
+                                <input type="hidden" class="form-control" id="categoryId" name="categoryId"value="${category.categoryId}"></input>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="col-md-3">排序</div>
+                            <div class="col-md-9">
+                                <input type="text"  class="form-control" id="sort" name="sort" value="1" ></input>
+                            </div>
+                        </div>
+                        <#if filtrate.paramType==1>
+                        <div class="form-row">
+                            <div class="col-md-3">
+                                <input type="text"  class="form-control"  name="filtrateName" value="${filtrate.filtrateName!}" placeholder="输入排序名称" ></input>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="paramId">
+                                    <option value="" >请选择参数名称</option>
+                                    <#list attributeList as attribute>
+                                    <option value="${attribute.attributeId!}" <#if attribute.attributeId== filtrate.paramId>  selected="selected"  </#if>>${attribute.aname!}</option>
+                                </#list>
+                                </select>
+                            </div>
+                        </div>
+                       </#if>
+
+
+                         <#if filtrate.paramType==2>
+                            <div class="form-row">
+                                <div class="col-md-3"><input type="text"  class="form-control"  name="filtrateName" value="${filtrate.filtrateName!}"  placeholder="输入排序名称" ></input>
+                                </div>
+                                <div class="col-md-9">
+                                    <select class="form-control" name="paramId">
+                                        <option value="" >请选择参数名称</option>
+                                        <#list decisionClassList as decisionClass>
+                                        <option value="${decisionClass.decisionClassId!}" <#if decisionClass.decisionClassId== filtrate.paramId>  selected="selected"  </#if> >${decisionClass.dcName!}</option>
+                                    </#list>
+                                    </select>
+                                </div>
+                            </div>
+                           </#if>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

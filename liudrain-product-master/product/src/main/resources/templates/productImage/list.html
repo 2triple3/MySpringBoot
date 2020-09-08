@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    function add(a) {
+        window.location.href = "../product/imageAdd?productId="+a;
+    }
+
+    function del(a) {
+        var r = window.confirm("确认删除？");
+        if (r == true) {
+            window.location.href = "../product/imageDel?imageId=" + a;
+        }
+    }
+  function change(a,b,c) {
+      window.location.href = "../product/imageChange?imageId=" + a+"&productId="
+          +b+"&type="+c;
+  }
+  function changeList(a,b) {
+        window.location.href = "../product/imageChangeList?imageId=" + a+"&productId="
+            +b
+    }
+    function back() {
+        window.history.back(-1); //返回上一页
+    }
+
+</script>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="../product/list">产品管理</a></li>
+                <li>图片管理</li>
+                <li class="active">${product.brand} ${product.name} ${product.model}</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="block">
+
+                <div class="form-row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <button class="btn btn-default btn-clean"
+                                type="button" onclick="back()">产品列表
+                        </button>
+                    </div>
+                    <div class="col-md-1">
+                        <div>
+                            <button class="btn btn-default btn-clean"
+                                    type="button" onclick="add(${product.productId})">添加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>排序</th>
+                            <th>轮播显示</th>
+                            <th>列表显示(90*90)</th>
+                            <th>产品图片(缩略图)</th>
+
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if imageList??>
+                        <#list imageList as image>
+                        <tr>
+                            <input type="hidden" name="id" value="${image.imageId}"/>
+                            <td>${image_index+1}</td>
+                            <td>${image.sort}</td>
+                            <td>
+                                <#if (image.type??)&&image.type== 1>
+                                <button class="btn btn-danger"
+                                        type="button" onclick="change(${image.imageId},${product.productId},0)">是</button>
+                                <#else>
+                                <button class="btn btn-success"
+                                        type="button" onclick="change(${image.imageId},${product.productId},1)">否</button>
+                            </#if>
+
+                            </td>
+                            <td>
+                                <#if (image.listImg??)&&image.listImg== 1>
+                                已为列表显示图
+                                <#else>
+                                <button class="btn btn-danger"
+                                        type="button" onclick="changeList(${image.imageId},${product.productId},0)">设为</button>
+                            </#if>
+
+                            </td>
+                            <td>
+                                <image style="width:50px; height: 50px;" src="${image.imageUrl!}"></image>
+                            </td>
+
+                            <td>
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="del(${image.imageId})">删除
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

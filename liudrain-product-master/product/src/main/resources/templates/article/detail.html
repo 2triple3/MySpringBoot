@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>善问</title>
+    <#import "/ftl/spring.ftl" as spring>
+</head>
+
+<style>
+
+    body {
+        text-align: center;
+        background-color: #ffffff;
+        color: #0A0B0C;
+    }
+
+    .title {
+        font-size:42px;
+        margin-top: 10px;
+    }
+
+    .content {
+        margin: 40px 30px 30px 30px;
+        font-size: 35px;
+    }
+</style>
+
+<html>
+
+<body>
+<div class="title">
+    ${freeArticle.title!}
+</div>
+<div class="content">
+    ${freeArticle.content!}
+</div>
+
+</body>
+</html>

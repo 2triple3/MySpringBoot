@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    function add(a) {
+        window.location.href = "../productprice/add?productId="+a;
+    }
+
+    function del(a) {
+        var r=window.confirm("确认删除？");
+        if (r==true) {
+            window.location.href = "../productprice/delete?productPriceId="+a;
+        }
+    }
+
+
+
+    function edit(id) {
+        window.location.href = "../productprice/edit?productPriceId="+id;
+    }
+    function back() {
+        window.history.back(-1); //返回上一页
+    }
+</script>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品管理</a></li>
+                <li><a href="#">价格列表</a></li>
+                <li class="active">${product.name} ${product.brand} ${product.model}</li>
+            </ol>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block">
+                <div class="form-row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                    <button class="btn btn-default btn-clean"
+                            type="button" onclick="back()">产品列表
+                    </button>
+                </div>
+                    <div class="col-md-1">
+                        <div><button class="btn btn-default btn-clean"
+                                     type="button" onclick="add(${product.productId})">添加</button></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>价格数目</th>
+                            <th>数据来源</th>
+                            <th>更新时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if productPriceList??>
+                        <#list productPriceList as productPriceList>
+                        <tr>
+                            <input type="hidden" name="id" value="${productPriceList.productPriceId}" />
+                            <td>${productPriceList_index+1}</td>
+                            <td>${productPriceList.priceNum!}</td>
+                            <td>${productPriceList.source!}</td>
+                            <td>${(productPriceList.updateDate?string("YYYY-MM-dd"))!}</td>
+
+
+                            <td><button class="btn btn-default btn-clean"
+                                        type="button" onclick="del(${productPriceList.productPriceId})">删除</button>
+
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="edit(${productPriceList.productPriceId})">修改</button></td>
+                        </tr>
+
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

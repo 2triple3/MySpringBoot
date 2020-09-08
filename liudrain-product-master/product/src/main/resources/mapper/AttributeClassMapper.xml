@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.AttributeClassMapper">
+    <resultMap id="AttributeClassResultMap" type="com.shanwen.select.entity.AttributeClass">
+        <id property="attributeClassId" column="attribute_class_id" />
+        <result property="acName" column="ac_name" />
+        <result property="createDate" column="create_date" />
+        <result property="status" column="status" />
+        <result property="sort" column="sort" />
+        <association property="category" column="category_id" javaType="com.shanwen.select.entity.Category">
+            <id column="category_id" property="categoryId"/>
+            <result column="c_name" property="cname"/>
+        </association>
+
+
+    </resultMap>
+
+
+    <select id="selectAll" resultMap="AttributeClassResultMap">
+ select a.attribute_class_id ,a.ac_Name,a.create_date,a.status, a.sort,b.category_id,b.c_name from attribute_class a,category b where a.status=1 and a.category_id=b.category_id
+ and  b.category_id=#{categoryId}  order by  a.sort asc
+	</select>
+    <insert id="insertAll" useGeneratedKeys="true" keyProperty="attributeClassId">
+
+        insert into attribute_class(ac_name,create_date,status,sort,category_id) values(#{acName},#{createDate},#{status},#{sort},#{category.categoryId})
+    </insert>
+    <update id="updateByMyId">
+    update attribute_class set status=0 where attribute_class_id=#{attributeClassId}
+    </update>
+    <select id="selectMyNeed" parameterType="Integer" resultMap="AttributeClassResultMap">
+    select a.attribute_class_id ,a.ac_Name,a.create_date,a.status,a.sort,b.category_id,b.c_name from attribute_class a,category b where a.status=1 and a.category_id=b.category_id and a.attribute_class_id=#{attributeClassId}
+    </select>
+
+    <update id="updateAll">
+        update attribute_class set ac_name=#{acName},create_date=#{createDate},status=1,sort=#{sort},category_id=#{category.categoryId} where attribute_class_id=#{attributeClassId}
+    </update>
+</mapper>

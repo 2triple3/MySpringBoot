@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    function add() {
+        window.location.href = "../attribute/add";
+    }
+    function del(a) {
+
+        alert("确认删除？");
+
+        window.location.href = "../attribute/delete?attributeId="+a;
+
+    }
+
+    function edit(id) {
+
+        window.location.href = "../attribute/edit?attributeId="+id;
+
+    }
+
+
+</script>
+<body>
+<div class="container">
+
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">属性</a></li>
+                <li class="active">属性明细分类列表</li>
+            </ol>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="block">
+
+                <div class="form-row">
+                    <div class="col-md-11">
+                    </div>
+                    <div class="col-md-1">
+                        <div><button class="btn btn-default btn-clean"
+                                     type="button" onclick="add()">添加</button></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>属性明细id</th>
+                            <th>属性主表id</th>
+                            <th>属性明细名称</th>
+                            <th>属性主表名称</th>
+
+                            <th>创建时间</th>
+                            <th>使用状态</th>
+                            <th>操作</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if list??>
+                        <#list list as list>
+                        <tr>
+                            <input type="hidden" name="id" value="${list.attributeId}" />
+                            <td>${list_index+1}</td>
+                            <td>${list.attributeId!}</td>
+                            <td>${list.attributeClass.attributeClassId!}</td>
+                            <td>${list.aname!}</td>
+                            <td>${list.attributeClass.acName!}</td>
+
+                            <td>${(list.createDate?string("YYYY-MM-dd"))!}</td>
+                            <td>${list.status!}</td>
+
+                            <td><button class="btn btn-default btn-clean"
+                                        type="button" onclick="del(${list.attributeId})">删除</button>
+
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="edit(${list.attributeId})">修改</button>
+
+                            </td>
+                        </tr>
+
+
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

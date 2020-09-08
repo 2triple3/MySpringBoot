@@ -1,0 +1,33 @@
+<!--pages/pay/pay.wxml-->
+<view class="title0">
+  <view class="title">
+    <view class="title2 location">
+      {{price.name}}
+    </view>
+    <view class="line location"></view>
+    <view class="title3 location">
+      持卡会员能够自持卡之日起，阅读善问所有内容，查询所有测试数据，并可提供付费问答，费用{{price.priceNum}}元。
+    </view>
+    <view class="title3_1">
+      <view class="title4 location">
+        自{{date1}}截止{{date2}}
+      </view>
+    </view>
+    <view>
+    </view>
+  </view>
+</view>
+<view class="title5"></view>
+<view class="title6">
+  <view class="wxParsecontainer">
+    <rich-text nodes="{{content.content}}">
+    </rich-text>
+  </view>
+</view>
+
+<view class="block2">
+</view>
+
+<view class="pay">
+  <button class='pay2' bindtap="pay" data-id="{{price.priceId}}" style="width:100%">开通订阅</button>
+</view>

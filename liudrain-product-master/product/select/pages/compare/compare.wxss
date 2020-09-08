@@ -1,0 +1,255 @@
+.banner {
+  background-color: #fff;
+  top: 88rpx;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+}
+
+.content {
+  z-index: 999;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  background: #28b1c7;
+  width: 100%;
+  color: #fff;
+  font-size: 36rpx;
+}
+.content2{
+  height: 120rpx;
+}
+.content1 {
+  margin-left: 20rpx;
+}
+
+.filter-tab {
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 80rpx;
+}
+
+.filter-tab view {
+  float: right;
+  margin-left: 22rpx;
+  height: 80rpx;
+  width: 50%;
+  text-align: right;
+  line-height: 80rpx;
+  color: #888;
+  font-size: 28rpx;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.filter-tab view text {
+  display: inline-block;
+  max-width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-tab view:before {
+  content: "";
+  position: absolute;
+  width: 1rpx;
+  height: 36rpx;
+  background-color: #f6f6f6;
+  right: 0;
+  top: 22rpx;
+}
+
+.filter-tab view:last-child:before {
+  width: 0;
+}
+
+.filter-tab view image {
+  display: inline-block;
+  margin-left: 10rpx;
+  margin-right: 1rpx;
+  vertical-align: 30rpx;
+}
+
+.sortimage {
+  width: 16rpx;
+  height: 8rpx;
+}
+
+.filter-tab view.active {
+  color: #4fcbff;
+}
+
+.filter-tab view text.active {
+  color: #4fcbff;
+}
+
+.active {
+  color: #28b1c7;
+}
+
+.selectImage {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.jiantou {
+  display: flex;
+}
+
+.icon {
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  width: 8%;
+  height: 20rpx;
+}
+
+.right {
+}
+
+.productList {
+  width: 50%;
+  display: inline-block;
+}
+
+.show-info {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.left {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+}
+
+.jy-item-hover {
+  border: none;
+}
+
+.right {
+  white-space: nowrap;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  font-size: 30rpx;
+}
+
+.checkbox1 {
+  background-color: #28b1c7;
+}
+
+.checkbox2 {
+  padding: 10rpx;
+  background-color: #28b1c7;
+  color: #fff;
+  font-size: 20rpx;
+  height: 130rpx;
+}
+
+.checkbox2 checkbox {
+  padding: 5rpx;
+}
+
+checkbox .wx-checkbox-input {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.productName {
+  padding: 10rpx;
+  background-color: #28b1c7;
+  height: 130rpx;
+}
+
+.productNametext {
+  margin: 20rpx;
+  background-color: #fff;
+  width: 200rpx;
+  height: 100rpx;
+  border-radius: 5px;
+}
+
+.productNameImage {
+  margin-top: 10rpx;
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.productNametext1 {
+  margin: 10rpx;
+}
+
+.productNametext2 {
+  word-break: keep-all;
+  word-wrap: break-word;
+  white-space: pre-line;
+  font-size: 24rpx;
+}
+.productNametext3{
+  word-break: keep-all;
+  word-wrap: break-word;
+  white-space: pre-line;
+  font-size: 21rpx;
+}
+
+.xuanxiang {
+  background-color: #fff;
+}
+
+.pingfen {
+  background-color: #fff;
+  padding-left: 20rpx;
+}
+
+.score {
+  background-color: #fff;
+  padding-left: 20rpx;
+  color: #fba503;
+}
+
+.dcName {
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #e2e2e2;
+}
+
+.acscoretext {
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+
+.acscoretext1 {
+  color: #28b1c7;
+}
+
+.list1 {
+  background: #fff;
+  padding-left: 20rpx;
+}
+
+.value {
+  margin-left: 0rpx;
+}
+
+.askimage {
+  width: 50rpx;
+  height: 40rpx;
+}

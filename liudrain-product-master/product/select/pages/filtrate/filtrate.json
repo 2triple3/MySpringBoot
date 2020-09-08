@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "zy-slider": "../../component/zyslider/zyslider"
+  },
+  "navigationBarTitleText": "筛选"
+}

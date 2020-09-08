@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btnsub").on("click",function(){
+            $("#formData").submit();
+        });
+    });
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品</a></li>
+                <li><a href="#">产品分类</a></li>
+                <li class="active">添加页面</li>
+            </ol>
+        </div>
+    </div>
+    <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls">
+
+
+
+                        <div class="form-row">
+                            <div class="col-md-3">产品名称</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="cname" name="cname" placeholder="产品名称" ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">创建时间</div>
+                            <div class="col-md-9"><input type="Date" class="form-control" id="createDate" name="createDate"  ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">父id</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="parent" name="parent"  ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品级别</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="level" name="level"  ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">状态</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="status" name="status" value="1" readonly="readonly"  ></input></div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

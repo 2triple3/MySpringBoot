@@ -1,0 +1,97 @@
+
+<#include "/ftl/header.ftl">
+
+<script type='text/javascript' src='../static/js/wangEditor.js'></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var E = window.wangEditor
+        var editor = new E('#editor')
+        editor.customConfig.uploadImgShowBase64 =false
+        editor.customConfig.onchange = function (html) {
+            // 监控变化，同步更新到 textarea
+            console.log(html)
+            $("#content").val(html);
+        }
+        editor.create()
+    });
+
+    function back() {
+        window.history.back(-1); //返回上一页
+    }
+</script>
+
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品管理</a></li>
+                <li><a href="#">添加产品报告</a></li>
+                <li class="active"> ${product.brand} ${product.name} ${product.model}</li>
+            </ol>
+        </div>
+    </div>
+
+    <div style="display:inline">
+    <form method="post"  enctype="multipart/form-data"  id="formData">
+        <div class="content controls npt text-center">
+            <div class="col-md-7">
+                <div class="block">
+                    <div class="content controls">
+
+                        <div class="form-row">
+                            <div class="col-md-1">名称</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="name" name="name"></input>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-1">内容<span style="color: red">*</span></div>
+                            <div class="col-md-9" id="editor">
+                            </div>
+
+                            <input type="hidden"  id="content" name="content">
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-1">标签</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="tag" name="tag"></input>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-1">排序</div>
+                            <div class="col-md-9"><input type="number" class="form-control" id="sort" name="sort" value="1"></input>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div  class="col-md-5">
+                            </div>
+                            <div class="col-md-6">
+                                <input class="col-md-2  btn btn-default btn-clean"   type="submit" value="添加">
+                                <button class="btn btn-default btn-clean"   onclick="back()" type="button">返回</button>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+    <div style="margin-left:20px;margin-top:20px;">
+        右键图片复制链接插入文本中
+    </div>
+    <div  style="height:400px;width:300px;overflow:auto" >
+
+        <#if imageList??>
+        <#list imageList as image>
+        <div >
+            <image style="margin-left:20px;margin-top:20px;width:200px;height:200px;" src="${image.imageUrl!}"></image>
+        </div>
+    </#list>
+</#if>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<#include "/ftl/header.ftl">
+<#include "/ftl/menu.ftl">
+<script type="text/javascript">
+    function add(a) {
+        window.location.href = "../decisionclass/add?categoryId="+a;
+    }
+    function del(a,b) {
+        var r = window.confirm("确认删除？");
+        if (r == true) {
+            window.location.href = "../decisionclass/delete?decisionClassId="+a+"&categoryId="+b;
+        }
+
+    }
+    function cate(categoryId) {
+
+        window.location.href = "../decisionclass/cate?categoryId="+categoryId;
+
+    }
+
+    function edit(id,categoryId) {
+
+        window.location.href = "../decisionclass/edit?decisionClassId="+id+"&categoryId="+categoryId;
+
+    }
+
+    function editdetail(id,b) {
+
+        window.location.href = "../decisionclass/detaillist?decisionClassId="+id+"&categoryId="+b;
+
+    }
+
+</script>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>产品决策</li>
+                <li>决策列表</li>
+                <li class="active">${category.cname}</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="block">
+
+                <div class="form-row">
+                    <div class="col-md-10">
+                    </div>
+                    <div class="col-md-2">
+                        <div>
+                            <button class="btn btn-default btn-clean"
+                                    type="button" onclick="cate(${category.categoryId})">一级指标</button>
+
+                            <button class="btn btn-default btn-clean"
+                                     type="button" onclick="add(${category.categoryId})">添加</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>二级指标</th>
+                            <th>一级指标</th>
+                            <th>二级指标说明</th>
+                            <th>创建时间</th>
+                            <th>排序</th>
+
+                            <th>操作</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if decisionlist??>
+                        <#list decisionlist as decisionlist>
+                        <tr>
+                            <input type="hidden" name="decisionClassId" value="${decisionlist.decisionClassId}" />
+                            <td>${decisionlist_index+1}</td>
+                            <td>${decisionlist.dcName}</td>
+                            <td>${decisionlist.decisionClassCate.dccName}</td>
+                            <td>${decisionlist.description!}</td>
+                            <td>${(decisionlist.createDate?string("YYYY-MM-dd"))!}</td>
+                            <td>${decisionlist.dcsort!}</td>
+
+                            <td><button class="btn btn-default btn-clean"
+                                        type="button" onclick="del(${decisionlist.decisionClassId},${category.categoryId})">删除</button>
+
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="edit(${decisionlist.decisionClassId},${category.categoryId})">修改</button>
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="editdetail(${decisionlist.decisionClassId},${category.categoryId})">参数明细</button>
+                            </td>
+                        </tr>
+
+
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

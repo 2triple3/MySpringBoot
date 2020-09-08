@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btnsub").on("click",function(){
+            $("#formData").submit();
+        });
+    });
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品</a></li>
+                <li><a href="#">产品决策</a></li>
+                <li class="active">添加页面</li>
+            </ol>
+        </div>
+    </div>
+    <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls">
+
+
+
+                        <div class="form-row">
+                            <div class="col-md-3">产品类型</div>
+                            <div class="col-md-9">
+                                <input type="text"  disabled="disabled"  value="${category.cname}">
+                                <input type="hidden"   name="categoryId" value="${category.categoryId}">
+
+                            </div>
+<!--                                <input type="text" class="form-control" id="productId" name="productId" placeholder="产品名称" ></input></div>-->
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">决策参数一级指标</div>
+                            <div class="col-md-9">
+                                <select  name="decisionClassCateId">
+                                    <#list decisionClassCates as decisionClassCate>
+                                    <option value="${decisionClassCate.decisionClassCateId!}">${decisionClassCate.dccName!}</option>
+                                </#list>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-3">决策参数二级指标名称</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="dcName" name="dcName"  ></input></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-3">决策参数二级指标说明</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="description" name="description"  ></input></div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="col-md-3">排序</div>
+                            <div class="col-md-9"><input type="number" class="form-control" id="dcsort" name="dcsort" value="1" ></input></div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

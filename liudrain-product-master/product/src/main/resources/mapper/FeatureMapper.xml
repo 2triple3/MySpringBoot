@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.FeatureMapper">
+
+    <resultMap type="com.shanwen.select.entity.Feature" id="resultMap">
+        <id column="feature_id" property="featureId"/>
+        <result column="category_id" property="categoryId"/>
+        <result column="flag" property="flag"/>
+        <result column="content" property="content"/>
+
+    </resultMap>
+
+
+    <select id="getFeatureList" resultMap="resultMap" parameterType="java.util.Map">
+
+        select * from  feature a left join product_Feature  b on a. feature_id =b.feature_id
+         where   b.product_id=#{productId} and  a.flag = #{flag}
+
+    </select>
+
+
+</mapper>

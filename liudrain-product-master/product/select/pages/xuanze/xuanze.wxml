@@ -1,0 +1,48 @@
+<!--pages/xuanze/xuanze.wxml-->
+
+<import src="/component/productList/list/index.wxml"></import>
+
+<view class="all">
+  <import src="/component/wxSearch/wxSearch"></import>
+  <template is="wxSearch" data="{{...tabData}}"></template>
+
+  <view class="banner">
+    <view class="filter-tab">
+      <view catchtap="setFilterPanelResult" class="{{showfilterindex==1?'active':''}}">
+        <text class="{{sortindex==1?'active':''}}">{{sorttext}}</text>
+        <image class="sortimage" src="{{sortindex==1?'/image/xz.png':'/image/wxz.png'}}"></image>
+        
+      </view>
+
+      <view catchtap="selectFilter" class="{{isfiltrate==1?'active':''}}">
+        <text class=" select {{isfiltrate==1?'active':''}}">筛选</text>
+        <image class="selectImage" src="{{isfiltrate==1?'/image/s1.png':'/image/s2.png'}}"></image>
+      </view>
+
+    </view>
+  </view>
+
+
+
+  <view class="filter-content">
+    <view class="common-panel" wx:if="{{showfilterindex==1}}">
+      <text catchtap="sortSelect" class="left" data-index="{{item.sortId}}"  wx:for="{{sort}}" wx:key="{{index}}">{{item.showName}}
+                </text>
+    </view>
+  </view>
+
+
+  <view class="productList">
+    <template is="list" data="{{productList:productList,level:level}}"></template>
+  </view>
+
+  <view wx:if="{{notone}}">
+    <view class="imagesize">
+      <image class="" src="/image/xcq.jpg"></image>
+    </view>
+    <view class="text" wx:if="{{notone}}">没有搜到此类的产品</view>
+
+  </view>
+  <view hidden="{{isover}}" class="ask">---已经没有更多了---</view>
+
+</view>

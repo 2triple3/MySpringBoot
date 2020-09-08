@@ -1,0 +1,167 @@
+<wxs src="../../utils/filter.wxs" module="tools" />
+
+<view class="pruduct">{{product.brand}} {{product.name}} {{product.model}}</view>
+<view class="nav_title">
+  <view class="nav_tab">
+    <view wx:for="{{list}}" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' bindtap="selected">{{item}}
+      <view class="{{selected==index?'nav_underline':''}}"></view>
+    </view>
+  </view>
+  <!-- tab框显示内容 -->
+  <view wx:if="{{selected == 0}}">
+    <view class="detail-top">
+      <view class="swiper_main">
+        <image class="defaultImg" wx:if="{{img.length==0}}" mode="aspectFill" src="/image/xcq.jpg"></image>
+        <image class="defaultImg" src="{{img[0].url}}"></image>
+        <view>
+          <text class="swiperPic_title" wx:if="{{img.length!=0}}">{{current+1}}/{{img.length}}
+                    </text>
+          <swiper autoplay="{{img.length==1?false:true}}" bindchange="swiperSlide" circular="true" current="{{current}}" duration="{{duration}}" interval="{{interval}}">
+
+            <swiper-item wx:if="{{img.length==0?false:true}}" wx:for="{{img}}" wx:key="{{index}}" wx:for-item="value">
+              <image bindtap="bigPic" class="slide-image" data-index="{{index}}" mode="aspectFill" src="{{value.imageUrl}}"></image>
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="info">评级信息</view>
+    <view class="pingji">
+      <view class="score">{{tools.filters(product.score,1)}}</view>
+      <view class="allstar">
+        <block wx:for="{{tools.star1(product.star)}}">
+          <image class="star" src='/image/star2.png'></image>
+        </block>
+        <block wx:for="{{tools.star2(product.star)}}">
+          <image class="star" src='/image/star3.png'></image>
+        </block>
+        <block wx:for="{{tools.star3(product.star)}}">
+          <image class="star" src='/image/star.png'></image>
+        </block>
+      </view>
+
+      <view class="price">
+        ¥{{tools.filters(product.productPrices[0].priceNum,2)}}</view>
+    </view>
+    <view class="lowprice"> 当前最低价</view>
+    <view class='line'></view>
+    <view class="info">优缺点</view>
+
+    <view class="tedianview">
+      <image class="tedian" src="/image/good.png"></image>
+    
+      <view class="content">
+      优点：  <text wx:for="{{product.advantages}}" wx:key="{{index}}" wx:for-item="item"> {{item.content}}\t</text>
+      </view>
+
+    </view>
+    <view class="tedianview">
+      <image class="tedian" src="/image/bad.png"></image>
+   
+      <view class="content">
+         缺点： <text wx:for="{{product.disadvantages}}" wx:key="{{index}}" wx:for-item="item"> {{item.content}}\t</text>
+      </view>
+
+
+    </view>
+
+    <view class='line'></view>
+    <view class="wxParsecontainer">
+      <view wx:for="{{product.productReports}}" wx:for-item="item">
+        <rich-text nodes="{{item.content}}">
+        </rich-text>
+        <view class='line'></view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{selected == 2}}">
+    <view class="pingji juece">
+      <view class="score">{{tools.filters(product.score,1)}}</view>
+      <view class="allstar">
+        <block wx:for="{{tools.star1(product.star)}}">
+          <image class="star" src='/image/star2.png'></image>
+        </block>
+        <block wx:for="{{tools.star2(product.star)}}">
+          <image class="star" src='/image/star3.png'></image>
+        </block>
+        <block wx:for="{{tools.star3(product.star)}}">
+          <image class="star" src='/image/star.png'></image>
+        </block>
+      </view>
+
+    </view>
+    <view class="overview">{{product.overview}}</view>
+    <view class='line'></view>
+    <view>
+      <view class='decisionbox'>
+        <view class='newslist' wx:for="{{listOne}}" wx:key="*this" wx:for-item="dayItem">
+          <view class='dcName'>
+            <text class="dcNametext">{{dayItem.dcName}}</text>
+            <text class="acscoretext">{{dayItem.score}}</text>
+          </view>
+          <view class="jiantou" bindtap="clickLine" data-classid="{{dayItem.decisionClassId}}">
+            <view class="progress">
+              <progress percent="{{dayItem.score*10}}" color="#28B1C7" />
+            </view>
+            <view class="icon">
+              <image src="/image/down.png" hidden="{{dayItem.hidden}}"></image>
+              <image src="/image/up.png" hidden="{{!dayItem.hidden}}"></image>
+            </view>
+          </view>
+
+          <view class="description" hidden="{{dayItem.hidden}}"> {{dayItem.description}}</view>
+          <view class='list1' hidden="{{dayItem.hidden}}" wx:for="{{dayItem.decisionList}}" wx:key="*this" wx:for-item="item">
+            <view class="acNametext"> {{item.dname}} </view>
+            <view class="value"> {{item.result}} </view>
+          </view>
+          <view class='line'></view>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+
+  <view wx:if="{{selected == 1}}">
+
+    <view class='mainbox'>
+      <view class="pricelow">
+        <text class="pricelowtext">当前最低价：¥{{tools.filters(product.productPrices[0].priceNum,2)}}元</text> </view>
+      <view class='pricelist' wx:for="{{product.productPrices}}" wx:for-item="item">
+        <view class="pricesource"> {{item.source}} </view>
+        <view class="priceNum"> ¥{{tools.filters(item.priceNum,2)}} </view>
+      </view>
+    </view>
+
+
+  </view>
+  <view wx:if="{{selected == 3}}">
+
+    <view class="attributeClass">
+      <view class='mainbox'>
+        <view class='newslist' wx:for="{{product.attributeClasses}}" wx:key="*this" wx:for-item="dayItem">
+          <view class='acName'>
+            <text class="acNametext">{{dayItem.acName}}</text>
+          </view>
+          <view class='list' wx:for="{{dayItem.attributeList}}" wx:key="*this" data-id="{{item.id}}" wx:for-item="item">
+            <view class="acNametext"> {{item.aname}} </view>
+            <view class="value"> {{item.value}} </view>
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="block"></view>
+  <view class="compare">
+    <button bindtap="qingdan" style="width: 33%" wx:if="{{product.focus==null}}" data-type="1"data-id="{{product.productId}}">加入清单</button>
+    <button bindtap="qingdan" style="width: 33%" wx:if="{{product.focus!=null}}" data-type="2" data-id="{{product.productId}}">移除清单</button>
+
+    <button bindtap="compare" style="width: 33%">再去比较</button>
+    <button bindtap="question" class="wenda" style="width: 33%">有问必答</button>
+  </view>
+</view>

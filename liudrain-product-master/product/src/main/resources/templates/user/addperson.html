@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	 $("#btnsub").on("click",function(){
+		 $("#formData").submit();
+	 });
+});
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">  
+<div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                   <li><a href="#">账号管理</a></li>                    
+                    <li><a href="#">人员列表</a></li>                    
+                    <li class="active">用户添加</li>
+                </ol>
+            </div>
+        </div>        
+        <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+      
+            <div class="col-md-9">
+                
+                <div class="block">
+                    
+                    <div class="content controls">
+
+                                                      
+                          
+                     <div class="form-row">
+                            <div class="col-md-3">姓名</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="adminName" name="adminName" placeholder="姓名" ></input></div>
+                        </div> 
+ 						<div class="form-row">
+                            <div class="col-md-3">密码</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="passWord" name="passWord" value="123456" readonly="readonly"></input></div>
+                        </div> 
+                         <div class="form-row">
+                            <div class="col-md-3">状态</div>
+                            <div class="col-md-9">
+                            <select id="status" name="status" >
+                            <option></option>
+                            <option>禁用</option>
+                            <option>正常</option>
+                            </select></div></div>
+                        
+ 						 <div class="form-row">
+                            <div class="col-md-3">是否超级管理员</div>
+                            <div class="col-md-9">
+                            <select id="isSuper" name="isSuper">
+                            <option></option>
+                            <option>否</option>
+                            <option>是</option>
+                            </select>
+                            </div>
+                        </div>
+	
+							
+					<div class="form-row">
+								<div class="col-md-12">
+								<button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+									
+								</div>
+							</div>    
+                       
+                    </div>
+                </div>                
+         </div>                
+    </div>
+    </form>
+</body>
+</html>

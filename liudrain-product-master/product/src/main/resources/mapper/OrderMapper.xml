@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.OrderMapper">
+    <resultMap id="ResultMap" type="com.shanwen.select.entity.Order">
+        <id property="orderId" column="order_id"/>
+        <result column="order_Num" property="orderNum"/>
+        <result column="pay_price" property="payPrice"/>
+        <result column="create_date" property="createDate"/>
+        <result column="pay_date" property="payDate"/>
+        <result column="create_date" property="createDate"/>
+        <result column="date_length" property="dateLength"/>
+        <result column="status" property="status"/>
+        <association property="userInfo" javaType="com.shanwen.select.entity.WeixinUserInfo">
+            <!-- 关联条件Employee的dept_id对应着Department的id -->
+            <id column="user_id" property="userId"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="DataMap" type="java.util.Map">
+        <result column="ordernum" property="ordernum"/>
+        <result column="ordersum" property="ordersum"/>
+    </resultMap>
+
+    <insert id="createOrder" parameterType="com.shanwen.select.entity.Order">
+ insert into sworder(user_id,pay_price,create_date,order_num,date_length,status)
+  values (#{userInfo.userId},#{payPrice}, #{createDate}, #{orderNum},#{dateLength},#{status}
+
+ ) </insert>
+
+    <select id="selectOrder" resultMap="ResultMap">
+
+     select * from sworder where order_Num =#{orderNum}
+
+    </select>
+
+
+    <select id="getOrderData" resultMap="DataMap">
+
+        select count(order_id) as ordernum, SUM(pay_price) as ordersum from sworder where create_date &gt;= '${endDate}'and
+        create_date  &lt;= '${startDate}' and status=1
+
+    </select>
+    <update id="updateOrder" parameterType="com.shanwen.select.entity.Order">
+ update  sworder set pay_date =#{payDate} ,status =#{status} where order_num=#{orderNum}
+   </update>
+
+</mapper>
+
+
+

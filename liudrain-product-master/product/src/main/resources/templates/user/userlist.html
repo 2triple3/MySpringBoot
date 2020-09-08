@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+function add() {
+	window.location.href = "../admin/add";
+}
+function del(a) {
+	alert(a);
+	alert("确认删除？");
+
+	window.location.href = "../admin/delete?a="+a;
+
+}
+function resert(id) {
+	
+	alert("确认重置？");
+
+	window.location.href = "../admin/resert?id="+id;
+
+}
+function edit(id) {
+
+	window.location.href = "../sys/editperson?id="+id;
+
+}
+
+</script>
+<body>
+<div class="container">
+
+
+		
+
+			<div class="row">
+				<div class="col-md-12">
+					<ol class="breadcrumb">
+						<li><a href="#">账号管理</a></li>
+						<li class="active">人员列表</li>
+					</ol>
+				</div>
+			</div>
+    
+         
+        
+		<div class="row">
+			<div class="col-md-12">
+
+				<div class="block">
+
+					<div class="form-row">
+                        <div class="col-md-11">
+                        </div>
+                        <div class="col-md-1">
+                        <div><button class="btn btn-default btn-clean"
+											type="button" onclick="add()">添加</button></div>
+                    </div>
+                    </div>
+					<div class="content">
+						<table class="table table-bordered table-striped table-hover">
+							<thead>
+								<tr>
+									<th>序号</th>
+									<th>主键</th>
+									<th>姓名</th>
+									<th>状态</th>
+									<th>是否超级管理员</th>
+									<th>操作</th>
+
+
+								</tr>
+							</thead>
+							<tbody>
+							<#if userlist??>
+								<#list userlist as userperson>
+								<tr>
+									<input type="hidden" name="id" value="${userperson.adminId}" />
+									<td>${userperson_index+1}</td>
+									
+									<td>${userperson.adminId}</td>
+									<td>${userperson.adminName}</td>
+									<td><#if (userperson.status)==1>正常<#else>禁用</#if></td>
+									<input type="hidden" name="isSuper" value="${userperson.isSuper}" />
+									<td><#if (userperson.isSuper)==1>是<#else>否</#if></td>
+									<td><button class="btn btn-default btn-clean"
+											type="button" onclick="del(${userperson.adminId})">删除</button>
+										<button class="btn btn-default btn-clean"
+											type="button" onclick="resert(${userperson.adminId})">重置</button>
+											<button class="btn btn-default btn-clean"
+											type="button" onclick="edit(${userperson.adminId})">修改</button></td>
+								</tr>
+
+
+								</#list>
+								</#if>
+							</tbody>
+
+						</table>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

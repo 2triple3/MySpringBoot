@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#btnsub").on("click",function(){
+            $("#formData").submit();
+        });
+    });
+    function back() {
+        window.history.back(-1); //返回上一页
+    }
+
+</script>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="../product/list">产品管理</a></li>
+                <li>图片新增</li>
+                <li class="active"> ${product.brand} ${product.name} ${product.model}</li>
+            </ol>
+        </div>
+    </div>
+
+    <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls">
+
+                        <div class="form-row">
+                            <div class="col-md-3">图片排序<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="sort" name="sort" placeholder="按数字倒叙排列" ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">轮播显示</div>
+                            <div class="col-md-1"><input type="radio" class="form-control"  name="type"  value="1" ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品图片<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="file" class="form-control" id="file" name="file"  ></input></div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+                                <button class="btn btn-default btn-clean"   onclick="back()" type="button">返回</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

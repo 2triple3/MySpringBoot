@@ -1,0 +1,118 @@
+@import '../../component/wxSearch/wxSearch';
+@import "../../wxParse/wxParse.wxss";
+
+.all {
+  background-color: #f0f0f0;
+}
+
+.link_parent {
+  background-color: #f0f0f0;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  position: relative;
+  padding: 20rpx;
+}
+
+.link_b {
+  margin-left: 10rpx;
+}
+
+.link_child {
+  width: 31%;
+  height: 100rpx;
+  background-color: white;
+  border: 1rpx solid white;
+}
+
+.link_child:not(:nth-child(3n)) {
+  margin-right: 10rpx;
+}
+
+.image {
+  margin-top: 12%;
+  margin-left: 8%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.msg {
+  margin-left: 38%;
+  margin-top: -23%;
+  font-size: 28rpx;
+  font-family: Microsoft Yahei;
+}
+
+.ask {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8f8f8f;
+}
+
+.askbutton {
+  margin-top: 20rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 60rpx;
+  background: #28b1c7;
+  color: #fff;
+}
+
+.article {
+  margin-top: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 20rpx;
+}
+
+.article_img {
+  width: 100%;
+  height: 240rpx;
+}
+
+.article_word {
+  background-color: #fff;
+}
+
+.article_title {
+  font-weight: 700;
+  color: #3f3f3f;
+  font-size: 32rpx;
+}
+
+.article_explian {
+  height: 65rpx;
+  font-size: 28rpx;
+  color: #8f8f8f;
+    /*超出部分隐藏*/
+  overflow: hidden;
+  /*不换行*/
+  white-space: nowrap;
+  /*添加...*/
+  text-overflow: ellipsis;
+}
+
+.needpay {
+  margin-left: 20rpx;
+  color: red;
+}
+
+.word {
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+  /*超出部分隐藏*/
+  overflow: hidden;
+  /*不换行*/
+  white-space: nowrap;
+  /*添加...*/
+  text-overflow: ellipsis;
+}
+
+.content {
+  margin-top: -10rpx;
+}

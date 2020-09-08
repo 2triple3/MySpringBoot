@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    function add() {
+        window.location.href = "../decision/add";
+    }
+    function del(a) {
+
+        alert("确认删除？");
+
+        window.location.href = "../decision/delete?decisionId="+a;
+
+    }
+
+    function edit(id) {
+
+        window.location.href = "../decision/edit?decisionId="+id;
+
+    }
+
+
+
+</script>
+<body>
+<div class="container">
+
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品决策</a></li>
+                <li class="active">产品决策列表</li>
+            </ol>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="block">
+
+                <div class="form-row">
+                    <div class="col-md-11">
+                    </div>
+                    <div class="col-md-1">
+                        <div><button class="btn btn-default btn-clean"
+                                     type="button" onclick="add()">添加</button></div>
+                    </div>
+                </div>
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>决策参数分类名称</th>
+                            <th>决策参数名称</th>
+                          <!--  <th>决策参数说明</th>-->
+                            <th>创建时间</th>
+                            <th>排序</th>
+                            <th>状态</th>
+                            <th>操作</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if decisionList??>
+                        <#list decisionList as decisionList>
+                        <tr>
+                            <input type="hidden" name="decisionId" value="${decisionList.decisionId}" />
+                            <td>${decisionList_index+1}</td>
+                            <td>${decisionList.decisionClass.dcName!}</td>
+                            <td>${decisionList.dname!}</td>
+                            <!--<td>${decisionList.description!}</td>-->
+                            <td>${(decisionList.createDate?string("YYYY-MM-dd"))!}</td>
+                            <td>${decisionList.dcsort!}</td>
+                            <td>
+                                <#if decisionList.status == 1>
+                                正常
+                                <#else>
+                                禁用
+                            </#if>
+                            </td>
+
+                            <td><button class="btn btn-default btn-clean"
+                                        type="button" onclick="del(${decisionList.decisionId})">删除</button>
+
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="edit(${decisionList.decisionId})">修改</button>
+
+                            </td>
+                        </tr>
+
+
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

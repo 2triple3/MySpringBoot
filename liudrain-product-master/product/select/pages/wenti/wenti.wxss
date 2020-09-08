@@ -1,0 +1,51 @@
+/* pages/wenti/wenti.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.all {
+  margin-left: 30rpx;
+}
+
+.wxParsecontainer {
+  margin: 25rpx;
+}
+.title {
+  font-weight: 700rpx;
+  font-size: 40rpx;
+}
+
+.title2 {
+  margin-top: 40rpx;
+  font-size: 30rpx;
+}
+
+.top30 {
+  margin-top: 30rpx;
+}
+
+.title3 {
+  font-size: 30rpx;
+  color: #3f3f3f;
+}
+
+.title4 {
+  font-size: 30rpx;
+  color: #8f8f8f;
+}
+
+.title5 {
+  background-color: #28b1c7;
+  color: #fff;
+}
+
+.fontw {
+  font-weight: 700;
+}
+
+.image {
+  margin-top: 30rpx;
+  margin-left: 5%;
+  width: 90%;
+}

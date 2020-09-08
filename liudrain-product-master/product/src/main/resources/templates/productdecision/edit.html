@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#btnsub").on("click", function () {
+            $("#formData").submit();
+        });
+    });
+    function back() {
+        window.history.back(-1); //返回上一页
+    }
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品管理</a></li>
+                <li><a href="#">决策参数</a></li>
+                <li class="active">${product.brand} ${product.name} ${product.model}</li>
+            </ol>
+        </div>
+    </div>
+    <form method="post" enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls">
+                        <#list decisionClassList as decisionClass>
+                        <div class="form-row">
+                            <div class="col-md-3">${decisionClass.dcName}</div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5"><input type="text" class="form-control" placeholder="输入产品报告中对应的分数（10分制）" oninput = "value=value.replace(/[^\d|/.]/g,'')"
+                                                         name="dc${decisionClass.decisionClassId}"
+                                                         value="${decisionClass.score!}"></div>
+                            <div class="form-row"></div>
+                             <#list decisionClass.decisionList as  decision>
+                            <div class="form-row">
+                              <div class="col-md-4">${decision.dname}</div>
+                              <div class="col-md-5"><input type="text" class="form-control"
+                                                         name="d${decision.decisionId}"
+                                                         value="${decision.result!}"></input>
+                               </div>
+                            </div>
+                        </#list>
+                        </div>
+                    </#list>
+
+
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <button class="btn btn-default btn-clean" id="btnsub" type="button">提交</button>
+                            <button class="btn btn-default btn-clean"   onclick="back()" type="button">返回</button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</div>
+</form>
+</body>
+</html>

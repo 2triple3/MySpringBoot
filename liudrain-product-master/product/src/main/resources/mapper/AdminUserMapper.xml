@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.AdminUserMapper">
+    <select id="login" resultType="com.shanwen.select.entity.AdminUser">
+	select * from AdminUser where adminName=#{adminName} and passWord=#{passWord} and status=1
+	</select>
+	<update id="updatePwd" parameterType="com.shanwen.select.entity.AdminUser">
+		update AdminUser
+		<set>
+			<if test="password!=null">
+				password=#{password}
+			</if>
+		</set>
+		where adminName=#{adminName}
+	</update>
+
+
+	<update id="updateByMyId">
+	update AdminUser
+	<set>
+
+		status=#{status}
+
+	</set>
+	where admin_Id=#{adminId}
+	</update>
+</mapper>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>密码修改</title>
+</head>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	 $("#btnsub").on("click",function(){
+		  //判断通知单标题不为空
+		 
+		  
+		 
+		  $("#formData").submit(); 
+		  return false;
+			
+	  }); 	
+		
+});
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">  
+<div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                   <li><a href="#">人员管理</a></li>                                   
+                    <li class="active">密码修改</li>
+                </ol>
+            </div>
+        </div>        
+        <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+        <div class="modal modal-danger" id="alerts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	        <div class="modal-dialog">
+	            <div class="modal-content">                
+	                <div class="modal-header">
+	                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                    <h4 class="modal-title" id="modalMsg">Modal danger</h4>
+	                </div>
+	                <div class="modal-footer">                    
+	                    <button type="button" class="btn btn-default btn-clean" data-dismiss="modal">Close</button>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+            <div class="col-md-9">
+              
+                <div class="block">
+                    <div class="header">
+                        <h2>密码修改</h2>
+                    </div>
+                    <div class="content controls">
+
+                                                      
+                          
+                     <div class="form-row">
+                            <div class="col-md-3">姓名</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="adminName" name="adminName" value="${adminUser.adminName}" readonly="readonly" ></input></div>
+                        </div> 
+ 						<div class="form-row">
+                            <div class="col-md-3">密码</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="passWord" name="password"  value="" ></input></div>
+                        </div>   
+							
+					<div class="form-row">
+								<div class="col-md-12">
+								<button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+									
+								</div>
+							</div>    
+                       
+                    </div>
+                </div>                
+         </div>                
+    </div>
+    </form>
+</body>
+</html>

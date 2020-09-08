@@ -1,0 +1,43 @@
+<!--pages/zhinan/zhinan.wxml-->
+
+<view class="all">
+  <import src="/component/wxSearch/wxSearch"></import>
+  <template is="wxSearch" data="{{...tabData}}"></template>
+
+  <view class="link_parent">
+    <view class="link">
+      <view class="link_child" bindtap="selectTab" data-id="1" >
+        <image class="image"  src="/image/paiming.png"></image>
+        <view class="msg">看排名</view>
+      </view>
+      <view class="link_child link_b" bindtap="selectTab" data-id="2" >
+        <image class="image" src="/image/quedian.png"></image>
+        <view class="msg">查缺点</view>
+      </view>
+      <view class="link_child link_b" bindtap="selectTab" data-id="3" >
+        <image class="image" src="/image/xiaoguo.png"></image>
+        <view class="msg">比效果</view>
+      </view>
+    </view>
+  </view>
+  <view class="ask">吸尘器怎么买，快速问“老法师”</view>
+  <button class="askbutton" bindtap="question" style="width: 94%;">快速提问</button>
+  <view wx:for="{{articles}}" wx:for-index="key" wx:for-item="item">
+    <view class="article" bindtap="more" data-id="{{item.freeArticleId}}" data-url="{{item.contentUrl}}" data-type="{{item.type}}">
+      <image class="article_img" src="{{item.imageUrl}}" mode="aspectFill"></image>
+      <view class="content">
+        <view class="article_word  article_title">
+          <text class="word">{{item.title}}</text>
+          <text class="needpay" wx:if="{{item.type==2}}">付费阅读</text>
+        </view>
+        <view class="article_word article_explian">
+          <text class="word"> {{item.summary}}</text>
+        </view>
+      </view>
+    </view>
+
+
+
+  </view>
+  <view hidden="{{ishave}}" class="ask">---已经没有更多了---</view>
+</view>

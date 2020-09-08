@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    function addAttribute(a) {
+        window.location.href = "../category/filtrate?categoryId="+a+"&paramType=1";
+    }
+    function addDecision(a) {
+        window.location.href = "../category/filtrate?categoryId="+a+"&paramType=2";
+    }
+    function edit(a) {
+        window.location.href = "../category/filtrateedit?filtrateId="+a;
+    }
+    function del(a) {
+        window.location.href = "../category/filtratedel?filtrateId="+a;
+    }
+
+</script>
+<body>
+<div class="container">
+
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>产品类别</li>
+                <li>排序参数</li>
+                <li class="active">${category.cname}</li>
+            </ol>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="block">
+
+                <div class="form-row">
+                    <div class="col-md-10">
+                    </div>
+                    <div class="col-md-1">
+                        <div><button class="btn btn-default btn-clean"
+                                     type="button" onclick="addDecision(${category.categoryId})">添加决策参数</button></div>
+                    </div>
+                    <div class="col-md-1">
+                        <div><button class="btn btn-default btn-clean"
+                                     type="button" onclick="addAttribute(${category.categoryId})">添加电气参数</button></div>
+                    </div>
+                   </div>
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>参数名称</th>
+                            <th>参数类别</th>
+                            <th>参数排序</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if filtrateList??>
+                        <#list filtrateList as filtrate>
+                        <tr>
+                           <td>${filtrate_index+1}</td>
+                            <td>${filtrate.filtrateName!}</td>
+                            <td> <#if filtrate.paramType == 1>
+                                电气参数
+                                <#else>
+                                决策参数
+                            </#if></td>
+                            <td>${filtrate.sort!}</td>
+                            <td>
+                                <#if filtrate.paramType != 0>
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="edit(${filtrate.filtrateId})">编辑</button>
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="del(${filtrate.filtrateId})">删除</button>
+                            </#if>
+                            </td>
+                        </tr>
+
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

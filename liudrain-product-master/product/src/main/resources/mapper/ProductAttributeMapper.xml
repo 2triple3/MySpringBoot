@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.ProductAttributeMapper">
+
+    <resultMap type="com.shanwen.select.entity.AttributeClass" id="resultMap">
+        <id column="attribute_class_id" property="attributeClassId"/>
+        <result column="ac_name" property="acName"/>
+        <collection property="attributeList" javaType="java.util.ArrayList" column="product_id"
+                    ofType="com.shanwen.select.entity.Attribute">
+            <result column="attribute_id" property="attributeId"/>
+            <result column="a_name" property="aname"/>
+            <result column="value" property="value"/>
+        </collection>
+    </resultMap>
+
+
+    <resultMap type="com.shanwen.select.entity.Attribute" id="attributeResultMap">
+        <result column="attribute_id" property="attributeId"/>
+        <result column="a_name" property="aname"/>
+        <result column="value" property="value"/>
+    </resultMap>
+
+
+    <update id="updateByMyId">
+        update product_attribute set status=0 where attribute_id=#{attributeId}
+    </update>
+    <!--    <update id="updateAllById">-->
+    <!--        update product_class set  name=#{name,jdbcType=VARCHAR}, level=#{level,jdbcType=INTEGER}, parent=#{parent,jdbcType=INTEGER} ,create_date= #{createDate},  status=1 where product_class_id=#{productClassId}-->
+    <!--    </update>-->
+
+
+    <select id="getAttributeClass" resultMap="resultMap">
+   SELECT
+	m.* ,c.ac_name FROM
+	(
+	SELECT a.*,
+			b.a_name,
+			b.attribute_class_id
+		FROM
+			( SELECT attribute_id, `value` FROM product_Attribute WHERE productId =#{product_id} ) a  LEFT JOIN attribute b ON a.attribute_id = b.attribute_id
+	) m
+	LEFT JOIN attribute_class c ON m.attribute_class_id = c.attribute_class_id
+    </select>
+
+
+    <select id="getAttributeByProduct" resultMap="attributeResultMap">
+
+select  a.attribute_id ,a.a_name ,c.value
+from  attribute  a  left join (select * from  product_Attribute where  productId=#{productId} )  c on   a.attribute_id=c.attribute_id where  a.attribute_class_id in (select attribute_class_id from attribute_class where category_id =#{categoryId} )
+
+    </select>
+
+
+    <insert id="saveProductAttribute" parameterType="java.util.List">
+
+        insert into product_Attribute
+        ( productId,attribute_id,value, status)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.productId},
+            #{item.attributeId},
+            #{item.value},
+            #{item.status}
+            )
+        </foreach>
+
+    </insert>
+
+    <delete id="deleteProductAttribute" parameterType="java.lang.Integer">
+
+   delete from product_Attribute where productId=#{productId}
+    </delete>
+
+</mapper>

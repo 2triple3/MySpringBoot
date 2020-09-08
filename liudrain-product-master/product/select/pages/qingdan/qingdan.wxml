@@ -1,0 +1,15 @@
+<import src="/component/productList/list/index.wxml"></import>
+
+<view class="imagesize" wx:if="{{notone}}">
+  <image src="/image/xcq.jpg"></image>
+</view>
+<view wx:if="{{notone}}">
+  <text class="text">还没有关注的产品</text>
+</view>
+
+<view class="productList" wx:if="{{!notone}}">
+  <template is="list" data="{{productList:productList,level:level}}"></template>
+</view>
+<view class="compare" wx:if="{{!notone}}">
+  <button bindtap="compare" style="width: 32%">开始比较</button>
+</view>

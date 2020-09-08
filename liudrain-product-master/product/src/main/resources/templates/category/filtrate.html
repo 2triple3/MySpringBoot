@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btnsub").on("click",function(){
+            $("#formData").submit();
+        });
+    });
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">类别管理</a></li>
+                <li><a href="#">排序参数</a></li>
+                <li class="active">新增</li>
+            </ol>
+        </div>
+    </div>
+    <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls">
+
+
+                        <div class="form-row">
+                            <div class="col-md-3">产品类型</div>
+                            <div class="col-md-9">
+                                <input type="text" disabled="disabled" class="form-control" id="name" name="name"value="${category.cname}"></input>
+                                <input type="hidden" class="form-control" id="id" name="categoryId"value="${category.categoryId}"></input>
+                                <input type="hidden" class="form-control" id="paramType" name="paramType"value="${paramType}"></input>
+
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-3">排序</div>
+                            <div class="col-md-9">
+                                <input type="text"  class="form-control" id="sort" name="sort" value="1" ></input>
+                            </div>
+                        </div>
+                        <#if paramType==1>
+                        <div class="form-row">
+                            <div class="col-md-3">
+                                <input type="text"  class="form-control"  name="filtrateName" placeholder="输入排序名称" ></input>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="paramId">
+                                    <option value="" >请选择参数名称</option>
+                                    <#list attributeList as attribute>
+                                    <option value="${attribute.attributeId!}">${attribute.aname!}</option>
+                                </#list>
+                                </select>
+                            </div>
+                        </div>
+                       </#if>
+
+
+                         <#if paramType==2>
+                            <div class="form-row">
+                                <div class="col-md-3"><input type="text"  class="form-control"  name="filtrateName" placeholder="输入排序名称" ></input>
+                                </div>
+                                <div class="col-md-9">
+                                    <select class="form-control" name="paramId">
+                                        <option value="" >请选择参数名称</option>
+                                        <#list decisionClassList as decisionClass>
+                                        <option value="${decisionClass.decisionClassId!}" >${decisionClass.dcName!}</option>
+                                    </#list>
+                                    </select>
+                                </div>
+                            </div>
+                           </#if>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

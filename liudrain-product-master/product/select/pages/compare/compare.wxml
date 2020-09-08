@@ -1,0 +1,95 @@
+<wxs src="../../utils/filter.wxs" module="tools" />
+<view class="banner">
+  <view class="filter-tab">
+    <view>
+      目前共有{{productNum}}款产品
+    </view>
+    <view catchtap="selectFilter">
+      <text class="right">筛选</text>
+      <image class="selectImage" src="{{selectindex==1?'/image/s1.png':'/image/s2.png'}}"></image>
+    </view>
+  </view>
+</view>
+
+<view class="show-info">
+
+  <!--  左侧纵向循环-->
+  <view class="left">
+    <view>
+
+          <view class="checkbox2">
+            <checkbox-group bindchange="checkboxChange">
+              <checkbox value='1'>隐藏相同</checkbox>
+              <checkbox value='2'>隐藏无内容</checkbox>
+              <checkbox value='4'>高亮差异</checkbox>
+            </checkbox-group>
+          </view>
+
+          <view class="xuanxiang">
+                <view class="pingfen">评分</view>
+
+                <view class='decisionbox'>
+                      <view class='newslist' wx:for="{{items.decisions}}" wx:key="*this" wx:for-item="dayItem">
+                        <!--  地毯、沙发-->
+                                <view class='dcName' bindtap="clickLine" data-classid="{{dayItem.decisionClassId}}">
+                                  <text class="acscoretext">{{dayItem.dcName}}</text>
+                                  <view class="icon">
+                                    <image src="/image/down.png" hidden="{{dayItem.hidden}}"></image>
+                                    <image src="/image/up.png" hidden="{{!dayItem.hidden}}"></image>
+                                  </view>
+                                </view>
+                        <!--  狗毛、猫毛-->
+                                <view class='list1' wx:for="{{dayItem.decisionList}}" wx:key="*this" wx:for-item="item" hidden="{{dayItem.hidden}}">
+                                  <view class="value {{item.active==1?'active':''}}"> {{item.dname}} </view>
+                                </view>
+
+                      </view>
+                </view>
+          </view>
+    </view>
+  </view>
+
+  <!--  右侧横向循环，每个循环单元内有三块，每个循环单元第三块内纵向循环-->
+  <scroll-view scroll-x="true" class="right">
+
+    <view wx:for="{{productList}}" class="productList" wx:for-item="item">
+
+      <view class=" productName ">
+        <view class="productNametext">
+          <view class="productNametext1">
+            <image bindtap="delFocus" class="productNameImage" src="/image/cha.png" data-id="{{item.productId}}"></image>
+            <view>
+            <view class="productNametext2">{{item.brand}}</view>
+            <view class="productNametext3">{{item.model}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="score"> {{tools.filters(item.score,1)}}</view>
+
+      <view class='decisionbox'>
+        <view class='newslist' wx:for="{{item.decisions}}" wx:key="*this" wx:for-item="dayItem">
+          <view class='dcName'>
+            <text class="acscoretext acscoretext1">{{tools.filters(dayItem.score,1)}}</text>
+          </view>
+          <view class='list1' wx:for="{{dayItem.decisionList}}" wx:key="*this" wx:for-item="item" hidden="{{dayItem.hidden}}">
+            <view class="value  {{item.active==1?'active':''}}"> {{(item.result == null ||item.result == '')? "—" : item.result}} </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+  </scroll-view>
+
+</view>
+
+
+<view  class="content2" ></view>
+
+<view class="content" bindtap="wenti">
+  <image  class="askimage" src="/image/ask.png"></image>
+  <view class="content1">无法决断，问小新</view>
+</view>
+

@@ -1,0 +1,88 @@
+
+<#include "/ftl/header.ftl">
+
+
+<script type="text/javascript">
+
+    function add(a) {
+        var word = window.prompt("请输入新添加一级指标名称","");
+        if(word){
+            window.location.href = "../decisionclass/cateadd?dccName="+word+"&categoryId="+a;
+        }
+
+
+    }
+
+    function del(a,b) {
+        var r = window.confirm("确认删除？");
+        if (r == true) {
+            window.location.href = "../decisionclass/catedelete?decisionClassCateId="+a+"&categoryId="+b;
+        }
+    }
+
+    function edit(a,b) {
+        var word = window.prompt("请输入修改后一级指标名称","");
+        if(word){
+            window.location.href = "../decisionclass/cateedit?dccName="+word+"&decisionClassCateId="+a+"&categoryId="+b;
+        }
+    }
+
+</script>
+
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品</a></li>
+                <li><a href="#">产品决策</a></li>
+                <li class="active">一级指标</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="block">
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-2">
+            <div>
+                <button class="btn btn-default btn-clean"
+                        type="button" onclick="add(${category.categoryId})">添加</button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>一级指标名称</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <#if decisionClassCates??>
+                <#list decisionClassCates as decisionClassCate>
+                <tr>
+                    <td>${decisionClassCate_index+1}</td>
+                    <td>${decisionClassCate.dccName}</td>
+                    <td><button class="btn btn-default btn-clean"
+                                type="button" onclick="del(${decisionClassCate.decisionClassCateId},${category.categoryId})">删除</button>
+                        <button class="btn btn-default btn-clean"
+                                type="button" onclick="edit(${decisionClassCate.decisionClassCateId},${category.categoryId})">修改</button>
+                        </td>
+                </tr>
+
+
+                </#list>
+            </#if>
+            </tbody>
+            </table>
+    </div>
+</div>
+
+</body>
+</html>

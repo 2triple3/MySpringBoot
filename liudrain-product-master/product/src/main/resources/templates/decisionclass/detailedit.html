@@ -1,0 +1,146 @@
+<#include "/ftl/header.ftl">
+<#include "/ftl/menu.ftl">
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#btnsub").on("click", function () {
+            $("#formData").submit();
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+    function add() {
+
+        var trLen = $("#trLen").val();
+
+        trLen = parseInt(trLen) + 1
+        $("#trLen").val(trLen);
+        var addtr = $(" <tr>  " +
+            "                                <td class='col-md-6'>" +
+            "                                    <input type='text' class='form-control'  " +
+            "                                           name='dname" + trLen + "' ></input>  " +
+            "                                </td>  " +
+            "                                <td class='col-md-4'>  " +
+            "                                    <div> <input type='checkbox' name='filtrate" + trLen + "' value='1'></div>  " +
+            "                                </td>  " +
+            "                                <td class='col-md-4'>  " +
+            "                                    <button class='btn btn-default btn-clean'  onclick='del(this)' type='button'>删除</button>  " +
+            "                                </td>  " +
+            "                            </tr>"
+        );
+        $("#tableList").append(addtr);
+
+    }
+
+    function del(tr) {
+        //多一个parent就代表向前一个标签,
+        //本删除范围为<td><tr>两个标签,即向前两个parent
+        //如果多一个parent就会删除整个table
+        $(tr).parent().parent().remove();
+
+    }
+</script>
+
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>类别管理</li>
+                <li>产品决策</li>
+                <li>${category.cname}</li>
+                <li class="active">${decisionClass.dcName}</li>
+            </ol>
+        </div>
+    </div>
+    <form method="post" enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+                    <div class="content controls" style="margin-left: 30%;width: 50%">
+                        <input type="hidden" id="trLen" name="trLen" value="${list?size}"/>
+                        <input type="hidden" class="form-control" name="attributeId"
+                               value="${(attribute.attributeId)!}"/>
+                        <input type="hidden" class="form-control" name="categoryId"
+                               value="${(category.categoryId)!}"/>
+                        <table id="tableList">
+                            <thead>
+                            <tr>
+                                <td  class="col-md-6"><div> 参数名称 </div> </td>
+                                <td class="col-md-3" ><div >作为筛选选项 </div> </td>
+                                <!--
+                                                                <td class="col-md-3" ><div >作为排序选项 </div> </td>
+                                -->
+                                <td class="col-md-3" ><div >操作</div>
+                                </td>
+                            </tr>
+                            </thead>
+                            <div></div>
+
+                            <#if list?size==0 >
+                            <tr>
+                                <td class="col-md-6">
+                                    <input type="text" class="form-control"
+                                           name="dname0" ></input>
+                                </td>
+                                <td class="col-md-4">
+                                    <input type="checkbox" name="filtrate0" value="1"/>
+                                </td>
+
+                                <td class="col-md-4">
+                                    <button class="btn btn-default btn-clean"  onclick="del(this)" type="button">删除</button>
+                                </td>
+                            </tr>
+                        </#if>
+
+
+                            <#list list as decision>
+                            <tr>
+
+                                <td class="col-md-6">
+                                    <input type="hidden" class="form-control"
+                                           name="decisionId${decision_index!}"
+                                           value="${decision.decisionId!}"></input>
+
+                                    <input type="text" class="form-control"
+                                           name="dname${decision_index!}"
+                                           value="${decision.dname!}"></input>
+
+                                </td>
+                                <td class="col-md-4">
+                                    <div>   <input type="checkbox" name="filtrate${decision_index!}" value="1"  <#if decision.filtrate??&&decision.filtrate==1>checked="checked" </#if>>  </div>
+                                </td>
+
+
+
+                    <!-- <td class="col-md-4">
+                         <label><input type="checkbox" name="sort0" value="1"></label>
+                     </td>-->
+                                <td class="col-md-4">
+                                    <button class="btn btn-default btn-clean"  onclick="del(this)" type="button">删除</button>
+                                </td>
+                                <td>
+                            </tr>
+                        </#list>
+                        </table>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default btn-clean" onclick="add()" type="button">添加</button>
+                                <button class="btn btn-default btn-clean" id="btnsub" type="button">提交</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.ParamsMapper">
+
+    <resultMap type="com.shanwen.select.entity.Params" id="resultMap">
+        <id column="p_id" property="pId"/>
+        <result column="p_name" property="pName"/>
+        <collection property="paramsValues" javaType="java.util.ArrayList" column="p_id"
+                    ofType="com.shanwen.select.entity.ParamsValue">
+            <result column="pv_id" property="pvId"/>
+            <result column="pv_name" property="pvName"/>
+            <result column="value" property="value"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="selectParams" resultMap="resultMap">
+
+		select a.value as  pv_name ,b.a_name  as  p_name  ,   b.attribute_id  as p_id   from (select  distinct value ,attribute_id from product_Attribute where attribute_id in (	select attribute_id    from  attribute where filtrate =1  ) ) a  LEFT JOIN attribute  b on a .attribute_id=b.attribute_id
+
+	</select>
+
+    <select id="selectParams2" resultMap="resultMap">
+    SELECT
+	a.result
+	AS pv_name,
+	b.d_name AS p_name,
+	b.decision_id AS p_id
+	from (
+	select distinct result,decision_id from  product_Decision where decision_id in (
+	SELECT decision_id FROM decision WHERE filtrate = 1 ) )a
+		LEFT JOIN decision b ON a.decision_id = b.decision_id
+	</select>
+
+</mapper>

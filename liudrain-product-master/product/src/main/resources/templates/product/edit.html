@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btnsub").on("click",function(){
+            $("#formData").submit();
+        });
+    });
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品</a></li>
+                <li><a href="#">产品详情</a></li>
+                <li class="active">修改页面</li>
+            </ol>
+        </div>
+    </div>
+    <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls">
+
+                        <div class="form-row">
+                            <div class="col-md-3">产品名称<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="name" name="name"   value="${product.name!}"></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品品牌<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="brand" name="brand"   value="${product.brand!}"></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品型号<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="model" name="model" value="${product.model!}" ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品分类<span style="color: red">*</span></div>
+                            <div class="col-md-9">
+                                <select class="form-control" name="categoryId">
+                                    <#list categoryList as categoryList>
+                                    <option value="${categoryList.categoryId}" <#if  categoryList.categoryId == product.category.categoryId> selected="selected" </#if> >${categoryList.cname}</option>
+                                   </#list>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-3">产品排序</div>
+                            <div class="col-md-9"><input type="text" class="form-control"  name="sort" value="${product.sort!}"  ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品概述<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control"  name="overview" value="${product.overview!}"></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品评级<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control"  name="rate" value="${product.rate!}"></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">产品评分<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control"  name="score" value="${product.score!}"></input></div>
+                        </div>
+                    <div class="form-row">
+                        <div class="col-md-3">颜色级别<span style="color: red">*</span></div>
+                        <div class="col-md-9"><input type="text" class="form-control"  name="colorLevel"  value="${product.colorLevel!}" placeholder="数字1-5越大越推荐"></input></div>
+                    </div>
+
+                        <div class="form-row">
+                            <div class="col-md-3">产品星级<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control"  name="star"  value="${product.star!}"></input></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

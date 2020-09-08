@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    function add(a) {
+        if(a==undefined){
+            window.location.href = "../content/imageAdd";
+        }else {
+            window.location.href = "../content/imageAdd?articleId="+a;
+        }
+    }
+
+    function del(a,b) {
+        var r = window.confirm("确认删除？");
+        if (r == true) {
+            window.location.href = "../content/imageDel?imageId=" + a+"&articleId="+b;
+        }
+    }
+</script>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="../product/list">内容管理</a></li>
+                <li>图片管理</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="block">
+
+                <div class="form-row">
+                    <div class="col-md-11">
+                    </div>
+                    <div class="col-md-1">
+                        <div>
+                            <button class="btn btn-default btn-clean"
+                                    type="button" onclick="add(${articleId!})">添加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>排序</th>
+                            <th>图片(缩略图)</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if imageList??>
+                        <#list imageList as image>
+                        <tr>
+                            <input type="hidden" name="id" value="${image.imageId}"/>
+                            <td>${image_index+1}</td>
+                            <td>${image.sort}</td>
+                            </td>
+                            <td>
+                                <image style="width:50px; height: 50px;" src="${image.imageUrl!}"></image>
+                            </td>
+
+                            <td>
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="del(${image.imageId},${articleId!})">删除
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

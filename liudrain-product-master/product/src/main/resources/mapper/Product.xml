@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.ProductMapper">
+    <resultMap type="com.shanwen.select.entity.Product" id="resultMap">
+        <id column="product_id" property="productId"/>
+        <result column="name" property="name"/>
+        <result column="brand" property="brand"/>
+        <result column="model" property="model"/>
+        <result column="focus" property="focus"/>
+        <result column="score" property="score"/>
+        <result column="sort" property="sort"/>
+        <result column="star" property="star"/>
+        <result column="overview" property="overview"/>
+        <result column="rate" property="rate"/>
+        <result column="color_level" property="colorLevel"/>
+        <result column="create_Date" property="createDate"/>
+        <result column="status" property="status"/>
+        <association property="category" column="category_id" javaType="com.shanwen.select.entity.Category">
+            <!-- 关联条件Employee的dept_id对应着Department的id -->
+            <id column="category_id" property="categoryId"/>
+            <result column="c_name" property="cname"/>
+        </association>
+
+
+        <collection property="decisions" javaType="java.util.ArrayList"
+                    ofType="com.shanwen.select.entity.Decision"
+                    resultMap="productDecisionMap">
+        </collection>
+
+        <collection property="productPrices" ofType="com.shanwen.select.entity.ProductPrice" column="product_id"
+                    select="getProductPrice">
+            <id column="product_price_id" property="productPriceId"/>
+            <result column="price_num" property="priceNum"/>
+            <result column="source" property="source"/>
+            <result column="update_Date" property="updateDate"/>
+            <result column="status" property="status"/>
+        </collection>
+
+
+        <collection property="imageList" ofType="com.shanwen.select.entity.Image" column="product_id"
+                    select="getImageList">
+
+        </collection>
+
+        <collection property="productReports" javaType="java.util.ArrayList"
+                    ofType="com.shanwen.select.entity.ProductReport"
+                    resultMap="productReportMap">
+        </collection>
+    </resultMap>
+
+    <resultMap id="productAttributeMap" type="com.shanwen.select.entity.Attribute">
+        <result column="attribute_id" property="attributeId"/>
+        <result column="a_name" property="aname"/>
+        <result column="create_Date" property="createDate"/>
+        <result column="status" property="status"/>
+        <association property="attributeClass" javaType="com.shanwen.select.entity.AttributeClass">
+            <id column="attribute_class_id" property="attributeClassId"/>
+            <result column="ac_name" property="acName"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="productDecisionMap" type="com.shanwen.select.entity.ProductDecision">
+        <!--        <result column="product_id" property="productId"/>-->
+        <result column="sort" property="sort"/>
+        <result column="result" property="result"/>
+        <result column="status" property="status"/>
+        <result column="create_Date" property="createDate"/>
+        <association property="decision" javaType="com.shanwen.select.entity.Decision">
+            <id column="decision_id" property="decisionId"/>
+            <result column="d_name" property="dname"/>
+            <result column="description" property="description"/>
+        </association>
+    </resultMap>
+    <resultMap id="productReportMap" type="com.shanwen.select.entity.ProductReport">
+        <id column="product_report_id" property="productReportId"/>
+
+        <result column="name" property="name"/>
+        <!--            <result column="content" property="content"/>-->
+        <result column="tag" property="tag"/>
+        <result column="create_Date" property="createDate"/>
+        <result column="status" property="status"/>
+        <result column="sort" property="sort"/>
+        <association property="product" column="product_id" javaType="com.shanwen.select.entity.Product">
+            <id property="productId" column="product_id"/>
+            <result property="name" column="name"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="productPriceMap" type="com.shanwen.select.entity.ProductPrice">
+        <id column="product_price_id" property="productPriceId"/>
+        <result column="price_num" property="priceNum"/>
+        <result column="source" property="source"/>
+        <result column="update_Date" property="updateDate"/>
+        <result column="status" property="status"/>
+        <association property="product" column="product_id" javaType="com.shanwen.select.entity.Product">
+            <id property="productId" column="product_id"/>
+            <result property="name" column="name"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="baseMap" type="java.util.Map">
+        <result column="first_letter" property="firstLetter"/>
+        <result column="brand" property="brand"/>
+    </resultMap>
+
+
+    <select id="selectFocusProduct" resultMap="resultMap" parameterType="java.util.Map">
+            select a.*  ,b.product_id as focus from product a left join focus_product b on a.product_id =b.product_id
+              where b.user_Id=#{userId}    order by score desc
+    </select>
+
+
+    <select id="getQueryListByUser" resultMap="resultMap" parameterType="java.util.Map">
+        select distinct a.* , b.product_id as focus, ${params1} price from product a left join
+        (select product_id from focus_product where user_id='${userId}' ) b on
+        a.product_id =b.product_id
+
+        left join (select product_id,min(price_num) as price from product_Price GROUP BY product_id ) f on
+        a.product_id=f.product_id
+
+        ${params2}
+
+        where a.status=1
+        <if test="productId!=null">
+            and a.product_id=${productId}
+        </if>
+
+        <if test="name!=null">
+            and ( a.name like "%"#{name}"%" or a.brand like "%"#{name}"%" or a.model like "%"#{name}"%" )
+        </if>
+
+        <if test="brand!=null">
+            and brand in (${brand})
+        </if>
+
+        <if test="rate!=null">
+            and rate in (${rate})
+        </if>
+
+        <if test="attribute!=null">
+            and a.product_id in (select productId from product_Attribute
+            where value in (${attribute})
+            )
+        </if>
+        <if test="feature!=null">
+            and a.product_id in ( select aa.product_id from product_Feature aa left join
+            feature bb on bb.feature_id = aa.feature_id where content in (${feature})
+            )
+        </if>
+        <if test="decision!=null">
+            and a.product_id in ( select product_id from product_Decision
+            where result in (${decision})
+            )
+        </if>
+
+        <if test="priceLow!=0 or priceHigh!=30000 ">
+            and price between ${priceLow} and ${priceHigh}
+        </if>
+
+        <if test="logicSort!=null">
+            ${logicSort}
+        </if>
+
+    </select>
+
+
+    <select id="getProductById" resultMap="resultMap" parameterType="java.util.Map">
+        select a.*  from product a  where  a.product_id = #{productId}
+    </select>
+
+
+    <select id="getProductPrice" resultType="com.shanwen.select.entity.ProductPrice" parameterType="int">
+	SELECT * FROM product_Price WHERE product_id = #{product_id}  order by price_num  asc
+    </select>
+
+    <select id="getImageList" resultType="com.shanwen.select.entity.Image" parameterType="int">
+	SELECT * FROM image WHERE product_id = #{product_id}  and  list_img = 1
+    </select>
+
+    <select id="getAttributeClasses" resultType="com.shanwen.select.entity.AttributeClass" parameterType="int">
+   SELECT
+	m.* ,c.ac_name FROM
+	(
+	SELECT a.*,
+			b.a_name,
+			b.attribute_class_id
+		FROM
+			( SELECT attribute_id, `value` FROM product_Attribute WHERE productId =#{product_id} ) a  LEFT JOIN attribute b ON a.attribute_id = b.attribute_id
+	) m
+	LEFT JOIN attribute_class c ON m.attribute_class_id = c.attribute_class_id
+    </select>
+
+
+    <select id="selectAll" resultMap="resultMap">
+    select a.product_id,a.name,a.brand,a.model,a.category_id,a.create_date,a.`status` ,a.sort,a.overview,a.rate,a.score,a.star,b.c_name from  product a ,category b where a.category_id=b.category_id   order by   a.`status` desc ,  sort desc
+
+    </select>
+
+    <insert id="insertFocus">
+            insert into focus_product (user_id ,product_id) values (#{userId},#{productId})
+    </insert>
+
+
+    <insert id="insertAll" useGeneratedKeys="true" keyProperty="productId">
+            insert into product(name,brand,model,sort,score,star,overview,rate,create_Date,status,category_id,color_level) values (#{name},#{brand},#{model},#{sort},#{score},#{star},#{overview},#{rate},#{createDate},#{status},#{category.categoryId},#{colorLevel})
+    </insert>
+
+    <delete id="deleteFocus">
+            delete  from  focus_product  where user_id =#{userId} and product_id = #{productId}
+    </delete>
+
+    <select id="getBrand" resultMap="baseMap">
+
+
+select t1.first_letter ,t1.brand , t2.brand as isshow
+from   (  select first_letter ,brand  from
+( SELECT distinct
+ELT(INTERVAL(CONV(HEX(LEFT(CONVERT(brand USING gbk),1)),16,10),
+0xB0A1,0xB0C5,0xB2C1,0xB4EE,0xB6EA,0xB7A2,0xB8C1,0xB9FE,0xBBF7,
+0xBFA6,0xC0AC,0xC2E8,0xC4C3,0xC5B6,0xC5BE,0xC6DA,0xC8BB,0xC8F6,
+0xCBFA,0xCDDA,0xCEF4,0xD1B9,0xD4D1),
+'A','B','C','D','E','F','G','H','J','K','L','M','N','O','P',
+'Q','R','S','T','W','X','Y','Z') as first_letter ,brand
+FROM product   ) a where first_letter is not null order by brand asc ) t1  left join (
+ select min(b.brand) as brand from (
+select first_letter ,brand  from
+( SELECT distinct
+ELT(INTERVAL(CONV(HEX(LEFT(CONVERT(brand USING gbk),1)),16,10),
+0xB0A1,0xB0C5,0xB2C1,0xB4EE,0xB6EA,0xB7A2,0xB8C1,0xB9FE,0xBBF7,
+0xBFA6,0xC0AC,0xC2E8,0xC4C3,0xC5B6,0xC5BE,0xC6DA,0xC8BB,0xC8F6,
+0xCBFA,0xCDDA,0xCEF4,0xD1B9,0xD4D1),
+'A','B','C','D','E','F','G','H','J','K','L','M','N','O','P',
+'Q','R','S','T','W','X','Y','Z') as first_letter ,brand
+FROM product   ) a where first_letter is not null order by brand asc
+) b group by  b.first_letter
+
+) t2 on t1. brand=t2.brand  order by first_letter asc
+
+
+    </select>
+
+
+    <update id="updateAll" parameterType="com.shanwen.select.entity.Product">
+        update product set name=#{name},brand=#{brand},model=#{model},status=#{status},
+        sort=#{sort},overview=#{overview},rate=#{rate},score=#{score},star=#{star},
+        category_id=#{category.categoryId}  ,color_level=#{colorLevel} where product_id=#{productId}
+    </update>
+
+    <select id="selectProductByMap" resultMap="resultMap">
+        select a.product_id,a.name,a.brand,a.model,a.category_id,a.create_date,a.`status`
+        ,a.sort,a.overview,a.rate,a.score,a.star,b.c_name from product a left join category b on
+        a.category_id=b.category_id
+        where 1=1
+        <if test="model!=null and model!=''">
+            and a.model like "%"#{model}"%"
+        </if>
+        <if test="brand!=null and brand!=''">
+            and a.brand like "%"#{brand}"%"
+        </if>
+
+    </select>
+
+</mapper>

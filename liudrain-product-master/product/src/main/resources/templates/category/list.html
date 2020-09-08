@@ -1,0 +1,257 @@
+<#include "/ftl/header.ftl">
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    <!--
+    var setting = {
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        callback: {
+
+            onClick: onClick,
+        },
+    };
+
+    function beforeClick(treeId, treeNode, clickFlag) {
+        className = (className === "dark" ? "" : "dark");
+        return (treeNode.click != false);
+    }
+
+    function onClick(event, treeId, treeNode, clickFlag) {
+        console.log(treeNode.id)
+        console.log(treeNode.isParent)
+        $("#id").val(treeNode.id);
+        $("#isParent").val(treeNode.isParent);
+        if (treeNode.isParent) {
+            id = "dianqi"
+        }
+    }
+
+    var zNodes = new Array();
+    $.ajax({
+        url: '../category/getCategory',//地址
+        dataType: 'json',//数据类型
+        type: 'GET',//类型
+        timeout: 2000,//超时
+        //请求成功
+        success: function (data) {
+            for (var i = 0; i < data.length; i++) {
+
+                var nodes = {'id': '', 'pId': '', 'name': '', 'open': true}
+                nodes.id = data[i].categoryId;
+                nodes.pId = data[i].parent;
+                nodes.name = data[i].cname;
+                zNodes.push(nodes)
+            }
+        },
+    });
+    let arr = zNodes;
+    console.log(arr)
+    setTimeout(() => {
+        $(document).ready(function () {
+            $.fn.zTree.init($("#treeDemo"), setting, arr);
+        });
+    }, 500);
+
+
+    //-->
+</script>
+
+
+<script type="text/javascript">
+    function add() {
+
+        var id = $("#id").val();
+
+        if (id == "" || id == null || id == undefined) {
+            alert("请点击左侧选中后操作")
+        } else {
+            var word = window.prompt("请输入创建类别名称", "");
+            if (word) {
+                window.location.href = "../category/add?parent=" + id + "&cname=" + word;
+            }
+        }
+    }
+
+    function del() {
+
+        var id = $("#id").val();
+        if (id == "" || id == null || id == undefined) {
+            alert("请点击左侧选中后操作")
+        } else {
+            var r = window.confirm("父类删除后子类将不可见，请确认？");
+            if (r == true) {
+                window.location.href = "../category/delete?categoryId=" + id;
+            }
+        }
+    }
+
+    function edit(a) {
+        var id = $("#id").val();
+        if (id == "" || id == null || id == undefined) {
+            alert("请点击左侧选中后操作")
+        } else {
+            var word = window.prompt("请输入修改后类别名称", "");
+            if (word) {
+                window.location.href = "../category/edit?categoryId=" + id + "&cname=" + word;
+            }
+        }
+
+    }
+
+    function addgen() {
+        var word = window.prompt("请输入创建类别名称", "");
+        if (word) {
+            window.location.href = "../category/add?parent=" + 0 + "&cname=" + word;
+        }
+    }
+
+    function editDecision() {
+        var id = $("#id").val();
+        var isParent = $("#isParent").val();
+
+        if (id == "" || id == null || id == undefined) {
+            alert("请点击左侧选中后操作")
+        } else {
+            if (isParent == "true") {
+                alert("请选中最末层操作")
+            }
+
+            if (isParent == "false") {
+                window.location.href = "../decisionclass/list?categoryId=" + id;
+            }
+
+        }
+    }
+
+    function editAttribute() {
+
+        var id = $("#id").val();
+        var isParent = $("#isParent").val();
+
+        if (id == "" || id == null || id == undefined) {
+            alert("请点击左侧选中后操作")
+        } else {
+            if (isParent == "true") {
+                alert("请选中最末层操作")
+            }
+
+            if (isParent == "false") {
+                window.location.href = "../attributeclass/list?categoryId=" + id;
+            }
+
+        }
+
+
+    }
+
+    function editFeature() {
+        var id = $("#id").val();
+        var isParent = $("#isParent").val();
+
+        if (id == "" || id == null || id == undefined) {
+            alert("请点击左侧选中后操作")
+        } else {
+            if (isParent == "true") {
+                alert("请选中最末层操作")
+            }
+
+            if (isParent == "false") {
+                window.location.href = "../category/feature?categoryId=" + id;
+            }
+
+        }
+    }
+
+    function editSort() {
+        var id = $("#id").val();
+        var isParent = $("#isParent").val();
+
+        if (id == "" || id == null || id == undefined) {
+            alert("请点击左侧选中后操作")
+        } else {
+            if (isParent == "true") {
+                alert("请选中最末层操作")
+            }
+            if (isParent == "false") {
+                window.location.href = "../category/filtratelist?categoryId=" + id;
+            }
+        }
+    }
+
+</script>
+<style>
+    .node_name {
+        font-size: 15px;
+    }
+</style>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品分类</a></li>
+                <li class="active">产品分类列表</li>
+            </ol>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-1">
+            <div>
+                <button class="btn btn-default btn-clean"
+                        type="button" onclick="addgen(0)">添加根节点
+                </button>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="id" value="">
+    <input type="hidden" id="isParent" value="">
+    <div class="form-row" style="text-align:center">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-5">
+            <div class="block">
+                <div class="content_wrap">
+                    <div class="zTreeDemoBackground left">
+                        <ul id="treeDemo" class="ztree"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div>
+                <button class="btn btn-default btn-clean"
+                        type="button" onclick="add()">添加子节点
+                </button>
+                <button class="btn btn-default btn-clean"
+                        type="button" onclick="del()">删除
+                </button>
+                <button class="btn btn-default btn-clean"
+                        type="button" onclick="edit()">编辑
+                </button>
+
+                <button class="btn btn-default btn-clean"
+                        type="button" onclick="editAttribute()">电气参数
+                </button>
+                <button class="btn btn-default btn-clean"
+                        type="button" onclick="editDecision()">决策参数
+                </button>
+                <button class="btn btn-default btn-clean"
+                        type="button" onclick="editFeature()">类别特点
+                </button>
+                <button class="btn btn-default btn-clean"
+                        type="button" onclick="editSort()">排序参数
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

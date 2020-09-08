@@ -1,0 +1,40 @@
+@import "../../component/productList/list/index.wxss";
+
+page {
+  background-color: #f6f6f6;
+}
+
+.imagesize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80rpx;
+}
+
+.text {
+  display: flex;
+  margin-top: 40rpx;
+  justify-content: center;
+  color: #8f8f8f;
+}
+
+.compare {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  left: 0px;
+  font-size: 24rpx;
+  bottom: 30rpx;
+}
+
+.compare button {
+  font-size: 32rpx;
+  background: #28b1c7;
+  color: #fff;
+}
+
+button::after {
+  border: none;
+  border-radius: 0;
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<#include "/ftl/menu.ftl">
+<h2 class="text-center">
+</h2>
+<div  class="text-center" style="font-size: 20px">
+    <div>累计访问用户人数：${count}</div>
+    <div>最近一月访问人数：${count2}</div>
+    <div>最近一月购买人数：${monthResult.ordernum!}</div>
+    <div>最近一月购买总额：${monthResult.ordersum!}</div>
+</div>

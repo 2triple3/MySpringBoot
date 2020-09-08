@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.AttributeMapper">
+    <resultMap id="AttributeResultMap" type="com.shanwen.select.entity.Attribute">
+        <id property="attributeId" column="attribute_id"/>
+        <result property="aname" column="a_name"/>
+        <result property="createDate" column="create_date"/>
+        <result property="status" column="status"/>
+        <result property="filtrate" column="filtrate"/>
+        <result property="sortOptions" column="sortOptions"/>
+        <association property="attributeClass" column="attribute_class_id"
+                     javaType="com.shanwen.select.entity.AttributeClass">
+            <id property="attributeClassId" column="attribute_class_id"/>
+            <result property="acName" column="ac_name"/>
+        </association>
+    </resultMap>
+
+
+    <select id="selectByMyId" parameterType="com.shanwen.select.entity.Attribute" resultMap="AttributeResultMap">
+    select a.attribute_id,a.a_name,a.create_date,a.status,a.filtrate,a.sortOptions,b.attribute_class_id,b.ac_name from attribute a, attribute_class b where a.attribute_class_id=b.attribute_class_id and a.status=1 and a.attribute_class_id=#{attributeClass.attributeClassId} order by a_name asc
+	</select>
+    <!--    <insert id="insertAll" useGeneratedKeys="true" keyProperty="attributeClassId">-->
+
+    <!--        insert into attribute_class(ac_name,create_date,status,category_id) values(#{acName},#{createDate},#{status},#{category.categoryId})-->
+    <!--    </insert>-->
+    <update id="updateByMyId" parameterType="Integer">
+        update attribute set status=0 where attribute_id=#{attributeId}
+    </update>
+    <insert id="insertAll" parameterType="java.util.List">
+        insert into attribute(a_name,create_date,status,filtrate,sortOptions,attribute_class_id)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.aname},
+            #{item.createDate},
+            #{item.status},
+            #{item.filtrate},
+            #{item.sortOptions},
+            #{item.attributeClass.attributeClassId}
+            )
+        </foreach>
+
+    </insert>
+
+
+    <select id="selectMyNeed" parameterType="Integer" resultMap="AttributeResultMap">
+    select a.attribute_id,a.a_name,a.create_date,a.status,b.attribute_class_id,b.ac_name from attribute a, attribute_class b where a.attribute_class_id=b.attribute_class_id and a.status=1 and a.attribute_id=#{attributeId}
+    </select>
+    <update id="updateAll">
+        update attribute set a_name=#{aname},create_date=#{createDate},status=#{status},attribute_class_id=#{attributeClass.attributeClassId} where attribute_id=#{attributeId}
+    </update>
+
+    <update id="deleteByAttributeClass" parameterType="Integer">
+        update set attribute status=0  where attribute_class_id=#{attributeClassId}
+    </update>
+
+    <select id="getAttributeForSort" parameterType="Integer" resultMap="AttributeResultMap">
+
+select  attribute_id,  a_name  from  attribute  where attribute_class_id  in (
+	select attribute_class_id  from  attribute_class  where category_id=#{categoryId} and status =1
+) and status =1
+    </select>
+
+
+</mapper>

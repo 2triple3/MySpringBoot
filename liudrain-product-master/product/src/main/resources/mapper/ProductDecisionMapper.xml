@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.ProductDecisionMapper">
+
+    <resultMap type="com.shanwen.select.entity.DecisionClass" id="resultMap">
+        <id column="decision_class_id" property="decisionClassId"/>
+        <result column="dcName" property="dcName"/>
+        <result column="description" property="description"/>
+        <result column="score" property="score"/>
+        <collection property="decisionList" javaType="java.util.ArrayList" column="product_id"
+                    ofType="com.shanwen.select.entity.Decision">
+            <result column="decision_id" property="decisionId"/>
+            <result column="d_name" property="dname"/>
+            <result column="result" property="result"/>
+        </collection>
+    </resultMap>
+
+
+	<resultMap type="com.shanwen.select.entity.Decision" id="baseMap">
+			<result column="decision_id" property="decisionId"/>
+			<result column="d_name" property="dname"/>
+			<result column="result" property="result"/>
+	</resultMap>
+
+
+
+	<update id="updateByMyId">
+        update product_decision set status=0 where decision_id=#{decisionId}
+    </update>
+    <!--    <update id="updateAllById">-->
+    <!--        update product_class set  name=#{name,jdbcType=VARCHAR}, level=#{level,jdbcType=INTEGER}, parent=#{parent,jdbcType=INTEGER} ,create_date= #{createDate},  status=1 where product_class_id=#{productClassId}-->
+    <!--    </update>-->
+
+    <select id="getDecisionClass" resultMap="resultMap">
+
+ select t.*,s.score  from (
+ SELECT
+	m.* ,c.dcName,description,dcsort FROM
+	(
+	SELECT a.*,
+			b.d_name,
+			b.decision_class_id ,
+			b.dsort
+
+		FROM
+			( SELECT  decision_id ,result FROM product_Decision WHERE product_id =#{productId} ) a  LEFT JOIN decision b ON a.decision_id = b.decision_id
+	) m
+	LEFT JOIN decision_class c ON m.decision_class_id = c.decision_class_id  ) t LEFT JOIN product_DecisionClass s on t.decision_class_id= s.decisionClassId and s.productId = #{productId}  order by dcsort asc ,d_name asc
+
+    </select>
+    <select id="getDecisionClassForWeb" resultMap="resultMap">
+
+
+SELECT
+	t.*,
+   k.score ,
+	h.result
+FROM
+	(
+	SELECT
+		a.*,
+		b.dcName
+	FROM
+		( SELECT m.decision_id, d_name, decision_class_id FROM decision m WHERE decision_class_id IN ( SELECT decision_class_id FROM decision_class WHERE category_id =  #{categoryId}  ) ) a
+		LEFT JOIN decision_class b ON a.decision_class_id = b.decision_class_id
+	) t
+		LEFT JOIN ( SELECT * FROM product_DecisionClass WHERE productId = #{productId} ) k ON   t.decision_class_id = k.decisionClassId
+	LEFT JOIN ( SELECT * FROM product_Decision WHERE product_id =  #{productId} ) h ON t.decision_id = h.decision_id
+ORDER BY
+	decision_class_id ASC,
+	decision_id ASC
+
+
+
+    </select>
+
+    <select id="getDecisionClassHideSame" resultMap="resultMap">
+ select t.*,s.score  from (
+
+	SELECT
+		m.*,
+		c.dcName,
+		dcsort
+	FROM
+		(
+		SELECT
+			a.*,
+			b.d_name,
+			b.decision_class_id,
+			b.dsort
+		FROM
+			(  SELECT product_id,  decision_id, result FROM product_Decision WHERE product_id IN ( ${productIds} ) and decision_id in (
+			select b.decision_id from (
+select a.decision_id ,count(distinct a.result) as nums from (SELECT product_id,  decision_id, result FROM product_Decision WHERE product_id IN ( ${productIds})  ORDER BY decision_id asc  ) a GROUP BY decision_id) b  where nums !=1
+			) ) a
+			LEFT JOIN decision b ON a.decision_id = b.decision_id
+		) m
+		LEFT JOIN decision_class c ON m.decision_class_id = c.decision_class_id  where product_id =${productId} )
+ t LEFT JOIN product_DecisionClass s on t.decision_class_id= s.decisionClassId and s.productId = t.product_id and  s.productId= ${productId}
+
+ORDER BY
+	dcsort ASC,
+	d_name ASC
+    </select>
+
+
+    <select id="getDecisionClassNoContent" resultMap="resultMap">
+ SELECT
+	t.*,
+	s.score
+FROM
+	(
+	SELECT
+		m.*,
+		c.dcName,
+		dcsort
+	FROM
+		(
+		SELECT
+			a.*,
+			b.d_name,
+			b.decision_class_id,
+			b.dsort
+		FROM
+			( SELECT  product_id,decision_id, result FROM product_Decision WHERE product_id  in (${productIds})  and decision_id  not in  (
+			SELECT decision_id  FROM product_Decision WHERE product_id  in (${productIds})  and result is null
+			)  ) a
+			LEFT JOIN decision b ON a.decision_id = b.decision_id   where a.product_id = ${productId}
+		) m
+		LEFT JOIN decision_class c ON m.decision_class_id = c.decision_class_id
+	) t
+	LEFT JOIN product_DecisionClass s ON t.decision_class_id = s.decisionClassId and s.productId= ${productId}
+ORDER BY
+	dcsort ASC,
+	d_name ASC
+
+    </select>
+
+    <select id="getDecisionClassHideSameAndNoContent" resultMap="resultMap">
+ SELECT
+	t.*,
+	s.score
+FROM
+	(
+	SELECT
+		m.*,
+		c.dcName,
+		dcsort
+	FROM
+		(
+		SELECT
+			a.*,
+			b.d_name,
+			b.decision_class_id,
+			b.dsort
+		FROM
+			(
+			SELECT
+				product_id,
+				decision_id,
+				result
+			FROM
+				product_Decision
+			WHERE
+				product_id IN (${productIds})
+				AND decision_id NOT IN ( SELECT decision_id FROM product_Decision WHERE product_id IN (${productIds}) AND result IS NULL )
+				and decision_id IN (
+				SELECT
+					b.decision_id
+				FROM
+					(
+					SELECT
+						a.decision_id,
+						count( DISTINCT a.result ) AS nums
+					FROM
+						( SELECT product_id, decision_id, result FROM product_Decision WHERE product_id IN (${productIds}) ORDER BY decision_id ASC ) a
+					GROUP BY
+						decision_id
+					) b
+				WHERE
+					nums != 1
+				)
+			) a
+			LEFT JOIN decision b ON a.decision_id = b.decision_id
+		WHERE
+			a.product_id = ${productId}
+		) m
+		LEFT JOIN decision_class c ON m.decision_class_id = c.decision_class_id
+	) t
+	LEFT JOIN product_DecisionClass s ON t.decision_class_id = s.decisionClassId  and  s. productId =${productId}
+ORDER BY
+	dcsort ASC,
+	d_name ASC
+    </select>
+
+    <delete id="deleteDecisionClass" parameterType="java.lang.Integer">
+
+  delete from product_DecisionClass where productId=#{productId}
+
+    </delete>
+
+    <delete id="deleteDecision" parameterType="java.lang.Integer">
+
+  delete from product_Decision where product_id=#{productId}
+
+    </delete>
+
+
+    <insert id="saveDecisionClass" parameterType="java.util.List">
+
+        insert into product_DecisionClass
+        ( productId,decisionClassId,score, createDate,status)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.product.productId},
+            #{item.decisionClass.decisionClassId},
+            #{item.score},
+            #{item.createDate},
+            #{item.status}
+            )
+        </foreach>
+
+    </insert>
+
+    <insert id="saveDecision" parameterType="java.util.List">
+
+        insert into product_Decision
+        ( product_id,decision_id,result, create_Date,status)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.product.productId},
+            #{item.decision.decisionId},
+            #{item.result},
+            #{item.createDate},
+            #{item.status}
+            )
+        </foreach>
+
+
+    </insert>
+
+    <select id="getDecisionResult" resultMap="baseMap" parameterType="java.lang.Integer">
+     select distinct  result  from product_Decision
+      where product_id in (select product_id from product where  category_id =#{categoryId} )
+	</select>
+
+
+</mapper>

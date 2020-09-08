@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.FreeArticleMapper">
+
+
+    <select id="selectArticle" resultType="com.shanwen.select.entity.FreeArticle">
+select a.* from free_article a  RIGHT join (
+select  attribute, max(create_date) as create_date from free_article GROUP BY  attribute order by  create_date desc limit 2 ) b on  a.attribute=b.attribute and a.create_date=b.create_date
+</select>
+
+    <update id="updateByMyId" parameterType="com.shanwen.select.entity.FreeArticle">
+        update free_article set status=#{status} where free_article_id=#{freeArticleId}
+    </update>
+
+</mapper>

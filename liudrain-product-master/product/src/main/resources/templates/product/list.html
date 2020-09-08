@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        var totalPage = "${pageInfo.pages}";
+        var visiblePages = 10;
+        if (totalPage == "") {
+            totalPage = 0;
+            visiblePages = 0;
+        }
+        if (totalPage == 0) {
+            $("#pager").hide();
+
+        }
+        if (totalPage != "" && totalPage <= visiblePages) {
+            totalPage = Number(totalPage);
+            visiblePages = totalPage;
+        }
+        var currentPage = "${pageInfo.pageNum}";
+        if (currentPage == "") {
+            currentPage = 1;
+        } else {
+            currentPage = Number(currentPage);
+        }
+        if (totalPage == 0 && currentPage > 0) {
+            totalPage = 1;
+            currentPage = 1;
+        }
+        //var pageSize = 20;
+        var pageSize = "${pageInfo.pageSize}";
+
+        $('#pager').twbsPagination({
+            totalPages: totalPage,
+            visiblePages: visiblePages,
+            prev: "«",
+            next: "»",
+            startPage: currentPage,
+            version: '1.1',
+            onPageClick: function (event, page) {
+                if (page == currentPage) {
+                    return;
+                }
+                $("#pageNum").val(page);
+                $("#pageSize").val(pageSize);
+
+                $("#formData").submit();
+                // alert($(this));
+                //$('#page-content').text('Page ' + page);
+            }
+
+
+        });
+
+        $("#btnSearch").on("click", function () {
+
+                $("#formData").submit();
+
+        });
+    });
+    function add() {
+        window.location.href = "../product/add";
+    }
+    function del(a,b) {
+        window.location.href = "../product/delete?productId="+a+"&status="+b;
+    }
+    function edit(id) {
+        window.location.href = "../product/edit?productId="+id;
+    }
+
+    function content(a,b) {
+        var pageSize = $("#pageSize").val()
+        var pageNum = $("#pageNum").val()
+        var brand = $("#brand").val()
+        var model = $("#model").val()
+
+        if(b==1){
+            //图片
+            window.location.href = "../product/image?productId="+a;
+        }
+        if(b==2){
+            //报告
+            window.location.href = "../productreport/list?productId="+a;
+        }
+        if(b==3){
+            //决策参数
+            window.location.href = "../product/productDecision?productId="+a;
+        }
+        if(b==4){
+            //电气参数
+            window.location.href = "../product/productAttribute?productId="+a;
+        }
+        if(b==5){
+        //价格
+        window.location.href = "../productprice/list?productId="+a;
+       }
+        if(b==6){
+            //特点选择
+            window.location.href = "../product/feature?productId="+a;
+        }
+
+    }
+
+
+
+</script>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品管理</a></li>
+                <li class="active">产品列表</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="block">
+                <form id="formData" >
+                    <input type="hidden" name="pageSize" id="pageSize"  />
+                    <input type="hidden" name="pageNum" id="pageNum" />
+
+                <div class="form-row">
+                  <div class="col-md-3">
+                        <div class="col-md-3">品牌</div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="brand" name="brand" value="${brand!}" placeholder="品牌"/>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-3">型号</div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="model" name="model" value="${model!}" placeholder="型号"/>
+                        </div>
+                    </div>
+                  <!--  <div class="col-md-3">
+                    <div class="col-md-3">分类</div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" id="category" name="category" value="${category!}" placeholder="型号"/>
+                    </div>
+                </div>-->
+                    <div class="col-md-3">
+                        <div class="col-md-3"></div>
+                        <div>
+                            <button class="btn btn-default btn-clean" id="btnSearch"
+                                    type="button" >搜索</button>
+                            <button class="btn btn-default btn-clean"
+                                    type="button" onclick="add()">添加</button>
+                        </div>
+                    </div>
+                </div>
+
+                </form>
+                <div class="form-row">
+                    <div class="col-md-11">
+                    </div>
+
+                </div>
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>品牌</th>
+                            <th>型号</th>
+                            <th>分类</th>
+                            <th>创建时间</th>
+                            <th>状态</th>
+                            <th>排序</th>
+                            <th style="width: 10%">概述</th>
+                            <th>评级</th>
+                            <th>评分</th>
+                            <th>星级</th>
+
+                            <th>产品操作</th>
+                            <th style="width: 20%">详情操作</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if productList??>
+                        <#list productList as productList>
+                        <tr>
+                            <input type="hidden" name="id" value="${productList.productId}" />
+                            <td>${productList_index+1}</td>
+                            <td>${productList.brand!}</td>
+                            <td>${productList.model!}</td>
+                            <td>${productList.category.cname!}</td>
+                            <td>${(productList.createDate?string("YYYY-MM-dd"))!}</td>
+                            <td><#if productList.status == 1>
+                                正常
+                                <#else>
+                                下架
+                                </#if>
+                               </td>
+                            <td>${productList.sort!}</td>
+                            <td title="${productList.overview!}">
+                                <#if (productList.overview?? && productList.overview?length>18)>
+                                ${productList.overview?substring(0,18)}...
+                                <#else>
+                                ${productList.overview!}
+                            </#if>
+                            </td>
+
+                            <td>${productList.rate!}</td>
+                            <td>${productList.score!}</td>
+                            <td>${productList.star!}</td>
+                            </td>
+                            <td>
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="edit(${productList.productId})">编辑</button>
+
+                                <#if productList.status == 1>
+                                <button class="btn btn-danger"
+                                        type="button" onclick="del(${productList.productId},0)">下架</button>
+                                <#else>
+                                <button class="btn btn-success"
+                                        type="button" onclick="del(${productList.productId},1)">上架</button>
+                            </#if>
+
+
+                            </td>
+
+                            <td>
+                                <button class="btn btn-default btn-clean"
+                                        type="button"  onclick="content(${productList.productId},1)">产品图片</button>
+                                <button class="btn btn-default btn-clean"
+                                    type="button"       onclick="content(${productList.productId},2)">产品报告</button>
+
+                            <button class="btn btn-default btn-clean"
+                                    type="button"   onclick="content(${productList.productId},3)">决策参数</button>
+                            <button class="btn btn-default btn-clean"
+                                    type="button"  onclick="content(${productList.productId},4)">电气参数</button>
+
+                            <button class="btn btn-default btn-clean"
+                                    type="button"  onclick="content(${productList.productId},5)">产品价格</button>
+
+                            <button class="btn btn-default btn-clean"
+                                    type="button"  onclick="content(${productList.productId},6)">产品特点</button>
+
+
+                        </tr>
+
+
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="text-center">
+        <ul id="pager"></ul>
+    </div>
+</div>
+
+</body>
+</html>

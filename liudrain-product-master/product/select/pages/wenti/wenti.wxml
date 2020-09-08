@@ -1,0 +1,7 @@
+<!--pages/wenti/wenti.wxml-->
+<view>
+     <view class="wxParsecontainer">
+        <rich-text nodes="{{content.content}}">
+        </rich-text>
+      </view>
+</view>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shanwen.select.mapper.ProductMapper">
+<!--    <resultMap id="productResultMap" type="com.shanwen.select.entity.Product">-->
+<!--        <id column="product_id" property="productId"/>-->
+<!--        <result column="name" property="name" />-->
+<!--        <result column="brand" property="brand" />-->
+<!--        <result column="model" property="model" />-->
+<!--        <result column="createDate" property="createDate" />-->
+<!--        <result column="status" property="status" />-->
+<!--        <result column="sort" property="sort" />-->
+<!--        <association property="productClassId" column="product_class_id" select="findAll"/>-->
+<!--        <collection property="attributeId" column="attribute_id" select="findAll" />-->
+<!--        <collection property="decisionId" column="decision_id" select="findAll" />-->
+<!--        <collection property="productPriceId" column="product_price_id" select="findAll" />-->
+<!--        <collection property="productReportId" column="product_report_id" select="findAll" />-->
+
+
+
+
+<!--    </resultMap>-->
+<!--    <select id="findAll" resultType="com.shanwen.select.entity.Product">-->
+
+<!--    </select>-->
+</mapper>

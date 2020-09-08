@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#btnsub").on("click", function () {
+            $("#formData").submit();
+        });
+    });
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品管理</a></li>
+                <li><a href="#">电气参数</a></li>
+                <li class="active">${product.brand} ${product.name} ${product.model}</li>
+            </ol>
+        </div>
+    </div>
+    <form method="post" enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+                <div class="content controls">
+                 <div class="block">
+                      <input type="hidden" name="productId" value="${product.productId}">
+                    <#list attributeList as attribute>
+                    <div class="form-row">
+                        <div class="col-md-3">${attribute.aname}</div>
+                        <div class="col-md-9"><input type="text" class="form-control"
+                                                     name="${attribute.attributeId!}" value="${attribute.value!}"></input>
+                        </div>
+                    </div>
+                  </#list>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <button class="btn btn-default btn-clean" id="btnsub" type="button">提交</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

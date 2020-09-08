@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btnsub").on("click",function(){
+            $("#formData").submit();
+        });
+    });
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+
+<script type="text/javascript">
+
+
+
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>产品管理</li>
+                <li>特点管理</li>
+                <li>${product.name}</li>
+            </ol>
+        </div>
+    </div>
+    <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls" style="margin-left: 30%;width: 30%">
+                        <input type="hidden" id="productId" name="flag" value="${product.productId}" />
+                        <table id="tableList" >
+                            <thead>
+                            <tr>
+                                <td class="col-md-6"><div> 优点名称 </div> </td>
+                                <td class="col-md-3" ><div >操作</div>
+                                </td>
+                            </tr>
+                            </thead>
+                            <#list youdianList as feature>
+                            <tr>
+                                <td class="col-md-6">
+
+                                        <div  class="form-row"> ${feature.content!}
+                                        </div>
+                                </td>
+
+                                <td class="col-md-3">
+                                        <div class="form-row">
+                                         <input type="checkbox" name="feature1${feature_index!}" value="${feature.featureId!}"
+                                             <#list productFeatures as productFeature>
+                                               <#if productFeature.featureId== feature.featureId>
+                                               checked="checked"
+                                         </#if>
+                                                </#list> >
+
+                                        </div>
+
+                                </td>
+                            </tr>
+                            </#list>
+                <tr>
+                    <td class="col-md-6"><div> 缺点名称 </div> </td>
+                    </td>
+                </tr>
+                        <#list quedianList as feature>
+                        <tr>
+                            <td class="col-md-6">
+
+                                    <div class="form-row"> ${feature.content!}
+                                    </div>
+                            </td>
+                            <td class="col-md-3">
+                                    <div class="form-row">
+                                      <input type="checkbox" name="feature2${feature_index!}" value="${feature.featureId!}"
+                                        <#list productFeatures as productFeature>
+                                        <#if productFeature.featureId== feature.featureId>
+                                        checked="checked"
+                                    </#if>
+                            </#list> >
+                                    </div>
+
+                            </td>
+                        </tr>
+                        </#list>
+                        </table>
+
+                        <div class="form-row">
+                            <div class="col-md-3">  </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

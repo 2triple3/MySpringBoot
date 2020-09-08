@@ -1,0 +1,75 @@
+<!--pages/filtrate/filtrate.wxml-->
+<view class="all">
+
+  <view>
+    <view class="title">
+      品牌
+    </view>
+    <view class="des">
+      <button bindtap="brand" class="brand" style="width:95%">{{brandtext}}</button>
+    </view>
+  </view>
+  <view class='line'></view>
+
+  <view class="filter-content">
+    <view class="common-panel" wx:if="{{showbrand==1}}">
+      <view>
+        <checkbox-group bindchange="checkboxChange" class="des" data-id="brand">
+
+          <view wx:for="{{brand}}">
+            <text class='' wx:if='{{item.isshow}}'>{{item.firstLetter}}</text>
+            <label style="display:flex;">
+              <checkbox value="{{item.pvName}}" checked="{{item.checked}}" />{{item.pvName}}
+            </label>
+          </view>
+        </checkbox-group>
+        <button class='pay3' bindtap="brand" style="width:45%">确定</button>
+      </view>
+    </view>
+  </view>
+
+
+  <view wx:if="{{brandhide}}">
+    <view>
+      <view class="title">
+        价格区间
+      </view>
+      <view class="des">￥{{low}}-￥{{heigh}}</view>
+      <view class="zy-slider">
+        <zy-slider id="zy-slider" minValue="{{low}}" maxValue="{{heigh}}" min="0" max="30000" selectedColor="#28B1C7" blockColor="#28B1C7" bind:lowValueChange="lowValueChangeAction" bind:heighValueChange="heighValueChangeAction" />
+      </view>
+    </view>
+    <view class='line'></view>
+
+    <view wx:for="{{params}}" wx:for-item="item">
+      <view class="title">
+        {{item.pname}}
+      </view>
+      <view>
+
+
+        <checkbox-group bindchange="checkboxChange" class="des" data-id="{{item.pname}}">
+          <view class="checkbox1">
+            <view class="checkbox2" wx:for="{{item.paramsValues}}" wx:for-item="dayItem">
+              <checkbox value="{{dayItem.pvName}}" checked="{{dayItem.checked}}">
+                {{dayItem.pvName}}
+              </checkbox>
+            </view>
+          </view>
+        </checkbox-group>
+
+      </view>
+      <view class='line'></view>
+    </view>
+
+  </view>
+</view>
+<view class="block2">
+  <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+</view>
+
+<view class="pay" wx:if="{{brandhide}}">
+  <button class='pay2' bindtap="resetSelect" style="width:45%">重置</button>
+
+  <button class='pay3' bindtap="filtrate" style="width:45%">筛选</button>
+</view>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    function edit(a) {
+        window.location.href = "../content/getContent?type="+a;
+    }
+
+</script>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">内容管理</a></li>
+                <li class="active">内容列表</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="block">
+
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>内容分类</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if contentList??>
+                        <#list contentList as content>
+                        <tr>
+                            <input type="hidden" name="contentId" value="${content.contentId}" />
+                            <td>${content_index+1}</td>
+                            <td><#if content.type==1>购买说明</#if>
+                            <#if content.type==2>有问必答</#if>
+                            </td>
+                            <td>
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="edit(${content.type})">编辑</button></td>
+                        </tr>
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

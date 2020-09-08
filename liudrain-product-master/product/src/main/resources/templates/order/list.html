@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    function add() {
+        window.location.href = "../product/add";
+    }
+</script>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">价格订单管理</a></li>
+                <li class="active">订单管理</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block">
+
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>时间/项目</th>
+                            <th>最近1天</th>
+                            <th>最近1周</th>
+                            <th>最近1月</th>
+                            <th>最近1年</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>付费人数</td>
+                            <td>${dailyResult.ordernum!}</td>
+                            <td>${weekResult.ordernum!}</td>
+                            <td>${monthResult.ordernum!}</td>
+                            <td>${yearResult.ordernum!}</td>
+                        </tr>
+                        <tr>
+                            <td>付费金额(￥)</td>
+                            <td>
+                                ${dailyResult.ordersum!}</td>
+                            <td>${weekResult.ordersum!}</td>
+                            <td>${monthResult.ordersum!}</td>
+                            <td>${yearResult.ordersum!}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

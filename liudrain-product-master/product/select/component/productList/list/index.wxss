@@ -1,0 +1,314 @@
+.content {
+  width: 100%;
+  background: #fff;
+  margin-top: 168rpx;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.first {
+  word-break: break-all;
+  color: #8f8f8f;
+  font-size: 23rpx;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 0;
+  margin: 0 15px 5rpx 5rpx;
+  position: relative;
+  height: 210rpx;
+}
+
+.list:last-child {
+  border: 0;
+}
+
+.list_left {
+  width: 180rpx;
+  margin-right: 10rpx;
+  height: 180rpx;
+  position: relative;
+}
+
+.list_left image {
+  width: 240rpx;
+  height: 216rpx;
+  display: block;
+  left: 0;
+  top: 0;
+  border-radius: 8rpx;
+}
+
+.list_left image.play_icon {
+  width: 72rpx;
+  height: 72rpx;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  top: auto;
+}
+
+.list_right {
+  flex: 1;
+  width: 420rpx;
+}
+
+.list_right .title {
+  margin-bottom: 24rpx;
+  display: flex;
+  flex-direction: row;
+  height: 48rpx;
+  overflow: hidden;
+}
+
+.list_right .title text {
+  font-size: 34rpx;
+  line-height: 48rpx;
+  color: #2f2f2f;
+  display: block;
+  white-space: nowrap;
+}
+
+.list_right .title text.areaName {
+  max-width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list_right .mess {
+  margin-top: 25rpx;
+  margin-bottom: 16rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  display: flex;
+}
+
+.list_right .mess text {
+  color: #888;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  display: inline-block;
+}
+
+.list_right .mess text.price {
+  color: #ff8e20;
+  text-align: right;
+  flex: 1;
+}
+
+.list_right .mess .price text {
+  font-size: 34rpx;
+  color: #ff8e20;
+  width: auto;
+  display: inline-block;
+  margin-right: 7rpx;
+}
+
+.list_right .address {
+  overflow: hidden;
+  display: flex;
+  width: 400rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  color: #888;
+  margin-bottom: 30rpx;
+}
+
+.list_right .address text {
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.list_right .label {
+  padding-bottom: -30rpx;
+  height: 180rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.list_right .label text {
+  display: block;
+  color: #888;
+  font-size: 20rpx;
+  height: 50rpx;
+  padding: 0 12rpx;
+  background: #f2f6fd;
+  margin-right: 16rpx;
+  border-radius: 8rpx;
+}
+
+.status3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.status3 image {
+  display: block;
+  width: 64rpx;
+  height: 175rpx;
+  margin-top: 52rpx;
+  margin-left: 76rpx;
+}
+
+.noMore {
+  padding: 10rpx 0;
+  background: #fff;
+}
+
+.noMore text {
+  display: block;
+  text-align: center;
+  color: #666;
+  font-size: 26rpx;
+}
+
+.noHouse {
+  min-height: 100vh;
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.noHouse image {
+  display: block;
+  width: 400rpx;
+  height: 400rpx;
+  margin: 100rpx auto 0;
+}
+
+.noHouse text {
+  display: block;
+  text-align: center;
+  color: #666;
+  font-size: 26rpx;
+}
+
+.delete {
+  position: absolute;
+  overflow: hidden;
+  right: -20rpx;
+  top: 200rpx;
+  width: 100rpx;
+  height: 55rpx;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid #28b1c7;
+}
+
+.delete2 {
+  position: absolute;
+  overflow: hidden;
+  right: -20rpx;
+  top: 200rpx;
+  width: 100rpx;
+  height: 55rpx;
+  background: #fff;
+  display: flex;
+  font-size: 26rpx;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid #e2e2e2;
+  color: #747171;
+}
+
+.delete text {
+  display: block;
+  text-align: center;
+  color: #28b1c7;
+  font-size: 26rpx;
+}
+
+.no-mess-title {
+  margin-top: 64rpx;
+  color: #8998a0;
+}
+
+.contentList {
+  margin-top: 20rpx;
+  width: 94%;
+  background: #fff;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+}
+
+.price {
+  color: #28b1c7;
+  font-size: 32rpx;
+  margin-top: 190rpx;
+  z-index: 999;
+}
+
+.tag {
+  margin-left: 432rpx;
+  margin-top: -90rpx;
+  width: 80rpx;
+  height: 60rpx;
+  text-align: center;
+}
+
+.color1 {
+  background-color: #0df;
+}
+
+.color2 {
+  background-color: #2abfd6;
+}
+
+.color3 {
+  background-color: #4f99a5;
+}
+
+.color4 {
+  background-color: #88a4a8;
+}
+
+.color5 {
+  background-color: #c2c2c2;
+}
+
+.tag_text {
+  color: #fff;
+  font-size: 26rpx;
+}
+
+.star {
+  margin-top: -12rpx;
+  width: 7%;
+  height: 18%;
+}
+
+.suo {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.score {
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  margin-top: -22rpx;
+  color: #fba503;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btnsub").on("click",function(){
+            $("#formData").submit();
+        });
+    });
+    function back() {
+        window.history.back(-1); //返回上一页
+    }
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">文章管理</a></li>
+                <li><a href="#">文章列表</a></li>
+                <li class="active">文章修改</li>
+            </ol>
+        </div>
+    </div>
+    <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls">
+
+                        <input type="hidden" name="freeArticleId" value="${freeArticle.freeArticleId}" />
+                        <input type="hidden" name="type" value="${freeArticle.type}" />
+
+                        <div class="form-row">
+                        <div class="col-md-3">文章标题<span style="color: red">*</span></div>
+                        <div class="col-md-9"><input type="text" class="form-control" id="title" name="title" value="${freeArticle.title}" ></input></div>
+                    </div>
+                        <div class="form-row">
+                            <div class="col-md-3">文章属性</div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="attribute" name="attribute" value="${freeArticle.attribute}"  ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">文章概要<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="summary" name="summary" value="${freeArticle.summary!}" ></input></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-3">内容链接<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="text" class="form-control" id="contentUrl" name="contentUrl" value="${freeArticle.contentUrl!}" ></input></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-3">首页图片<span style="color: red">*</span></div>
+                            <div class="col-md-9"><input type="hidden" class="form-control" id="imageUrl" name="imageUrl"  value="${freeArticle.imageUrl!}"></input></div>
+                            <div class="col-md-9"><input type="file" class="form-control" id="file" name="file"  ></input></div>
+                            <div class="col-md-7"><image  style="width:50px; height: 50px;" src="${freeArticle.imageUrl!}"></image>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+                                <button class="btn btn-default btn-clean"   onclick="back()" type="button">返回</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

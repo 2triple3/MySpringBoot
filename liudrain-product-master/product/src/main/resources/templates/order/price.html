@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    function add() {
+        window.location.href = "../product/add";
+    }
+
+    function edit(a) {
+        var word = window.prompt("请输入更改后价格","");
+        if(word){
+            window.location.href = "../order/editPrice?priceId="+a+"&priceNum="+word;
+        }
+
+    }
+</script>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">价格订单管理</a></li>
+                <li class="active">价格管理</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="block">
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>名称</th>
+                            <th>价格</th>
+                            <th>会员时长</th>
+                            <th>创建时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if priceList??>
+                        <#list priceList as price>
+                        <tr>
+                            <input type="hidden" name="id" value="${price.priceId}"/>
+                            <td>${price_index+1}</td>
+                            <td>${price.name!}</td>
+                            <td>${price.priceNum!}</td>
+                            <td>${price.duration!}</td>
+                            <td>${(price.createDate?string("YYYY-MM-dd"))!}</td>
+
+                            <td>
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="edit(${price.priceId})">编辑
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </#list>
+                </#if>
+                </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

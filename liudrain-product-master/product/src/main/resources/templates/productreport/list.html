@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    function add(a) {
+        window.location.href = "../productreport/add?productId=" + a;
+    }
+
+    function del(a) {
+        var r = window.confirm("确认删除？");
+        if (r == true) {
+            window.location.href = "../productreport/delete?productReportId=" + a;
+        }
+    }
+
+    function edit(id) {
+        window.location.href = "../productreport/edit?productReportId=" + id;
+    }
+    function back() {
+        window.history.back(-1); //返回上一页
+    }
+
+</script>
+<body>
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>产品报告</li>
+                <li>产品报告列表</li>
+                <li class="active">${product.brand} ${product.name} ${product.model}</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="block">
+
+                <div class="form-row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <button class="btn btn-default btn-clean"
+                                type="button" onclick="back()">产品列表
+                        </button>
+                    </div>
+                    <div class="col-md-1">
+                        <div>
+                            <button class="btn btn-default btn-clean"
+                                    type="button" onclick="add(${product.productId})">添加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>产品报告模块名称</th>
+                            <th>产品报告标签</th>
+                            <th>创建时间</th>
+                            <th>排序</th>
+                            <th>使用状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if productReportList??>
+                        <#list productReportList as productReportList>
+                        <tr>
+                            <input type="hidden" name="id" value="${productReportList.productReportId}"/>
+                            <td>${productReportList_index+1}</td>
+                            <td>${productReportList.name!}</td>
+                            <td>${productReportList.tag!}</td>
+                            <td>${(productReportList.createDate?string("YYYY-MM-dd 24HH:mm:SS"))!}</td>
+                            <td>${productReportList.sort!}</td>
+                            <td>
+                                <#if productReportList.status == 1>
+                                正常
+                            </#if>
+                              </td>
+
+                            <td>
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="del(${productReportList.productReportId})">删除
+                                </button>
+
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="edit(${productReportList.productReportId})">编辑
+                                </button>
+                            </td>
+                        </tr>
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

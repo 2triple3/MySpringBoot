@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#btnsub").on("click",function(){
+            $("#formData").submit();
+        });
+    });
+</script>
+<#include "/ftl/menu.ftl">
+<body>
+
+<script type="text/javascript">
+
+    function add() {
+
+        var trLen =$("#trLen").val();
+
+        trLen=parseInt(trLen)+1
+        $("#trLen").val(trLen);
+        var addtr = $("<tr>"
+            + "<td class='col-md-6'>" +
+            "<div ><input type='text' class='form-control' name= 'feature" + trLen + "' /></div>\n" +
+            "</td><td class='col-md-4'> <div>"+
+            "                                    <select name='flag" + trLen + "'>" +
+            "                                        <option value ='1'>优点</option>" +
+            "                                        <option value ='2'>缺点</option>" +
+            "                                    </select></div>" +
+            "</td><td class='col-md-4'><div >" +
+            /* "  <td class='col-md-4'>" +
+             "                        <div><input type='checkbox' name='sort" + trLen + "'  value='1'></label>" +
+             "                </div>"+*/
+
+            "<button class='btn btn-default btn-clean'  onclick='del(this)' type='button'>删除</button>" +
+            "</div></div></td></tr>"
+        );
+
+        $("#tableList").append(addtr);
+
+    }
+
+    function del(tr) {
+        //多一个parent就代表向前一个标签,
+        //本删除范围为<td><tr>两个标签,即向前两个parent
+        //如果多一个parent就会删除整个table
+        $(tr).parent().parent().parent().remove();
+
+    }
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="#">产品类别</a></li>
+                <li><a href="#">产品特点</a></li>
+                <li >${category.cname}</li>
+            </ol>
+        </div>
+    </div>
+    <form  method="post"  enctype="multipart/form-data" id="formData">
+        <div class="content controls npt col-sm-offset-2 text-center">
+
+            <div class="col-md-9">
+
+                <div class="block">
+
+                    <div class="content controls" style="margin-left: 20%;width:60%">
+                        <input type="hidden" id="trLen" name="trLen" value="${list?size+1}" />
+                        <input type="hidden" class="form-control"  name="attributeId" value="${(attribute.attributeId)!}"/>
+                        <table id="tableList" >
+                            <thead>
+                            <tr>
+                                <td  class="col-md-6"><div> 特点名称 </div> </td>
+                                <td class="col-md-3" ><div >优缺点 </div> </td>
+
+                                <td class="col-md-3" ><div >操作</div>
+                                </td>
+                            </tr>
+                            </thead>
+                            <div></div>
+                            <#if list?size==0 >
+                            <tr>
+                                <td class="col-md-6">
+                                    <input type="text" class="form-control"
+                                           name="feature0" ></input>
+                                </td>
+                                <td class="col-md-4">
+                                    <select name="flag0">
+                                        <option value ="1">优点</option>
+                                        <option value ="2">缺点</option>
+                                    </select>
+                                </td>
+
+                                <td class="col-md-4">
+                                    <button class="btn btn-default btn-clean"  onclick="del(this)" type="button">删除</button>
+                                </td>
+                            </tr>
+                        </#if>
+                        <#list list as feature>
+                        <tr>
+                            <td class="col-md-6">
+
+                                <div ><input type="text" class="form-control"
+                                             name="feature${feature_index}" value="${feature.content!}"></input>
+                                </div>
+
+                            </td>
+                            <td class="col-md-4">
+                                <div>
+                                    <select name="flag${feature_index}">
+                                        <option value ="1" <#if feature.flag??&& feature.flag==1> selected="selected"</#if> >优点</option>
+                                        <option value ="2"  <#if feature.flag??&& feature.flag==2> selected="selected"</#if> >缺点</option>
+                                    </select>
+                    </div>
+                    </td>
+
+                    <td class="col-md-4">
+                        <div >
+                            <button class="btn btn-default btn-clean"  onclick="del(this)" type="button">删除</button>
+
+                        </div>
+                    </td>
+                    </tr>
+                </#list>
+
+                </table>
+
+
+
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <button class="btn btn-default btn-clean"  onclick="add()" type="button">添加</button>
+                        <button class="btn btn-default btn-clean"  id="btnsub" type="button">提交</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</div>
+</form>
+</div>
+</body>
+</html>

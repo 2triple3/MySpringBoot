@@ -1,0 +1,80 @@
+<wxs src="../../../utils/filter.wxs" module="tools" />
+<template name="list">
+
+  <view class="contentList" wx:for="{{productList}}" wx:key="key">
+    <view bindtap="toDetail" class="list" data-id="{{item.productId}}" data-status="{{item.status}}" style="left:{{-item.left+'px'}}">
+      <view class="list_left">
+
+        <image mode="aspectFill" wx:if="{{item.imageList.length==0}}" src="/image/xcq.jpg?x-oss-process=style/w500"></image>
+        <image mode="aspectFill" wx:if="{{item.imageList.length!=0}}" src="{{item.imageList[0].imageUrl+'?x-oss-process=style/w500'}}"></image>
+        <text class="price">￥{{tools.filters(item.productPrices[0].priceNum,2)}}</text>
+      </view>
+
+      <view class="list_right">
+        <view class="title">
+          <text class="areaName">{{item.model}}</text>
+        </view>
+        <view class="tag color{{item.colorLevel}}">
+          <text class="tag_text" wx:if="{{level==1}}">{{item.rate}}</text>
+          <text class="tag_text" wx:if="{{level==0}}">待解锁</text>
+        </view>
+
+        <view class="mess">
+          <text>{{item.brand}}</text>
+        </view>
+
+        <view class="address">
+          <text class="first">{{item.overview}}</text>
+        </view>
+        <view wx:if="{{item.overview.length<18}}" class="address"> </view>
+        <view class="label">
+          <block wx:for="{{tools.star1(item.star)}}" wx:if="{{level==1}}">
+            <image class="star" src='/image/star2.png'></image>
+          </block>
+          <block wx:for="{{tools.star2(item.star)}}" wx:if="{{level==1}}">
+            <image class="star" src='/image/star3.png'></image>
+          </block>
+          <block wx:for="{{tools.star3(item.star)}}" wx:if="{{level==1}}">
+            <image class="star" src='/image/star.png'></image>
+          </block>
+          <block wx:for="{{5}}" wx:if="{{level==0}}">
+            <image class="star" src='/image/star.png'></image>
+          </block>
+
+          <view class="score" wx:if="{{level==1}}">{{tools.filters(item.score,1)}}</view>
+
+          <view class="score" wx:if="{{level==0}}">
+            <image class="suo" src='/image/suo.png'></image>
+          </view>
+
+
+        </view>
+
+      </view>
+
+
+      <view catchtap="focus" class="delete" data-id="{{item.productId}}" wx:if="{{item.focus==null}}" data-type="1">
+        <text>+关注</text>
+      </view>
+      <view catchtap="focus" class="delete2" data-id="{{item.productId}}" wx:if="{{item.focus!=null}}" data-type="2">
+        <text>已关注</text>
+      </view>
+    </view>
+  </view>
+
+
+  <block wx:if="{{statusTip}}">
+    <view class="noMore" wx:if="{{houseMess==2&&listArras.length}}">
+      <text>已加载所有产品</text>
+    </view>
+    <view class="noHouse" wx:if="{{houseMess<=0}}">
+      <view wx:if="{{nLocation==0}}">
+        <image src="../images/no.jpg"></image>
+        <text class="no-mess-title" wx:if="{{comfrom=='save'}}">还没有关注的产品</text>
+        <text class="no-mess-title" wx:else>没有找到符合条件的产品</text>
+      </view>
+
+    </view>
+  </block>
+
+</template>

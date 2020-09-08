@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<#include "/ftl/header.ftl">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<#include "/ftl/menu.ftl">
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var totalPage = "${page.total}";
+        var visiblePages = 10;
+        if (totalPage == "") {
+            totalPage = 0;
+            visiblePages = 0;
+        }
+        if (totalPage == 0) {
+            $("#pager").hide();
+
+        }
+        if (totalPage != "" && totalPage <= visiblePages) {
+            totalPage = Number(totalPage);
+            visiblePages = totalPage;
+        }
+        var currentPage = "${page.current}";
+        if (currentPage == "") {
+            currentPage = 1;
+        } else {
+            currentPage = Number(currentPage);
+        }
+        if (totalPage == 0 && currentPage > 0) {
+            totalPage = 1;
+            currentPage = 1;
+        }
+        //var pageSize = 20;
+        var pageSize = "${page.size}";
+
+        $('#pager').twbsPagination({
+            totalPages: totalPage,
+            visiblePages: visiblePages,
+            prev: "«",
+            next: "»",
+            startPage: currentPage,
+            version: '1.1',
+            onPageClick: function (event, page) {
+                if (page == currentPage) {
+                    return;
+                }
+                $("#current").val(page);
+                $("#size").val(pageSize);
+
+                $("#formData").submit();
+                // alert($(this));
+                //$('#page-content').text('Page ' + page);
+            }
+        });
+    });
+
+    function add(a) {
+        window.location.href = "../article/add?type="+a;
+    }
+    function del(a,b,c) {
+        if(c==-1){
+            var r = window.confirm("确认删除？");
+            if (r == true) {
+                window.location.href = "../article/delete?freeArticleId=" + a+"&type="+b+"&flag="+c;
+            }
+        }else {
+            window.location.href = "../article/delete?freeArticleId=" + a+"&type="+b+"&flag="+c;
+        }
+    }
+    function edit(id,a) {
+        window.location.href = "../article/edit?freeArticleId=" + id+"&type="+a;
+    }
+    function image(id) {
+        window.location.href = "../content/image?articleId=" + id;
+    }
+
+</script>
+<body>
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>文章管理</li>
+                <li>文章列表</li>
+                <li class="active">  <#if type == 1>
+                    免费文章
+                    <#else>
+                    付费文章
+                </#if></li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="block">
+
+                <form id="formData">
+                    <input type="hidden" name="pageSize" id="pageSize"/>
+                    <input type="hidden" name="current" id="current"/>
+                </form>
+
+                <div class="form-row">
+                    <div class="col-md-11">
+                    </div>
+                    <div class="col-md-1">
+                        <div>
+                            <button class="btn btn-default btn-clean"
+                                    type="button" onclick="add(${type})">添加
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>文章标题</th>
+                            <th>创建时间</th>
+                            <th>文章属性</th>
+                            <th>文章概要</th>
+                            <th>内容链接</th>
+                            <th>是否付费</th>
+                            <th>文章状态</th>
+                            <th width="8%">标题图片(缩略图)</th>
+                            <th>操作</th>
+
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <#if articleList??>
+                        <#list articleList as articleList>
+                        <tr>
+                            <input type="hidden" name="id" value="${articleList.freeArticleId}"/>
+                            <td>${articleList_index+1}</td>
+                            <td>${articleList.title!}</td>
+                            <td>${(articleList.createDate?string("YYYY-MM-dd"))!}</td>
+                            <td>${articleList.attribute!}</td>
+                            <td>${articleList.summary!}</td>
+                            <td>${articleList.contentUrl!}</td>
+                            <td>
+                                <#if articleList.type == 1>
+                                免费
+                                <#else>
+                                 付费
+                            </#if>
+
+                            </td>
+                            <td>
+                                <#if articleList.status == 1>
+                                已发布
+                                <#else>
+                                已隐藏
+                             </#if>
+
+                            </td>
+
+                            <td>
+                                <#if articleList.imageUrl??>
+                                <image style="width:50px; height: 50px;" src="${articleList.imageUrl!}"></image>
+                              </#if>
+                            </td>
+                            <td>
+                                <#if articleList.type == 2>
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="image(${articleList.freeArticleId},${type})">图片库
+                                </button>
+                                </#if>
+
+                            <button class="btn  btn-danger"
+                                    type="button" onclick="del(${articleList.freeArticleId},${articleList.type},-1)">删除
+                            </button>
+
+                            <#if articleList.status == 0>
+                            <button class="btn  btn-success"
+                                    type="button" onclick="del(${articleList.freeArticleId},${articleList.type},1)">发布
+                            </button>
+                            <#else>
+                            <button class="btn  btn-warning"
+                                    type="button" onclick="del(${articleList.freeArticleId},${articleList.type},0)">隐藏
+                            </button>
+                        </#if>
+
+
+
+                                <button class="btn btn-default btn-clean"
+                                        type="button" onclick="edit(${articleList.freeArticleId},${type})">编辑
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        </#list>
+                    </#if>
+                    </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <ul id="pager"></ul>
+    </div>
+</div>
+
+</body>
+</html>
