@@ -55,8 +55,10 @@ public class SysUserController {
 	@RequestMapping("/api/adduser")
 	public String addUser() {
 		SysUser user = new SysUser();
-		user.setUserid("009");
-		user.setUsername("zhangsan");	
+//		user.setUserid("009");
+//		user.setUsername("zhangsan");
+		user.setId(9L);
+		user.setName("zhangsan");
 		sysUserServiceImpl.addUser(user);
         List<SysUser> userlist = sysUserServiceImpl.findUserInfoByUsername("");
 		String s ="";
@@ -74,8 +76,9 @@ public class SysUserController {
 	public Map<String, Object> register(@RequestBody Map registerInfo) {
 		System.out.println("username_register:"+registerInfo.get("username")+":::password_register:"+registerInfo.get("password"));
 		SysUser user = new SysUser();
-		user.setUsername((String)registerInfo.get("username"));
-		user.setPassword((String)registerInfo.get("password"));	
+		user.setName((String)registerInfo.get("username"));
+//		user.setUsername((String)registerInfo.get("username"));
+		user.setPassword((String)registerInfo.get("password"));
 		sysUserServiceImpl.addUser(user);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -159,8 +162,9 @@ public class SysUserController {
     public Map<String, Object> findUser(@RequestBody Map userInfo) {
     	System.out.println("username_findUser:"+userInfo.get("username")+":::password_findUser:"+userInfo.get("password"));
     	SysUser user = new SysUser();
-		user.setUsername((String)userInfo.get("username"));
-		user.setPassword((String)userInfo.get("password"));	
+		user.setName((String)userInfo.get("username"));
+//		user.setUsername((String)userInfo.get("username"));
+		user.setPassword((String)userInfo.get("password"));
 		List<SysUser> userlist = sysUserServiceImpl.findUser(user);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userlist", userlist);
@@ -175,9 +179,11 @@ public class SysUserController {
 		System.out.println("userid_updateUser:"+userInfo.get("userid")+":::username_updateUser:"+userInfo.get("username")+":::password_updateUser:"+userInfo.get("password"));
 		
 		SysUser user = new SysUser();
-		user.setUserid((String)userInfo.get("userid"));
-		user.setUsername((String)userInfo.get("username"));
-		user.setPassword((String)userInfo.get("password"));	
+		user.setId(2L);
+		user.setName((String)userInfo.get("username"));
+//		user.setUserid((String)userInfo.get("userid"));
+//		user.setUsername((String)userInfo.get("username"));
+		user.setPassword((String)userInfo.get("password"));
 				
 		return HttpResult.ok(sysUserServiceImpl.updateUser(user));
 	} 

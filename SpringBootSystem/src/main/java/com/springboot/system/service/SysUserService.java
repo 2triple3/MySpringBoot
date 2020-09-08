@@ -1,19 +1,13 @@
 package com.springboot.system.service;
 
-import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
-
 import com.springboot.common.entity.SysUser;
+import com.springboot.common.entity.SysUserRole;
+
+import java.util.List;
+import java.util.Set;
 
 
-
-/**
- * @author 大闲人柴毛毛
- * @date 2017/11/1 下午3:33
- * @description Redis服务接口
- */
-public interface SysUserService {
+public interface SysUserService extends CurdService<SysUser>{
 	public List<SysUser> findUserInfoByUsername(String userid);
 
 	public int addUser(SysUser user);
@@ -23,4 +17,12 @@ public interface SysUserService {
 	public int updateUser(SysUser user);
 
 	public List<SysUser> findUser(SysUser userInfo);
+
+
+	SysUser findByName(String username);
+
+	Set<String> findPermissions(String userName);
+
+	List<SysUserRole> findUserRoles(Long userId);
+
 }

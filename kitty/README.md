@@ -34,6 +34,8 @@ QQ技术交流群： 528818161
 
 - shiro: 基于Spring Boot + Shiro，不包含 Spring Cloud，部署环境稍微简单一点
 
+- idea: IDEA项目结构代码，使用IDEA作为开发IDE的朋友可以使用此分支快速导入IDEA
+
 ### 项目介绍
 
 - Kitty是基于Spring Boot、Spring Cloud、Vue、Element实现的Java快速开发平台。
@@ -158,7 +160,7 @@ kitty-ui
 
 3. 编译代码
 
-    找到 kitty-pom 工程的 pom.xml，执行 maven clean install 命令编译一键打包。
+    找到 kitty-pom 工程的 pom.xml，执行 mvn clean install 命令编译一键打包。
 
     一般来说不会有什么问题，如果还是编译不成功，可以按照优先级逐个编译试一试。
 
@@ -185,7 +187,7 @@ kitty-ui
     找到 kitty-backup 工程下的 KittyBackupApplication.java，启动项目，开启备份还原服务。
 
 
-    其他模块根据各自需要选择性启动，模块依赖可以参见我的博客同步教程...
+    包含以上模块已经可以满足权限管理系统的运行了，其他模块根据各自需要选择性启动，模块依赖可以参见我的博客同步教程...
 
     注意事项：
 
@@ -279,6 +281,11 @@ kitty-ui
 #### 主题切换
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/1227/154943_1752c336_645970.png "屏幕截图.png")
+
+#### 请作者喝杯茶
+
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0917/115411_f1d433c3_645970.png "wx_samll.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0917/115402_b3a16f74_645970.jpeg "zfb_small.jpg")
 
 ### 参与贡献
 

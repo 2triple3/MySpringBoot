@@ -29,7 +29,6 @@ public interface CurdService<T> {
 	
 	/**
 	 * 批量删除操作
-	 * @param entities
 	 */
 	int delete(List<T> records);
 	

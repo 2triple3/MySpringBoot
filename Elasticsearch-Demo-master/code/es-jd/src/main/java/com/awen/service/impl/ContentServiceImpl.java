@@ -129,6 +129,7 @@ public class ContentServiceImpl implements IContentService {
         }
         return  list;
     }
+
     //3、获取这些数据实现搜索功能  搜索高亮功能
     //问我 为什么头脑这么清晰 晚上少做点事就行的
     public List<Map<String,Object>> searchPageHighlight(String keyword, int pageNo, int pageSize) throws Exception{

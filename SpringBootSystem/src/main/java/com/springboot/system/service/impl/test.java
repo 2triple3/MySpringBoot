@@ -14,8 +14,9 @@ public class test {
 	
 	
 	public static void main(String[] args) {
-		a();
-		a xx = new a();
+//		a();
+//		a xx = new a();
+		System.out.println("2+2");
 	}
 
 }
