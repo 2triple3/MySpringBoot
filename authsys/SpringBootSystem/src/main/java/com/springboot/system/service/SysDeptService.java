@@ -7,7 +7,7 @@ import com.springboot.common.entity.SysDept;
 
 /**
  * 机构管理
- * @author Louis
+ * @author fancm
  * @date Oct 29, 2018
  */
 public interface SysDeptService extends CurdService<SysDept> {

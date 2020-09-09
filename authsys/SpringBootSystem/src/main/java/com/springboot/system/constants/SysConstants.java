@@ -2,7 +2,7 @@ package com.springboot.system.constants;
 
 /**
  * 常量管理
- * @author Louis
+ * @author fancm
  * @date Oct 29, 2018
  */ 
 public interface SysConstants {

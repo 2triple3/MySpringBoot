@@ -8,7 +8,7 @@ import com.springboot.common.entity.SysMenu;
 
 /**
  * 菜单管理
- * @author Louis
+ * @author fancm
  * @date Oct 29, 2018
  */
 public interface SysMenuService extends CurdService<SysMenu> {

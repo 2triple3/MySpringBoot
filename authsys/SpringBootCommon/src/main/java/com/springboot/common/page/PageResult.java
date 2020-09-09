@@ -3,7 +3,7 @@ package com.springboot.common.page;
 import java.util.List;
 /**
  * 分页返回结果
- * @author Louis
+ * @author fancm
  * @date Aug 19, 2018
  */
 public class PageResult {

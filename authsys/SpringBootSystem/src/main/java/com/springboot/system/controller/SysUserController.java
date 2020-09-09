@@ -30,7 +30,7 @@ import com.springboot.system.service.SysUserService;
 
 @Controller
 public class SysUserController {
-//6666666666666666666666666
+
 	@Autowired
 	private SysUserService sysUserServiceImpl;
 	

@@ -5,8 +5,7 @@ import java.util.List;
 import com.springboot.common.page.PageRequest;
 import com.springboot.common.page.PageResult;
 
-//import com.louis.kitty.core.page.PageRequest;
-//import com.louis.kitty.core.page.PageResult;
+
 
 /**
  * 通用CURD接口

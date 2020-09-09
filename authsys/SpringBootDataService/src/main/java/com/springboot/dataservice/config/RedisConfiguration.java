@@ -34,7 +34,7 @@ import redis.clients.jedis.JedisPoolConfig;
 /**
  * Redis 配置类
  *
- * @author Leon
+ * @author fancm
  * @version 2018/6/17 17:46
  */
 // @ConditionalOnExpression 动态配置此配置

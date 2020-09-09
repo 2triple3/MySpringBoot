@@ -9,7 +9,7 @@ import com.springboot.common.entity.SysRoleMenu;
 
 /**
  * 角色管理
- * @author Louis
+ * @author fancm
  * @date Oct 29, 2018
  */
 public interface SysRoleService extends CurdService<SysRole> {
