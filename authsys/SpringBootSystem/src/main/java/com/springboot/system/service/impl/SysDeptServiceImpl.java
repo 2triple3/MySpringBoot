@@ -21,7 +21,7 @@ public class SysDeptServiceImpl implements SysDeptService {
 
 	@Override
 	public int save(SysDept record) {
-		if(record.getId() == null || record.getId() == 0) {
+		if (record.getId() == null || record.getId() == 0) {
 			return sysDeptDAO.insertSelective(record);
 		}
 		return sysDeptDAO.updateByPrimaryKeySelective(record);
@@ -32,9 +32,10 @@ public class SysDeptServiceImpl implements SysDeptService {
 		return sysDeptDAO.deleteByPrimaryKey(record.getId());
 	}
 
+
 	@Override
 	public int delete(List<SysDept> records) {
-		for(SysDept record:records) {
+		for (SysDept record : records) {
 			delete(record);
 		}
 		return 1;

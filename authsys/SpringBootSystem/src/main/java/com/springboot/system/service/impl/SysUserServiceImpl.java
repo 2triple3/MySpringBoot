@@ -89,7 +89,7 @@ public class SysUserServiceImpl implements com.springboot.system.service.SysUser
 
 	@Override
 	public SysUser findByName(String username) {
-		return null;
+		return userdao.findByName(username);
 	}
 
 	@Override

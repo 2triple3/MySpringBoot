@@ -16,7 +16,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import javax.naming.Name;
 
 
 /**
@@ -24,7 +23,10 @@ import javax.naming.Name;
  * @author fancm
  * @date Nov 20, 2018
  */
+
 @Service("UserDetailsServiceImpl")
+//@Resource
+//@Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private static Logger log = LoggerFactory.getLogger(WebSecurityConfig.class);
@@ -34,7 +36,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        log.info("UserDetailsServiceImpl类的loadUserByUsername方法中");
+//        log.info("UserDetailsServiceImpl---loadUserByUsername()");
         SysUser user = sysUserService.findByName(username);
         if (user == null) {
             throw new UsernameNotFoundException("该用户不存在");

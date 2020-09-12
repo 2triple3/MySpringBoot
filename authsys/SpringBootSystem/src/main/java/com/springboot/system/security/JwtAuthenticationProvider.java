@@ -1,12 +1,16 @@
 package com.springboot.system.security;
 
 import com.springboot.system.util.PasswordEncoder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+
+import javax.sound.midi.Soundbank;
 
 
 /**
@@ -15,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  * @date Nov 20, 2018
  */
 public class JwtAuthenticationProvider extends DaoAuthenticationProvider {
+	private static Logger log = LoggerFactory.getLogger(JwtAuthenticationProvider.class);
 
     public JwtAuthenticationProvider(UserDetailsService userDetailsService) {
         setUserDetailsService(userDetailsService);

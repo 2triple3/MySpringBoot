@@ -19,6 +19,22 @@
 	    <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
     </resultMap>
 
+    <resultMap id="BaseResultMap" type="com.springboot.common.entity.SysUser">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="salt" jdbcType="VARCHAR" property="salt" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+        <result column="status" jdbcType="TINYINT" property="status" />
+        <result column="dept_id" jdbcType="BIGINT" property="deptId" />
+        <result column="create_by" jdbcType="BIGINT" property="createBy" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="last_update_by" jdbcType="BIGINT" property="lastUpdateBy" />
+        <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+        <result column="del_flag" jdbcType="TINYINT" property="delFlag" />
+    </resultMap>
+
     <sql id="Base_Column_List">
 	    userid, username, password, salt, email, mobile, status, dept_id, create_by, create_time,
 	    last_update_by, last_update_time, del_flag
@@ -87,5 +103,10 @@
     </set>
     where sys_user.userid = #{sysUser.userid}
     </update>
+
+    <select id="findByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select u.*, (select d.name from sys_dept d where d.id = u.dept_id) deptName from sys_user u
+        where u.username = #{username,jdbcType=VARCHAR}
+    </select>
 
 </mapper>

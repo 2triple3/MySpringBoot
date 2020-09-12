@@ -2,6 +2,7 @@ package com.springboot.system.config;
 
 
 
+import com.springboot.system.security.UserDetailsServiceImpl;
 import jdk.nashorn.internal.ir.annotations.Reference;
 
 import org.slf4j.Logger;
@@ -39,15 +40,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Qualifier("UserDetailsServiceImpl")
     private UserDetailsService userDetailsService;
 
+//    @Bean
+//    public UserDetailsService userDetailsService() {
+//        //获取用户账号密码及权限信息
+//        return new UserDetailsServiceImpl();
+//    }
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManager() throws Exception {
+        return super.authenticationManager();
+    }
+
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
          //使用自定义身份验证组件
         auth.authenticationProvider(new JwtAuthenticationProvider(userDetailsService));
+//        auth.userDetailsService(userDetailsService());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        log.info("WebSecurityConfig类中configure方法");
+        log.info("WebSecurityConfig---configure()");
 
         // 禁用 csrf, 由于使用的是JWT，我们这里不需要csrf
         http.cors().and().csrf().disable()
@@ -57,14 +71,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             // 首页
             .antMatchers("/").permitAll()
             //登录页
-            .antMatchers("/api/login").permitAll()
+            .antMatchers("/login").permitAll()
+            //检查用户名是否存在
+            .antMatchers("/api/checkUsernameExist/**").permitAll()
+
+            //查找菜单树
+            .antMatchers("//menu/findNavTree").permitAll()
+
             // web jars
             .antMatchers("/webjars/**").permitAll()
             .antMatchers("/webjars/springfox-swagger-ui/**").permitAll()
             // 查看SQL监控（druid）
             .antMatchers("/druid/**").permitAll()
-            // swagger.antMatchers("/swagger-ui.html").permitAll()
-            .antMatchers("/swagger-resources").permitAll()
+            .antMatchers("/swagger-resources").permitAll()  // swagger.antMatchers("/swagger-ui.html").permitAll()
             .antMatchers("/v2/api-docs").permitAll()
             // 验证码
             .antMatchers("/captcha.jpg**").permitAll()
@@ -73,22 +92,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
            // 其他所有请求需要身份认证
             .anyRequest().authenticated()
 
-
         ;
 
+      http.authorizeRequests().and().formLogin().permitAll();
 
         // 退出登录处理器
        http.logout().logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler());
         // token验证过滤器
        http.addFilterBefore(new JwtAuthenticationFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
 
-
     }
 
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManager() throws Exception {
-        return super.authenticationManager();
-    }
 
 }

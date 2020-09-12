@@ -10,6 +10,8 @@ import com.springboot.common.entity.SysUser;
 
 @Mapper
 public interface SysUserDAO {
+	SysUser findByName(@Param(value="username") String username);
+
 	List<SysUser> findUserInfoByUsername(@Param("username") String username);
 
 	int addUser(@Param("sysUserpp")SysUser sysUser);
